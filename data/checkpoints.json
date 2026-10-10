@@ -1,14 +1,178 @@
 {
-  "updated":"2026-10-10",
-  "build":{"version":"1d79ef7","label":"Last delivered playable checkpoint","tested":"Feature-by-feature acceptance evidence pending","sourceCandidate":"570e0cd","sourceLabel":"Compiled source only · not a delivered playable build","manifest":["Playable build delivery recorded","RPG perk stacking, projectile, damage and ammo behavior is the preservation baseline"],"evidence":[]},
-  "stages":[
-    {"id":"stability","title":"Protect the hunt","biome":"forest","state":"in-progress","summary":"Current bugs, audio and RPG performance.","criteria":["Fix reported defects and audio issues with repeatable playtest evidence","Optimize lag without nerfing 1d79ef7 perk stacking, projectiles, damage or ammo","First-person remains primary; third-person supports character inspection","Compass and clearer upgrade navigation pass usability review"],"blocker":"Candidate source work needs packaged-build regression testing."},
-    {"id":"world","title":"Three worlds. One identity.","biome":"snow","state":"in-progress","summary":"All-biome asset polish, with the strongest pass reserved for the fire finale.","criteria":["Forest, snow and fire assets pass visual and performance review","Natural terrain and forage feel coherent","Polar bear and snow tracks verified in play","Rare Christmas trees and late-snow red-nosed reindeer encounter verified","20+ live elk lead to Santa boss, present and camp outfit unlock"],"blocker":"Art and encounter acceptance require in-game review."},
-    {"id":"systems","title":"Survive what follows","biome":"fire","state":"requested","summary":"Zombie Mode, bosses, destruction, NPC quests and progression.","criteria":["Main-menu Zombie Mode includes all species and unrestricted-distance pursuit","Fire undead-elk boss passes gameplay and balance review","Special signature weapons roll independently at 33% per kill; no third-kill guarantee","Destruction, NPC quests and progression pass complete-loop tests","Nuke ending is realistic and entirely in-scene; no AI video"],"blocker":"Requested features are not accepted until verified in a delivered build."},
-    {"id":"multiplayer","title":"Bring the whole party","biome":"snow","state":"requested","summary":"Six-player multiplayer and supported-hardware validation.","criteria":["Six players complete a synchronized full session","Defined supported hardware/settings sustain minimum 30 FPS; 60 FPS preferred","Steam Deck controls, readability and performance measured","Performance improvements preserve gameplay semantics"],"blocker":"Hardware matrix, measured frame times and six-player evidence pending."},
-    {"id":"steam","title":"Earn the release","biome":"fire","state":"requested","summary":"Steamworks onboarding, store and build review, then release.","criteria":["Onboarding, app identity and app-fee payment date verified privately","First-title 30-day fee clock and 14-day public Coming Soon requirement satisfied","Store/pricing/content survey approved, then playable build approved","Purchase, install and launch smoke tests pass","Dashboard confirms seasonal discount eligibility and saved discount"],"blocker":"All account and approval gates remain unverified. Sale participation is not guaranteed."}
+  "updated": "2026-10-10",
+  "build": {
+    "version": "1d79ef7",
+    "label": "Public Windows playtest baseline",
+    "tested": "Original automated checks: 151 EditMode, 58 PlayMode, 11 packaged runtime gates. Fresh sanitized-package headless smoke passed; public full-download hash verified. Human/Steam/Deck acceptance remains pending.",
+    "sourceCandidate": "a5798f0",
+    "sourceLabel": "Compiled source only · not a delivered playable build",
+    "manifest": [
+      "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
+      "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",
+      "224-metre Forest, Snow and Fire map, lake, roaming wildlife and four discoverable respawn/upgrade camps",
+      "Bow, knife, rifles, RPG/rapid-RPG upgrades, earned alien raygun and reclaimable purchased weapons",
+      "Carry/stow/throw cargo, four-item capacity upgrades, magnetic returns, camp hoop and 25-item collection vehicle",
+      "Horseshoes, marshmallow roasting/eating, rhythm camp band and stake-free blackjack",
+      "Complete The Camels - Jam Session recording and retained elk-caller audio",
+      "Bear, Bigfoot, skeleton and UFO/mothership encounters, alien rewards, gunship progression and historical nuke finale"
+    ],
+    "evidence": [
+      {
+        "title": "Public release and package verification",
+        "url": "https://github.com/stevologic/winter-hunt-tracker/releases/tag/playtest-1d79ef7"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "stability",
+      "title": "Protect the hunt",
+      "biome": "forest",
+      "state": "in-progress",
+      "summary": "Current bugs, audio and RPG performance.",
+      "criteria": [
+        "Fix reported defects and audio issues with repeatable playtest evidence",
+        "Optimize lag without nerfing 1d79ef7 perk stacking, projectiles, damage or ammo",
+        "First-person remains primary; third-person supports character inspection",
+        "Compass and clearer upgrade navigation pass usability review"
+      ],
+      "blocker": "Candidate source work needs packaged-build regression testing."
+    },
+    {
+      "id": "world",
+      "title": "Three worlds. One identity.",
+      "biome": "snow",
+      "state": "in-progress",
+      "summary": "All-biome asset polish, with the strongest pass reserved for the fire finale.",
+      "criteria": [
+        "Forest, snow and fire assets pass visual and performance review",
+        "Natural terrain and forage feel coherent",
+        "Polar bear and snow tracks verified in play",
+        "Rare Christmas trees and late-snow red-nosed reindeer encounter verified",
+        "20+ live elk lead to Santa boss, present and camp outfit unlock"
+      ],
+      "blocker": "Art and encounter acceptance require in-game review."
+    },
+    {
+      "id": "systems",
+      "title": "Survive what follows",
+      "biome": "fire",
+      "state": "requested",
+      "summary": "Zombie Mode, bosses, destruction, NPC quests and progression.",
+      "criteria": [
+        "Main-menu Zombie Mode includes all species and unrestricted-distance pursuit",
+        "Fire undead-elk boss passes gameplay and balance review",
+        "Special signature weapons roll independently at 33% per kill; no third-kill guarantee",
+        "Destruction, NPC quests and progression pass complete-loop tests",
+        "Nuke ending is realistic and entirely in-scene; no AI video"
+      ],
+      "blocker": "Requested features are not accepted until verified in a delivered build."
+    },
+    {
+      "id": "multiplayer",
+      "title": "Bring the whole party",
+      "biome": "snow",
+      "state": "requested",
+      "summary": "Six-player multiplayer and supported-hardware validation.",
+      "criteria": [
+        "Six players complete a synchronized full session",
+        "Defined supported hardware/settings sustain minimum 30 FPS; 60 FPS preferred",
+        "Steam Deck controls, readability and performance measured",
+        "Performance improvements preserve gameplay semantics"
+      ],
+      "blocker": "Hardware matrix, measured frame times and six-player evidence pending."
+    },
+    {
+      "id": "steam",
+      "title": "Earn the release",
+      "biome": "fire",
+      "state": "requested",
+      "summary": "Steamworks onboarding, store and build review, then release.",
+      "criteria": [
+        "Onboarding, app identity and app-fee payment date verified privately",
+        "First-title 30-day fee clock and 14-day public Coming Soon requirement satisfied",
+        "Store/pricing/content survey approved, then playable build approved",
+        "Purchase, install and launch smoke tests pass",
+        "Dashboard confirms seasonal discount eligibility and saved discount"
+      ],
+      "blocker": "All account and approval gates remain unverified. Sale participation is not guaranteed."
+    }
   ],
-  "decisions":[{"state":"verified","title":"In-scene finale","text":"The old 30–45 second video requirement is cancelled. The nuclear ending must be realistic and rendered entirely in the game scene."},{"state":"verified","title":"Preserve RPG behavior","text":"Optimization must preserve the current 1d79ef7 perk stacking, projectile, damage and ammo semantics."},{"state":"verified","title":"Independent loot rolls","text":"Signature weapon drops use an independent 33% chance per kill, with no guaranteed third drop."}],
-  "targets":[["Oct 16","Verify onboarding and fee date"],["Oct 20","Submit store, pricing and survey"],["Oct 30","Approved public Coming Soon"],["Nov 2","Playable build review candidate"],["Nov 12","Quality go / no-go"],["Nov 16","Buffered release target"],["Dec 10","Verify saved discount eligibility"],["Dec 17","Purchase, install and smoke test"],["Jan 4","Discount expiry review"]],
-  "sources":[["2026 Steam events","https://partner.steamgames.com/doc/marketing/upcoming_events"],["Onboarding and waiting periods","https://partner.steamgames.com/doc/gettingstarted/onboarding?language=english"],["Store and build review","https://partner.steamgames.com/doc/store/review_process"],["Discount rules and eligibility","https://partner.steamgames.com/doc/marketing/discounts"],["Content Survey and AI disclosure","https://partner.steamgames.com/doc/gettingstarted/contentsurvey"]]
+  "decisions": [
+    {
+      "state": "verified",
+      "title": "In-scene finale",
+      "text": "The old 30–45 second video requirement is cancelled. The nuclear ending must be realistic and rendered entirely in the game scene."
+    },
+    {
+      "state": "verified",
+      "title": "Preserve RPG behavior",
+      "text": "Optimization must preserve the current 1d79ef7 perk stacking, projectile, damage and ammo semantics."
+    },
+    {
+      "state": "verified",
+      "title": "Independent loot rolls",
+      "text": "Signature weapon drops use an independent 33% chance per kill, with no guaranteed third drop."
+    }
+  ],
+  "targets": [
+    [
+      "Oct 16",
+      "Verify onboarding and fee date"
+    ],
+    [
+      "Oct 20",
+      "Submit store, pricing and survey"
+    ],
+    [
+      "Oct 30",
+      "Approved public Coming Soon"
+    ],
+    [
+      "Nov 2",
+      "Playable build review candidate"
+    ],
+    [
+      "Nov 12",
+      "Quality go / no-go"
+    ],
+    [
+      "Nov 16",
+      "Buffered release target"
+    ],
+    [
+      "Dec 10",
+      "Verify saved discount eligibility"
+    ],
+    [
+      "Dec 17",
+      "Purchase, install and smoke test"
+    ],
+    [
+      "Jan 4",
+      "Discount expiry review"
+    ]
+  ],
+  "sources": [
+    [
+      "2026 Steam events",
+      "https://partner.steamgames.com/doc/marketing/upcoming_events"
+    ],
+    [
+      "Onboarding and waiting periods",
+      "https://partner.steamgames.com/doc/gettingstarted/onboarding?language=english"
+    ],
+    [
+      "Store and build review",
+      "https://partner.steamgames.com/doc/store/review_process"
+    ],
+    [
+      "Discount rules and eligibility",
+      "https://partner.steamgames.com/doc/marketing/discounts"
+    ],
+    [
+      "Content Survey and AI disclosure",
+      "https://partner.steamgames.com/doc/gettingstarted/contentsurvey"
+    ]
+  ]
 }

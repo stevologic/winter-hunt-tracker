@@ -1,1 +1,31 @@
-{"state":"pending","version":null,"publishedDate":null,"url":null,"filename":null,"sha256":null,"bytes":null,"executable":null,"features":[],"knownLimits":[],"verification":null,"screenshots":[]}
+{
+  "state": "verified",
+  "version": "1d79ef7",
+  "publishedDate": "2026-10-10",
+  "builtDate": "October 9, 2026, 5:52 p.m. Phoenix (October 10, 00:52 UTC)",
+  "originalTestDate": "October 9, 2026; final staged visual-test receipt written 6:14 p.m. Phoenix (October 10, 01:14 UTC)",
+  "url": "https://github.com/stevologic/winter-hunt-tracker/releases/download/playtest-1d79ef7/WinterHunt-Windows-1d79ef7-Public.zip",
+  "filename": "WinterHunt-Windows-1d79ef7-Public.zip",
+  "sha256": "8dd4c9a6dae9c3587e6e36a2570b07113d6a828b1158a1396a3984eb0873e65e",
+  "bytes": 158846801,
+  "executable": "WinterHunt.exe",
+  "features": [
+    "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
+    "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",
+    "224-metre Forest, Snow and Fire map, lake, roaming wildlife and four discoverable respawn/upgrade camps",
+    "Bow, knife, rifles, RPG/rapid-RPG upgrades, earned alien raygun and reclaimable purchased weapons",
+    "Carry/stow/throw cargo, four-item capacity upgrades, magnetic returns, camp hoop and 25-item collection vehicle",
+    "Horseshoes, marshmallow roasting/eating, rhythm camp band and stake-free blackjack",
+    "Complete The Camels - Jam Session recording and retained elk-caller audio",
+    "Bear, Bigfoot, skeleton and UFO/mothership encounters, alien rewards, gunship progression and historical nuke finale"
+  ],
+  "knownLimits": [
+    "Older baseline: ending includes about five-second AI-generated Forest/Snow/Fire clips. The new entirely in-scene finale is not included",
+    "Santa/outfit, Frost Harpoon, flamethrower, randomized-per-run routes and consolidated upgrades are not included",
+    "Zombie campaign, completed-level replay and completion mount/gold rewards are not included; Fire continues into Fire",
+    "Internet Steam invites, voice service setup, physical Steam Deck, human listening and subjective visual acceptance remain unverified",
+    "Development playtest with a harmless diagnostic output-directory literal behind explicit diagnostic arguments; original runtime files are preserved"
+  ],
+  "verification": "Original baseline: 151 selected EditMode, 58 selected PlayMode and 11 local packaged-runtime checks. Sanitized ZIP: retained runtime bytes matched; 248 entries CRC/extraction/hash checked; redistribution cleared. Fresh isolated headless smoke passed on October 10, 2026 with natural exit code 0 and unchanged payload. Anonymous full public download returned HTTP 200 and matched the SHA-256 and 158,846,801-byte size. This does not establish new rendered, listening, Steam Internet or physical Deck acceptance.",
+  "screenshots": []
+}
