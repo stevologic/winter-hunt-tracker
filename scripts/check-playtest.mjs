@@ -1,0 +1,4 @@
+import{readFile}from'node:fs/promises';import assert from'node:assert/strict';
+const d=JSON.parse(await readFile('data/playtest.json','utf8'));
+if(d.state==='pending'){assert.equal(d.url,null);console.log('PASS: public playtest remains pending without an invented link.');}
+else{assert.equal(d.state,'verified');for(const k of ['version','publishedDate','filename','executable','verification'])assert(d[k],`Missing ${k}`);assert(/^[a-f0-9]{64}$/.test(d.sha256));assert(d.bytes>0&&d.bytes<2147483648);assert(d.features.length&&d.knownLimits.length);const u=new URL(d.url);assert.equal(u.hostname,'github.com');assert(u.pathname.startsWith('/stevologic/winter-hunt-tracker/releases/download/'));assert(d.filename.endsWith('.zip'));assert(d.executable.endsWith('.exe'));console.log('PASS: complete public release manifest.');}
