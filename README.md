@@ -8,6 +8,6 @@ Run `npm run build && npm test`. Publish the repository root from `main` through
 
 Planning targets are not deadlines or promises. Steam account gates stay pending until reviewed privately; publish only the sanitized gate result. Official documentation is linked on the website.
 
-Current visuals use genuine historical game screenshots, labeled with their source checkpoint. Screenshots do not verify features in a newer package and were not used as AI input. The earlier imagined concept artwork is no longer displayed.
+Current visuals combine an explicitly labeled AI-generated low-poly concept illustration with separate genuine historical game screenshots labeled with their source checkpoint. The new illustration was made from descriptive art direction only, without purchased asset or screenshot input. Screenshots do not verify features in a newer package. Earlier ornate hero and emblem are retired.
 
 `data/playtest.json` controls the public playtest. Set `state` to `verified` only after receiving the tested complete ZIP and redistribution clearance, inspecting contents, matching the supplied SHA-256 and checking the public release asset. Include exact version, publish date, executable, features and known limits. Keep binaries out of Pages.
