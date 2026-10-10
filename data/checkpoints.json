@@ -4,8 +4,8 @@
     "version": "1d79ef7",
     "label": "Public Windows playtest baseline",
     "tested": "Original automated checks: 151 EditMode, 58 PlayMode, 11 packaged runtime gates. Fresh sanitized-package headless smoke passed; public full-download hash verified. Human/Steam/Deck acceptance remains pending.",
-    "sourceCandidate": "a5798f0",
-    "sourceLabel": "Compiled source only · not a delivered playable build",
+    "sourceCandidate": "c00ad87",
+    "sourceLabel": "Owner-only candidate, October 10: 205 native tests and 8 packaged gates passed, including same-machine six-player/save/reload/flight/firing/caller checks. Separate from the public 1d79ef7 download. Human listening, separate-PC Internet/Steam and physical Deck remain unverified; Skip caption and respawn instructions remain open.",
     "manifest": [
       "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
       "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",
