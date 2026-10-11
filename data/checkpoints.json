@@ -5,7 +5,7 @@
     "label": "Public Windows playtest baseline",
     "tested": "Original automated checks: 151 EditMode, 58 PlayMode, 11 packaged runtime gates. Fresh sanitized-package headless smoke passed; public full-download hash verified. Human/Steam/Deck acceptance remains pending.",
     "sourceCandidate": "c00ad87",
-    "sourceLabel": "Owner-only candidate, October 10: 205 native tests and 8 packaged gates passed, including same-machine six-player/save/reload/flight/firing/caller checks. Separate from the public 1d79ef7 download. Human listening, separate-PC Internet/Steam and physical Deck remain unverified; Skip caption and respawn instructions remain open.",
+    "sourceLabel": "Owner-only candidate, October 10: 205 native tests and 8 packaged gates passed, including same-machine six-player/save/reload/flight/firing/caller checks. Separate from the public 1d79ef7 download. Human listening, separate-PC Internet/Steam and physical Deck remain unverified; Skip caption remains open.",
     "manifest": [
       "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
       "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",
@@ -90,7 +90,7 @@
       "summary": "Steamworks onboarding, store and build review, then release.",
       "criteria": [
         "Onboarding, app identity and app-fee payment date verified privately",
-        "First-title 30-day fee clock and 14-day public Coming Soon requirement satisfied",
+        "First-title 21-day fee clock and 14-day public Coming Soon requirement satisfied",
         "Store/pricing/content survey approved, then playable build approved",
         "Purchase, install and launch smoke tests pass",
         "Dashboard confirms seasonal discount eligibility and saved discount"
