@@ -1,0 +1,135 @@
+{
+  "updated": "2026-10-11",
+  "title": "The path from playtest to production",
+  "summary": "The current download remains the earlier tested playtest. The recovered survival candidate is private, uncommitted and not release-ready. Every requested feature stays on this trail until its acceptance gate passes.",
+  "candidate": {
+    "base": "aee0f8e",
+    "fingerprint": "F1D48286CAEF58C6B3BCA671B902206404E3E706E5A17CF97AC0A93D060CA8A5",
+    "state": "Private diagnostic / runtime acceptance incomplete",
+    "passed": "Core8: all four managed assemblies, three-biome bake, 1,450 native cases and Windows build passed. Its exact package passed Solo, Coop2, Coop6, CampSave and ZombieCoop.",
+    "limits": "These passes do not certify the whole package: Horde failed, Normal EngineFinale / GroupFire / Flight remain unaccepted, and human, controller, listening, Internet multiplayer, Steam and Deck gates remain open.",
+    "camp": "The two-process Zombie check verified real 30-second shared camp safety, invasion after expiry and repeated entry without reset. Its 299-to-300-second wave transition was accelerated; Zombie save readback did not restart the process.",
+    "performance": [
+      {
+        "target": 512,
+        "live": "481–512",
+        "active": 481,
+        "moving": 445,
+        "proxies": 0,
+        "fps": 63.0475,
+        "p95Ms": 17.7902,
+        "state": "Phase passed"
+      },
+      {
+        "target": 1024,
+        "live": "991–1024",
+        "active": 991,
+        "moving": 925,
+        "proxies": 0,
+        "fps": 32.7403,
+        "p95Ms": 35.575,
+        "state": "Failed: p95 and strict melee-kill gate"
+      },
+      {
+        "target": 2048,
+        "live": "Unmeasured",
+        "active": null,
+        "moving": null,
+        "proxies": null,
+        "fps": null,
+        "p95Ms": null,
+        "state": "Not run after 1024 failure"
+      }
+    ],
+    "measurement": "One fixed-seed, manually staged ordinary-AI solo diagnostic: 30-second phases, 1280×800 D3D11, 120 FPS cap, vSync off, i7-14700K / RTX 5070. Exceptional threats were isolated. GPU timing was unavailable. Active counts are separate from camera-frustum bounds; occlusion visibility was not measured. Production ordinary-AI cap remains 512, fallback 128. Natural thousands capacity and six-peer density are unverified.",
+    "route": "A seeded Core7 HOME-return route rejected after real contact. Core8 passed another seed; the original failure is still open.",
+    "optimization": "The small Core7/Core8 predicate comparison showed mixed, inconclusive changes. No meaningful general performance improvement is claimed."
+  },
+  "phases": [
+    {
+      "id": "survival",
+      "title": "Finish the endless survival loop",
+      "state": "In progress",
+      "criteria": [
+        "Endless Zombie has no win, nuke or finale. Three total lives per stable participant; the third death ends that participant’s run, and co-op ends when all registered participants are out. Final kills, survival time and waves stay visible.",
+        "Five-minute waves increase speed, damage and spawn pressure. Once per wave, shared camp safety lasts exactly 30 seconds with a prominent countdown; reentry, grenade refill and save/reload cannot reset it. Zombies invade after expiry.",
+        "Two weapon types per wave, both barred in the next wave then eligible again. Owned table retrieval costs about $100, retains upgrades and cannot double charge. Two grenades sit outside weapon slots and refill only at camp.",
+        "Earn compatible perks and combinations from kills, loot and harvests, with no paid loot boxes. Giant skeletons arrive every three minutes; 25 ordinary rockets remove about one quarter of 30,000 HP."
+      ],
+      "gate": "Native rules and selected package flows passed. Natural 10+ minute play, third-death results, Zombie process restart, two-peer arsenal/grenade transitions and boss cadence under load remain open. Later speed/damage/pressure tiers are bounded; a three-live-boss cap defers backlog."
+    },
+    {
+      "id": "density",
+      "title": "Prove crowded pursuit and performance",
+      "state": "Open gate",
+      "criteria": [
+        "Fast contact attacks within about half a second, readable lunges and fair knockback; crowds keep pursuing and attacking. Animals jump or reposition to reach juniper perches.",
+        "Admit hordes throughout the map from multiple directions, scaling toward thousands through pooling, LOD and spatial/navigation work. Report real active AI separately from proxies.",
+        "Keep cheap visible frozen/batched corpse piles bounded, with no unbounded physics, revival or duplicate rewards."
+      ],
+      "gate": "512 staged phase passed; 1024 failed; 2048 is unmeasured. Attribute animal/native/render/allocation costs before another optimization. Resolve the seeded return-route rejection, dense melee target churn, sustained corpse persistence and delayed/reordered leap transport. Natural growth, combined exceptional threats and six-peer density remain unaccepted."
+    },
+    {
+      "id": "art",
+      "title": "Raise the original visual quality",
+      "state": "In progress",
+      "criteria": [
+        "Improve original hunter, animal, monster and UFO models, textures, rigs and lighting while preserving silhouettes, hurtboxes and combat readability.",
+        "Keep mitten/block hands in first and third person, improve held flamethrower presentation, and keep a sky beam on lost gear until recovered or empty.",
+        "Retain bounded weapon/environment particles and existing pooled left/right boot-sole snow footprints; validate slope contact, fade and co-op consistency. Add a shared adaptive effects budget when measured."
+      ],
+      "gate": "Modest mitten/flamethrower/beacon and footprint implementations already exist. Near/far packaged images, dense-session cost and human art acceptance remain open. High-end original character quality is still expected; no purchased or copied game/film assets."
+    },
+    {
+      "id": "profiles",
+      "title": "Make menus and profiles clear",
+      "state": "In progress",
+      "criteria": [
+        "Native Unity Normal / Zombie, Start New / Load / Resume, pause, settings and results flows remain readable at supported resolutions, with keyboard/controller focus, back and cancel.",
+        "Editable nonunique nickname and color preview persist across reopen/rejoin separately from private stable identity. Public results require explicit sharing consent."
+      ],
+      "gate": "Existing menu/save flows are tested; recovery wording and profile selection need a focused pass. Editable profile persistence, chosen color replication and native rendered/hardware acceptance remain open. Existing Steam-name defaults and seat colors do not satisfy profile selection."
+    },
+    {
+      "id": "classes",
+      "title": "Earn perks and playable monster classes",
+      "state": "Requested",
+      "criteria": [
+        "Expand earned perk inventory and combinations, preserving weapon rotation, ownership, grenades and live weapon state.",
+        "Normal map victories unlock persisted playable classes. Bigfoot is a strong melee tank; Devil trades health for strong melee and bounded magic. Neither uses hunter guns.",
+        "Resolve the proposed third class’s recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
+      ],
+      "gate": "Current enemies are not playable classes. Class authority, unlock rollback/rejoin, progression, camera, collider, animation and balance still require implementation and validation."
+    },
+    {
+      "id": "boards",
+      "title": "Put global records in every map",
+      "state": "Requested",
+      "criteria": [
+        "Physical boards partition records by map, mode, rules/version, class and team. Rank Normal completions separately from Zombie waves, time and kills.",
+        "Keep immutable run/private identity separate from mutable nicknames, with consent, idempotent retries and bounded cached/offline/loading/error states."
+      ],
+      "gate": "Only an opt-in local queue bounded to 16 exists. Contract and fake-adapter/UI work can proceed; no connected global service or internet-wide leaderboard is implemented. Service access is a later dependency."
+    },
+    {
+      "id": "acceptance",
+      "title": "Verify the exact final private build",
+      "state": "Open gate",
+      "criteria": [
+        "Run bound managed/native, build/package and persistence tests for the final source; cover repeated camp entry, waves, high-density combat and Normal regression.",
+        "Resolve actual-screen/HUD capture for Normal EngineFinale, GroupFire and Flight. Complete human gameplay/listening, physical controller/Deck and separate-PC Internet six-player checks."
+      ],
+      "gate": "Core8 remains a preserved private diagnostic. Commit only the verified recovered candidate; keep saves, earlier ZIPs and failed evidence. Source compilation, package hashes and selected checks are distinct from release acceptance."
+    },
+    {
+      "id": "production",
+      "title": "Pass the human and Steam release gates",
+      "state": "Conditional",
+      "criteria": [
+        "Verify onboarding, app identity, store/pricing/content survey, playable build review, install/launch and discount eligibility in the authorized Steam workflow.",
+        "Every actual game release updates this tracker with the matching download and instructions, then verifies the live site. Public release, merge and promotion require their remaining approvals."
+      ],
+      "gate": "November 2 review candidate and November 16 release are planning targets, not promises. Fee-credit evidence is recorded privately; app identity and account gates remain unverified. The October 19/20 submission-date discrepancy needs reconciliation. No new game build is published by this roadmap update."
+    }
+  ]
+}

@@ -19,3 +19,14 @@
 @media(max-width:640px){.play .public-playtest{padding:24px 20px}.play .public-playtest h2{font-size:36px}.play .button{font-size:13px;padding:13px 15px}}
 
 .hero .concept{right:auto;left:6%;top:16px}.overview:before{background-image:linear-gradient(#23392bdd,#23392b88),url(assets/world.svg);background-size:cover;opacity:.55}footer{background-image:linear-gradient(#191f20ee,#191f20cc),url(assets/fire-world.svg);background-size:cover;background-position:center 65%}@media(max-width:640px){.hero .concept{top:12px}}
+
+/* Full-scope recovery roadmap, retaining the existing camp journey. */
+.production{background:linear-gradient(135deg,#182923ee,#172325f2);border-top:1px solid #607768;color:#e8eee6}
+.production>h2{max-width:800px}.production>.build-card{max-width:none;margin:28px 0}
+.production-phases{list-style:none;counter-reset:production;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:0;margin:30px 0}
+.production-phases>li{counter-increment:production;min-width:0;border:1px solid #66715e;background:#101c18d9;padding:24px}
+.production-phases>li>article:before{content:counter(production,decimal-leading-zero);display:block;color:#dac48d;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.production-phases h3{font-size:26px;line-height:1.2;margin:16px 0}.production details{margin:16px 0}.production summary{cursor:pointer;line-height:1.5;padding:8px 0;color:#f0d6a4}.production details li{margin:12px 0;line-height:1.6}
+.production-gate{border-top:1px solid #566052;padding-top:16px;line-height:1.6;font-size:14px}.performance-scroll{overflow-x:auto;max-width:100%;outline-offset:4px}.performance-table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;line-height:1.5}.performance-table caption{text-align:left;color:#d7c28f;padding:8px 0}.performance-table th,.performance-table td{padding:12px 10px;border-bottom:1px solid #66715e;vertical-align:top}.performance-table thead{color:#efd5a4}.source-fingerprint{overflow-wrap:anywhere;font-size:12px}
+@media(max-width:900px){.production-phases{grid-template-columns:1fr}.performance-table{min-width:620px}.production-phases>li{padding:20px}header nav{gap:12px}}
+@media(max-width:640px){header nav{gap:10px}header nav a{font-size:10px}.production-phases h3{font-size:24px}}

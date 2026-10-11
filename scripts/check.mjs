@@ -11,3 +11,4 @@ async function walk(p){for(const f of await readdir(p,{withFileTypes:true})){con
 await import('./check-playtest.mjs');
 await import('./check-playtest-render.mjs');
 console.log('PASS: checkpoint schema, evidence gates, official sources and public-content scan with one authorized private-link exception.');
+await import('./check-production.mjs');
