@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "build": {
     "version": "1d79ef7",
     "label": "Public Windows playtest baseline",
     "tested": "Original automated checks: 151 EditMode, 58 PlayMode, 11 packaged runtime gates. Fresh sanitized-package headless smoke passed; public full-download hash verified. Human/Steam/Deck acceptance remains pending.",
-    "sourceCandidate": "c00ad87",
-    "sourceLabel": "Owner-only candidate, October 10: 205 native tests and 8 packaged gates passed, including same-machine six-player/save/reload/flight/firing/caller checks. Separate from the public 1d79ef7 download. Human listening, separate-PC Internet/Steam and physical Deck remain unverified; Skip caption remains open.",
+    "sourceCandidate": "a047a9a",
+    "sourceLabel": "Private playtest, October 11 UTC: 247 selected native tests, 8 packaged gates and additional 1080p finale checks passed. Skip-caption fix verified; full authenticated ZIP download matched its hash. Find the sign-in-required link in Playtest above. Public 1d79ef7 stays unchanged. Human listening/gameplay, separate-PC Steam/network and physical Deck/controller acceptance remain pending.",
     "manifest": [
       "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
       "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",

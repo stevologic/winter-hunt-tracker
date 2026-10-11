@@ -1,0 +1,20 @@
+{
+  "state": "private-playtest",
+  "access": "github-private-draft",
+  "version": "a047a9a",
+  "builtDate": "October 11, 2026 UTC",
+  "url": "https://github.com/stevologic/operation-winter-steam-sale/releases/tag/untagged-1fa972a8f96404b34f94",
+  "filename": "WinterHunt-Win-Diagnostic-20261011-010804-a047a9a.zip",
+  "bytes": 162177359,
+  "sha256": "6810f2f2fd2ef89738989833e6c04e25093a7958b4ea18cfe7f19bf758220f93",
+  "launcher": "Start-Playtest.cmd",
+  "executable": "WinterHunt.exe",
+  "summary": "A newer Windows playtest with the finale Skip-caption fix, purchased audio/effects and the complete The Camels - Jam Session recording.",
+  "verification": "247 selected native tests and eight packaged checks passed, including six peers on one computer, save/reload, group fire and flight. Additional 1080p finale checks passed. A full authenticated download matched this ZIP's size and SHA-256. Automated checks do not establish human acceptance or release readiness.",
+  "knownLimits": [
+    "Human listening, gameplay feel and visual acceptance remain unfinished",
+    "Separate-PC Internet/Steam invites and voice, physical Steam Deck/controller and hardware performance remain unverified",
+    "Fire currently repeats Fire; the automatic post-Fire zombie campaign cycle and other queued content are unfinished",
+    "The finale is rendered in-game; this candidate does not include an AI-generated ending video"
+  ]
+}
