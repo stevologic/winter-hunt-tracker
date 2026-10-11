@@ -5,7 +5,7 @@
     "label": "Public Windows playtest baseline",
     "tested": "Original automated checks: 151 EditMode, 58 PlayMode, 11 packaged runtime gates. Fresh sanitized-package headless smoke passed; public full-download hash verified. Human/Steam/Deck acceptance remains pending.",
     "sourceCandidate": "aee0f8e",
-    "sourceLabel": "Private playtest, October 11 UTC: Normal/Zombie selection, Start New / Load Saved Game / Resume, six campaign stages and revised first-person hands. 506 selected native tests and nine exact-package checks passed. Real menu navigation verified separate Normal/Zombie saves and Resume/Load after relaunch, preserving saved state and elapsed time. Packaged images were reviewed and the authenticated ZIP download matched its hash. Find the sign-in-required link in Playtest above. Public 1d79ef7 and historical screenshots stay unchanged. Human listening/gameplay, separate-PC Steam/network and physical Deck/controller acceptance remain pending.",
+    "sourceLabel": "Earlier private playtest, October 11 UTC: Normal/Zombie selection, Start New / Load Saved Game / Resume, six campaign stages and revised first-person hands. That released aee0f8e package passed 506 selected native tests and nine exact-package checks, real menu/save relaunch and reviewed captures. Its sign-in-required link above is unchanged. The later uncommitted endless-survival recovery has separate evidence and open gates in Production; its diagnostic is not a replacement download. Public 1d79ef7 and historical screenshots stay unchanged. Human listening/gameplay, separate-PC Steam/network and physical Deck/controller acceptance remain pending.",
     "manifest": [
       "Solo hunt or LAN camps for up to six players, hosted-camp list, manual address and reconnect support",
       "Deer, elk and antelope hunting; trophy harvesting and hauling; shared camp money and upgrades",
@@ -36,7 +36,7 @@
         "First-person remains primary; third-person supports character inspection",
         "Compass and clearer upgrade navigation pass usability review"
       ],
-      "blocker": "Candidate aee0f8e passed 506 selected native tests and nine exact-package gates; root reviewed packaged images and verified real menu/save flows. Human usability, listening and hardware performance acceptance remain pending."
+      "blocker": "The earlier aee0f8e playtest passed 506 selected native tests and nine exact-package gates, with reviewed captures and real menu/save flows. Later recovery evidence is separate in Production. Human usability, listening and supported-hardware acceptance remain pending."
     },
     {
       "id": "world",
@@ -58,16 +58,16 @@
       "title": "Survive what follows",
       "biome": "fire",
       "state": "in-progress",
-      "summary": "Normal/Zombie campaign and start/load/resume are implemented in candidate aee0f8e; remaining bosses, destruction, NPC quests and progression stay tracked separately.",
+      "summary": "Earlier mode/menu/save work is available in the private aee0f8e playtest. The later endless Zombie recovery, remaining bosses, destruction, NPC quests and progression have separate acceptance gates in Production.",
       "criteria": [
-        "Normal Forest / Snow / Fire then Zombie Forest / Snow / Fire preserve unlocks, host authority and saves; Start New never overwrites an existing slot",
+        "Normal Forest / Snow / Fire progression and independent endless Zombie runs preserve unlocks, host authority and saves; Start New never overwrites an existing slot",
         "Main-menu Zombie Mode includes all species and unrestricted-distance pursuit",
         "Fire undead-elk boss passes gameplay and balance review",
         "Special signature weapons roll independently at 33% per kill; no third-kill guarantee",
         "Destruction, NPC quests and progression pass complete-loop tests",
-        "Nuke ending is realistic and entirely in-scene; no AI video"
+        "Normal mode’s nuke ending is realistic and entirely in-scene, with no AI video. Endless Zombie has no win, nuke or finale."
       ],
-      "blocker": "Menu/save flows and a two-process Zombie encounter passed packaged checks; campaign transitions passed selected native tests. Complete-loop human play, balance and other requested content remain unfinished."
+      "blocker": "Earlier menu/save and two-process Zombie encounter checks passed; they do not validate the uncommitted recovery. Its measured Horde failure and integrated survival limits stay open in Production. Complete-loop human play, balance and other requested content remain unfinished."
     },
     {
       "id": "multiplayer",
@@ -103,7 +103,7 @@
     {
       "state": "verified",
       "title": "In-scene finale",
-      "text": "The old 30–45 second video requirement is cancelled. The nuclear ending must be realistic and rendered entirely in the game scene."
+      "text": "The old 30-45 second video requirement is cancelled. Normal mode’s nuclear ending must be realistic and rendered entirely in the game scene. Endless Zombie has no win, nuke or finale."
     },
     {
       "state": "verified",
