@@ -17,7 +17,31 @@
       <span class="badge in-progress">Private playtest · acceptance pending</span>
       <p class="access-note" id="private-access"><strong>GitHub sign-in required.</strong> You also need existing permission to view the private draft release. GitHub may show a 404 if your account cannot access it.</p>
       <a class="button" href="${safe(d.url)}" aria-describedby="private-access">Open ${safe(d.version)} playtest <span aria-hidden="true">↗</span></a>
-      <p class="launch-note">On GitHub, download the ZIP under <strong>Assets</strong>. Extract All, then double-click <strong>${safe(d.launcher)}</strong> to start ${safe(d.executable)} with separate playtest saves.</p>
+      <h3 class="launch-title">Download and launch</h3>
+      <ol class="launch-steps">
+        <li><strong>Sign in to GitHub</strong> with the account that has access to this private playtest.</li>
+        <li>Open the private release above, expand <strong>Assets</strong> and download <code>${safe(d.filename)}</code>.</li>
+        <li>In File Explorer, choose <strong>Extract All</strong>. Keep the whole extracted game folder together.</li>
+        <li>Inside that folder, double-click <code>${safe(d.launcher)}</code> to start the game with separate playtest saves and settings.</li>
+        <li>At the opening menu, use <kbd>Up</kbd>/<kbd>Down</kbd> to select a row. On the mode row, <kbd>Left</kbd>/<kbd>Right</kbd> chooses Normal or Zombie. Select an action and press <kbd>Enter</kbd>.</li>
+      </ol>
+      <details id="saved-camp-help"><summary>Normal, Zombie and saved camps +</summary>
+        <ul>
+          <li><strong>Start New:</strong> creates a separate camp in the selected mode without overwriting an existing camp.</li>
+          <li><strong>Resume:</strong> continues the saved camp in its saved mode, even if the selector shows the other mode.</li>
+          <li><strong>Load Saved Game:</strong> choose an existing camp, then press <kbd>Enter</kbd>. Its saved mode and state are retained.</li>
+        </ul>
+        <p>The mode selector applies to Start New. This launcher keeps this build's saves separate; earlier builds' camps are not automatically listed here.</p>
+      </details>
+      <details id="lan-play-help"><summary>LAN / Steam Deck +</summary>
+        <ol>
+          <li>On each Windows PC, use this same build and the same local network. Start or load your camp, then press <kbd>F2</kbd> for Friends.</li>
+          <li>The host selects <strong>HOST MY CAMP</strong>. Friends select the host's named <strong>JOIN CAMP</strong> row.</li>
+          <li>If the camp is not listed, enter the host's local IP address in the manual address field and select <strong>JOIN ADDRESS</strong>.</li>
+        </ol>
+        <p>Separate-PC play is still unverified; automated co-op checks used multiple game processes on one computer. Internet play, Steam invites and voice still need a real playtest.</p>
+        <p>Steam Deck/controller hardware has not been tested. Verified Deck installation steps are not available for this Windows build.</p>
+      </details>
       <p class="baseline-note">Human listening/gameplay, separate-PC Steam/network play and Steam Deck/controller checks are still pending. This playtest is not release-ready.</p>
       <details><summary>Checks and unfinished work +</summary><p>${safe(d.verification)}</p><ul>${list(d.knownLimits)}</ul></details>
       <details><summary>Verify the private ZIP +</summary><p class="hash">${safe(d.filename)}<br>${safe(d.bytes)} bytes<br>SHA-256<br>${safe(d.sha256)}</p></details>
