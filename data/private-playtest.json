@@ -1,20 +1,37 @@
 {
   "state": "private-playtest",
   "access": "github-private-draft",
-  "version": "a047a9a",
+  "version": "aee0f8e",
   "builtDate": "October 11, 2026 UTC",
-  "url": "https://github.com/stevologic/operation-winter-steam-sale/releases/tag/untagged-1fa972a8f96404b34f94",
-  "filename": "WinterHunt-Win-Diagnostic-20261011-010804-a047a9a.zip",
-  "bytes": 162177359,
-  "sha256": "6810f2f2fd2ef89738989833e6c04e25093a7958b4ea18cfe7f19bf758220f93",
+  "url": "https://github.com/stevologic/operation-winter-steam-sale/releases/tag/untagged-9cd2a93d7678eeaf1eec",
+  "filename": "WinterHunt-Win-Diagnostic-20261011-043708-aee0f8e.zip",
+  "bytes": 161987739,
+  "sha256": "06d0216779399accbd317dcee1bdfeb9ba5625dc1df0914b4a5805057843b098",
   "launcher": "Start-Playtest.cmd",
   "executable": "WinterHunt.exe",
-  "summary": "A newer Windows playtest with the finale Skip-caption fix, purchased audio/effects and the complete The Camels - Jam Session recording.",
-  "verification": "247 selected native tests and eight packaged checks passed, including six peers on one computer, save/reload, group fire and flight. Additional 1080p finale checks passed. A full authenticated download matched this ZIP's size and SHA-256. Automated checks do not establish human acceptance or release readiness.",
+  "summary": "New candidate with Normal/Zombie selection, Start New, Load Saved Game and Resume; a six-stage Forest/Snow/Fire campaign across both modes, authoritative zombie encounters and simpler flat-shaded first-person hands. Existing camp activities, purchased audio/effects and the complete The Camels - Jam Session recording are retained.",
+  "verification": "506 selected native tests passed. Nine exact-package gates passed, including six peers on one computer, save/reload, group fire, flight and a live two-process Zombie encounter. All 31 gate processes exited naturally; root reviewed 17 packaged images. Real menu navigation verified New Zombie, quit/relaunch, Resume after selecting Normal, separate New Normal and Load original Zombie, retaining saved mode, seed, run and elapsed time. Nine additional menu screenshots and game-created save checksums were reviewed; both menu sessions exited normally. A full authenticated download matched this ZIP's size and SHA-256. Automated and assistant checks do not establish human acceptance or release readiness.",
   "knownLimits": [
     "Human listening, gameplay feel and visual acceptance remain unfinished",
     "Separate-PC Internet/Steam invites and voice, physical Steam Deck/controller and hardware performance remain unverified",
-    "Fire currently repeats Fire; the automatic post-Fire zombie campaign cycle and other queued content are unfinished",
-    "The finale is rendered in-game; this candidate does not include an AI-generated ending video"
-  ]
+    "Campaign transition diagnostics exercise results, scene-reset and persistence boundaries with accelerated combat/cinematic steps; they do not prove six complete human-played stages or combat balance. The manual menu check stayed at camp and verifies saved state and elapsed time, not earned-stage progress.",
+    "The finale capture fixture changes scenery without advancing campaign state, so Snow/Fire diagnostic captures can show a Forest completion title; these captures do not verify production completion wording",
+    "The finale is rendered in-game; this candidate does not include a new AI-generated ending video",
+    "Save schema 19 migrates older readable saves on a successful save; all co-op peers need protocol winter-hunt-party-54 from this build",
+    "Other requested content and completion-reward decisions remain separate; this update does not mark every roadmap feature complete"
+  ],
+  "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65",
+  "nativeTests": {
+    "passed": 506,
+    "failed": 0,
+    "other": 0,
+    "editMode": 317,
+    "playMode": 189
+  },
+  "packageChecks": {
+    "required": 9,
+    "status": "passed"
+  },
+  "rootVisualReviewComplete": true,
+  "privateDownloadVerified": true
 }
