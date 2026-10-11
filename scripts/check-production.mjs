@@ -31,3 +31,4 @@ assert(!evidence.includes('releases/download'),'Private candidate cannot expose 
 assert.equal((nodes.get('#production-phases').innerHTML.match(/<article>/g)||[]).length,8);
 assert.equal(nodes.get('#production-summary').textContent,d.summary);
 console.log('PASS: full production scope, bound horde evidence, unresolved gates and rendered roadmap.');
+assert.match(d.routine.source,/9F0107F223A307EEE3A2D1FE3B1B2839D3792E71A4296138C0008A10F6D1703E/); assert.match(d.routine.passed,/145 focused native/); assert.match(d.routine.limits,/fresh full Windows build\/package/);

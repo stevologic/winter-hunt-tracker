@@ -12,7 +12,7 @@
     "performance": [
       {
         "target": 512,
-        "live": "481–512",
+        "live": "481â€“512",
         "active": 481,
         "moving": 445,
         "proxies": 0,
@@ -22,7 +22,7 @@
       },
       {
         "target": 1024,
-        "live": "991–1024",
+        "live": "991â€“1024",
         "active": 991,
         "moving": 925,
         "proxies": 0,
@@ -41,7 +41,7 @@
         "state": "Not run after 1024 failure"
       }
     ],
-    "measurement": "One fixed-seed, manually staged ordinary-AI solo diagnostic: 30-second phases, 1280×800 D3D11, 120 FPS cap, vSync off, i7-14700K / RTX 5070. Exceptional threats were isolated. GPU timing was unavailable. Active counts are separate from camera-frustum bounds; occlusion visibility was not measured. Production ordinary-AI cap remains 512, fallback 128. Natural thousands capacity and six-peer density are unverified.",
+    "measurement": "One fixed-seed, manually staged ordinary-AI solo diagnostic: 30-second phases, 1280Ã—800 D3D11, 120 FPS cap, vSync off, i7-14700K / RTX 5070. Exceptional threats were isolated. GPU timing was unavailable. Active counts are separate from camera-frustum bounds; occlusion visibility was not measured. Production ordinary-AI cap remains 512, fallback 128. Natural thousands capacity and six-peer density are unverified.",
     "route": "A seeded Core7 HOME-return route rejected after real contact. Core8 passed another seed; the original failure is still open.",
     "optimization": "The small Core7/Core8 predicate comparison showed mixed, inconclusive changes. No meaningful general performance improvement is claimed."
   },
@@ -51,7 +51,7 @@
       "title": "Finish the endless survival loop",
       "state": "In progress",
       "criteria": [
-        "Endless Zombie has no win, nuke or finale. Three total lives per stable participant; the third death ends that participant’s run, and co-op ends when all registered participants are out. Final kills, survival time and waves stay visible.",
+        "Endless Zombie has no win, nuke or finale. Three total lives per stable participant; the third death ends that participantâ€™s run, and co-op ends when all registered participants are out. Final kills, survival time and waves stay visible.",
         "Five-minute waves increase speed, damage and spawn pressure. Once per wave, shared camp safety lasts exactly 30 seconds with a prominent countdown; reentry, grenade refill and save/reload cannot reset it. Zombies invade after expiry.",
         "Two weapon types per wave, both barred in the next wave then eligible again. Owned table retrieval costs about $100, retains upgrades and cannot double charge. Two grenades sit outside weapon slots and refill only at camp.",
         "Earn compatible perks and combinations from kills, loot and harvests, with no paid loot boxes. Giant skeletons arrive every three minutes; 25 ordinary rockets remove about one quarter of 30,000 HP."
@@ -78,7 +78,7 @@
         "Keep mitten/block hands in first and third person, improve held flamethrower presentation, and keep a sky beam on lost gear until recovered or empty.",
         "Retain bounded weapon/environment particles and existing pooled left/right boot-sole snow footprints; validate slope contact, fade and co-op consistency. Add a shared adaptive effects budget when measured."
       ],
-      "gate": "Modest mitten/flamethrower/beacon and footprint implementations already exist. Near/far packaged images, dense-session cost and human art acceptance remain open. High-end original character quality is still expected; no purchased or copied game/film assets."
+      "gate": "Modest mitten/flamethrower/beacon and pooled footprint implementations already exist. Profile2 produced original-character palette/mittens and staged equipment/trail renders; representative images were inspected. Integrated near/far gameplay, dense-session cost, shared effects budget and human art acceptance remain open. High-end original character quality is still expected; no purchased or copied game/film assets."
     },
     {
       "id": "profiles",
@@ -88,7 +88,7 @@
         "Native Unity Normal / Zombie, Start New / Load / Resume, pause, settings and results flows remain readable at supported resolutions, with keyboard/controller focus, back and cancel.",
         "Editable nonunique nickname and color preview persist across reopen/rejoin separately from private stable identity. Public results require explicit sharing consent."
       ],
-      "gate": "Existing menu/save flows are tested; recovery wording and profile selection need a focused pass. Editable profile persistence, chosen color replication and native rendered/hardware acceptance remain open. Existing Steam-name defaults and seat colors do not satisfy profile selection."
+      "gate": "Editable nickname/six-color preview, Apply/Cancel, separate device-profile persistence and matching-build protocol57 cosmetics are implemented in uncommitted profile2, with focused native passes. Separate-process color replication, late join/rejoin, actual menu pixels and controller/Deck hardware acceptance remain open. The earlier downloadable playtest still uses its original defaults."
     },
     {
       "id": "classes",
@@ -97,7 +97,7 @@
       "criteria": [
         "Expand earned perk inventory and combinations, preserving weapon rotation, ownership, grenades and live weapon state.",
         "Normal map victories unlock persisted playable classes. Bigfoot is a strong melee tank; Devil trades health for strong melee and bounded magic. Neither uses hunter guns.",
-        "Resolve the proposed third class’s recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
+        "Resolve the proposed third classâ€™s recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
       ],
       "gate": "Current enemies are not playable classes. Class authority, unlock rollback/rejoin, progression, camera, collider, animation and balance still require implementation and validation."
     },
@@ -119,7 +119,7 @@
         "Run bound managed/native, build/package and persistence tests for the final source; cover repeated camp entry, waves, high-density combat and Normal regression.",
         "Resolve actual-screen/HUD capture for Normal EngineFinale, GroupFire and Flight. Complete human gameplay/listening, physical controller/Deck and separate-PC Internet six-player checks."
       ],
-      "gate": "Core8 remains a preserved private diagnostic. Commit only the verified recovered candidate; keep saves, earlier ZIPs and failed evidence. Source compilation, package hashes and selected checks are distinct from release acceptance."
+      "gate": "Core8 remains the preserved private diagnostic package. Profile2 has focused native evidence only and has not been built or packaged. Commit only the fully verified recovered candidate; keep saves, earlier ZIPs and failed evidence. Compilation, selected native renders and package acceptance remain distinct."
     },
     {
       "id": "production",
@@ -131,5 +131,12 @@
       ],
       "gate": "November 2 review candidate and November 16 release are planning targets, not promises. Fee-credit evidence is recorded privately; app identity and account gates remain unverified. The October 19/20 submission-date discrepancy needs reconciliation. No new game build is published by this roadmap update."
     }
-  ]
+  ],
+  "routine": {
+    "label": "Private profile/menu continuation / not packaged",
+    "source": "aee0f8e + working-tree:9F0107F223A307EEE3A2D1FE3B1B2839D3792E71A4296138C0008A10F6D1703E",
+    "passed": "The later profile2 source passed all four managed assemblies, a fresh three-biome bake and 145 focused native cases: 76 rules, 43 menu/appearance/footprint flows, 24 campaign-reset/results regressions and two GPU capture cases. Zero failures or forced cleanup on this final focused run.",
+    "visual": "72 original-game PNGs were produced: 65 staged hands/equipment poses, two original-rig palette/mittens renders and five bloody-trail/control renders. Representative images were inspected. These are staged URP renders, not actual menu/HUD or human art acceptance.",
+    "limits": "Nickname/color Apply/Cancel, separate profile storage/reopen, validated color codec, original rigs and Santa-color restoration have focused native evidence. A fresh full Windows build/package, separate-process profile/color late join, density measurement, actual IMGUI capture and physical hardware acceptance remain open. The Core8 horde measurements above belong to Core8, not this changed source. Existing downloads are unchanged."
+  }
 }
