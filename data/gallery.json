@@ -1,122 +1,204 @@
 {
-  "checkpoint": "2026-10-11 / profile2 / Checkpoint-20261011-215318",
-  "engine": "Unity 6000.5.8f1 / URP",
-  "sourceCommit": "aee0f8e66af2c8571a06032143c2de09c1e2bc65",
-  "workingTreeSha256": "9F0107F223A307EEE3A2D1FE3B1B2839D3792E71A4296138C0008A10F6D1703E",
-  "evidence": "Original PNG hashes verified against PROFILE-EVIDENCE-COPY.json and MEASURED-CHECKPOINT-profile2.md.",
-  "scope": "Staged native engine world/model renders, not packaged gameplay, menu/HUD captures, continuous animation or final visual acceptance. Existing downloads are unchanged.",
+  "checkpoint": "2026-10-12 / core9-visual02",
+  "captureType": "Actual packaged-player scene + HUD, EngineFinale controlled exact-age capture",
+  "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:A39BE2ECDC20FD65B6358592C9824AF29FF1BDE530A25158C66EA21B2D178563",
+  "payloadFingerprint": "CDBB7EF5D2000B690753E250DF747B4D0ECB8C921D8F9D8BF10A4D8CB7998ABA",
+  "buildId": "WinterHunt-Win-Diagnostic-20261012-034521-aee0f8e-wtA39BE2EC",
+  "captureGate": "PASSED: EngineFinale; source/payload and original PNG hashes verified",
+  "evidence": "Selected originals and comparison copies verified against COMPARISON-RECEIPT.json; six playback proof hashes verified. MILESTONE-core9-visual02.md records separate native/package evidence and remaining gates.",
+  "scope": "Normal campaign finale across Forest (receipt Normal), Snow and Fire; Full Impact. Exact-age GPU readback holds scaled time. Still captures do not prove motion, sustained FPS, isolated effect cost, human visual/listening acceptance or full-game acceptance. Zombie has no finale. Existing downloads are earlier builds and unchanged.",
+  "trees": "Each biome has 24 trees selected for the reaction sequence; selected count is not a count of trees visibly moving in any single frame.",
+  "webConversion": "Uncropped 640/1280 WebP derivatives; no enhancement, annotations or generated replacement. Original PNGs remain preserved privately.",
   "images": [
     {
-      "title": "Six hunter colors",
-      "originalFilename": "OriginalPalette.png",
-      "originalSha256": "ab0c94d9f12d2de69a4cc409dea2dd8b32227ebaaa7fabaec2ef8989dd17784e",
+      "title": "Forest / updated fireball",
+      "biome": "Normal",
+      "displayBiome": "Forest",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 5.1,
+      "originalFilename": "engine-normal-full-02-05.10-player.png",
+      "originalSha256": "276C686D380E350307DBB47635AB00189D983765846D0A5A25D446F50E83A4B2",
+      "originalBytes": 583370,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/hunter-palette-640.webp",
-          "bytes": 8822,
-          "sha256": "5794efdb09ad1f4b3857c18bc0ac54b8fa678f024306ae6faea70ee6b1296b7e",
-          "width": 640
+          "path": "assets/gallery-visual02/forest-fireball-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 23574,
+          "sha256": "d479f304edac3fc192f625e08b337f22c5b66b60489619d994897bcf52c0461b"
         },
         {
-          "path": "assets/gallery-profile2/hunter-palette-1280.webp",
-          "bytes": 22582,
-          "sha256": "0489b399c3917ae9baf691b8e448846d7046e6e14e8fa1157da098fc9659a8f6",
-          "width": 1280
+          "path": "assets/gallery-visual02/forest-fireball-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 88522,
+          "sha256": "81c8f116ea5f94ed929d730fa06411be63347a41b1a17d4ccbe433ceb46884fc"
         }
       ]
     },
     {
-      "title": "Chosen teal hunter",
-      "originalFilename": "ChosenTealMittens.png",
-      "originalSha256": "4075a8b72d1ae68e95883feb2879692bf13ea161a56c6c5f1e5defcc065527a1",
+      "title": "Forest / updated cloud",
+      "biome": "Normal",
+      "displayBiome": "Forest",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 12.8,
+      "originalFilename": "engine-normal-full-13-12.80-player.png",
+      "originalSha256": "F5F44837EE43574587AD78FD6040BB73C4CF6C1DCBA09E00EAA7201647CE2DC0",
+      "originalBytes": 599387,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/teal-hunter-640.webp",
-          "bytes": 4456,
-          "sha256": "942a23519a21bf4c29ff18948ff4c78c5ab545b2a86dea3fb3e5e8756a3f47fd",
-          "width": 640
+          "path": "assets/gallery-visual02/forest-cloud-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 21014,
+          "sha256": "2ebaa8d82a29aeccd4fc1ebf6927874a814b8c18d531232519311e5003444cec"
         },
         {
-          "path": "assets/gallery-profile2/teal-hunter-1280.webp",
-          "bytes": 11804,
-          "sha256": "245de180b6f605b77679960f856e64ace3f680811d81142862efa48281c4207b",
-          "width": 1280
+          "path": "assets/gallery-visual02/forest-cloud-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 78094,
+          "sha256": "daee17b54ff46163b2add27e212aeb5b8894b1a1114fcff19d4bf7ac73af3518"
         }
       ]
     },
     {
-      "title": "Flamethrower at rest",
-      "originalFilename": "20-flamethrower-idle.png",
-      "originalSha256": "949b56c2d59a9bcbc0577fa658a679f00baeaf13ac936fe23e5c3272ce5967b3",
+      "title": "Snow / updated fireball",
+      "biome": "Snow",
+      "displayBiome": "Snow",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 5.1,
+      "originalFilename": "engine-snow-full-02-05.10-player.png",
+      "originalSha256": "DCCD3A9ED731A2AC87C073D832A079383805BBAA9B660D00988890786AEBA6EE",
+      "originalBytes": 492637,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/flamethrower-idle-640.webp",
-          "bytes": 18338,
-          "sha256": "e4d2b49373d9061ffc831be1f41516274ea82f4ff55707367387fb0d4707c0f1",
-          "width": 640
+          "path": "assets/gallery-visual02/snow-fireball-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 21350,
+          "sha256": "59d2190669a1e4376fa4f8ea50c987c42347c561009661ae61b30e7f818ac31d"
         },
         {
-          "path": "assets/gallery-profile2/flamethrower-idle-1280.webp",
-          "bytes": 43210,
-          "sha256": "658e1e2295b704656dc29090d7e5bee0a43f1cf3801c2e54093744e410f7db3c",
-          "width": 1280
+          "path": "assets/gallery-visual02/snow-fireball-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 65858,
+          "sha256": "7d919ec18d708d5f7cfcc9a72970533d6de41a235d96f1d3f12ee1b887e7bc6b"
         }
       ]
     },
     {
-      "title": "Flamethrower reload pose",
-      "originalFilename": "23-flamethrower-reload-36.png",
-      "originalSha256": "fba04b51249f10ece23a17f1ff3c7c7e160e423f9efe2536c08ef0b998aa5b46",
+      "title": "Snow / updated cloud",
+      "biome": "Snow",
+      "displayBiome": "Snow",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 12.8,
+      "originalFilename": "engine-snow-full-13-12.80-player.png",
+      "originalSha256": "F5D29A04BFDB31A032E9100DEA55F938DFBD3272A708F33C7F506C925DDB23F0",
+      "originalBytes": 489942,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/flamethrower-reload-640.webp",
-          "bytes": 19656,
-          "sha256": "80af3c2c2332b4acb0d8fb567a75dc522020b745f0d1b973ba740c3891eb3a09",
-          "width": 640
+          "path": "assets/gallery-visual02/snow-cloud-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 13968,
+          "sha256": "8b267b8c59e5a7a9a2e6eb3a216c10fc087742c63c9ef60815de97ba8f1dfe68"
         },
         {
-          "path": "assets/gallery-profile2/flamethrower-reload-1280.webp",
-          "bytes": 46504,
-          "sha256": "150e53666bf75d65073c0aa2f5af43fd5db8a030408fe422fdf8fc1ff6293222",
-          "width": 1280
+          "path": "assets/gallery-visual02/snow-cloud-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 47040,
+          "sha256": "99a70b2ea61d5fc913e65c7573f8f7cd126965458d3428113af385a00b01e4b5"
         }
       ]
     },
     {
-      "title": "Rapid RPG reload pose",
-      "originalFilename": "17-rapid-rpg-reload-96.png",
-      "originalSha256": "1f4a08f5dd3e973f7416ba43f9df683ed7c33c3d178b95293693a141fc0b26a0",
+      "title": "Fire / updated fireball",
+      "biome": "Fire",
+      "displayBiome": "Fire",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 5.1,
+      "originalFilename": "engine-fire-full-02-05.10-player.png",
+      "originalSha256": "15A5372BEA9EA8B86BE35E900B5D9680299450912BDC975E327D442FDBBFBAAB",
+      "originalBytes": 445025,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/rapid-rpg-reload-640.webp",
-          "bytes": 16350,
-          "sha256": "d5e06796aeabbeed85824a282796edfd56414191d7d75b134416268108ab33aa",
-          "width": 640
+          "path": "assets/gallery-visual02/fire-fireball-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 14112,
+          "sha256": "e41801d5e5236824db893763e4a7a7ac419c0cd7dd4071cf2b3e7dcaccaeccff"
         },
         {
-          "path": "assets/gallery-profile2/rapid-rpg-reload-1280.webp",
-          "bytes": 37626,
-          "sha256": "949006fbcf63ce29739f9155137047d1e23cc7ce141698b41056dc6297aa7576",
-          "width": 1280
+          "path": "assets/gallery-visual02/fire-fireball-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 49224,
+          "sha256": "007871b258f4ce9a804362d1ef89455d40197d857d992baf3858376988c46bde"
         }
       ]
     },
     {
-      "title": "Bloody trail on the ground",
-      "originalFilename": "LocalTrail.png",
-      "originalSha256": "d1fd31a214c844c65790fe35d6acbc26fc05c22c92ac7d18097766c241ab5c69",
+      "title": "Fire / updated cloud",
+      "biome": "Fire",
+      "displayBiome": "Fire",
+      "mode": "Normal campaign finale",
+      "impact": "Full",
+      "ageSeconds": 12.8,
+      "originalFilename": "engine-fire-full-13-12.80-player.png",
+      "originalSha256": "98BCDE280FA386EA37584C7E23EFDB8CACE202CCAEB0EFCF6F78AE1E962FECA2",
+      "originalBytes": 401987,
+      "originalDimensions": [
+        1280,
+        800
+      ],
+      "selectedReactionTrees": 24,
       "derivatives": [
         {
-          "path": "assets/gallery-profile2/local-bloody-trail-640.webp",
-          "bytes": 7360,
-          "sha256": "1e9bd828589f42a607162c6f420f12c4111fa9ac98c742a6f4f7052fb487960d",
-          "width": 640
+          "path": "assets/gallery-visual02/fire-cloud-640.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 11258,
+          "sha256": "c3248287b79eeda2db4d6bbad06340778fc84a7f092caadf8419761d67abb619"
         },
         {
-          "path": "assets/gallery-profile2/local-bloody-trail-1280.webp",
-          "bytes": 17854,
-          "sha256": "9bcb9248e6fd6c54d6f07bf7dae98848f291a15746c538ce598bdcab6087e20b",
-          "width": 1280
+          "path": "assets/gallery-visual02/fire-cloud-1280.webp",
+          "width": 1280,
+          "height": 800,
+          "bytes": 41802,
+          "sha256": "9f6d19e8b85409aa1d8b11ef0300dbf6e62b5fe2bbe53f616211c98ade7facb9"
         }
       ]
     }
