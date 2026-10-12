@@ -8,8 +8,12 @@ Run `npm run build && npm test`. Publish the repository root from `main` through
 
 Planning targets are not deadlines or promises. Steam account gates stay pending until reviewed privately; publish only the sanitized gate result. Official documentation is linked on the website.
 
-Current visuals combine an explicitly labeled AI-generated low-poly concept illustration with separate genuine historical game screenshots labeled with their source checkpoint. The new illustration was made from descriptive art direction only, without purchased asset or screenshot input. Screenshots do not verify features in a newer package. Earlier ornate hero and emblem are retired.
+The active hero and camp section use genuine visual05 packaged scene/HUD captures; the finale gallery retains its visual02 source labels. Prior AI campfire artwork is retired from the active layout and preserved unchanged as the user's two-character reference. Screenshot provenance is explicit, and captures do not close human or full-game acceptance.
 
 `data/playtest.json` controls the public playtest. Set `state` to `verified` only after receiving the tested complete ZIP and redistribution clearance, inspecting contents, matching the supplied SHA-256 and checking the public release asset. Include exact version, publish date, executable, features and known limits. Keep binaries out of Pages.
 
 `data/private-playtest.json` controls the separately labeled latest private playtest. Its exact release-page URL is allowlisted by validation. Keep the GitHub sign-in/private-draft permission notice, version, launch instructions, exact package identity and unfinished acceptance gates visible. Do not change repository permissions, publish the draft, upload private assets to this tracker or replace `data/playtest.json` when updating this handoff. Draft URLs must be reverified if the release is edited.
+
+The latest publicly authorized test candidate is identified in `data/latest-playtest.json`, with direct `WinterHunt.exe` extraction/launch instructions and separate delivery/human acceptance labels. Earlier public/private download manifests remain frozen. The active hero uses the real visual05 packaged capture recorded in `data/hero.json`; former concept hero assets are retired. No character replacement or generated gameplay is used.
+
+The active theme uses the game's forest/earth/snow/HUD palette, unique visual05 Bigfoot and UFO frames, and solid/gradient content panels. Repeated SVG scene backgrounds, jagged motifs and the invented web compass are retired. Gallery frames remain separately identified as visual02.

@@ -1,0 +1,21 @@
+{
+  "title": "Support the developer",
+  "optional": true,
+  "dogecoin": {
+    "network": "Dogecoin",
+    "ticker": "DOGE",
+    "address": "DTW2M5oEW97WbmYJRM71qD7uE6xfJs1MUK",
+    "source": "Verbatim public receiving address supplied by user",
+    "base58checkValid": true,
+    "version": 30
+  },
+  "xMoney": {
+    "display": "X Money / @MadeItHappenX",
+    "url": "https://x.com/i/money/pay/MadeItHappenX",
+    "source": "Exact target independently decoded from user-supplied payment QR by parent task",
+    "accountAuthenticated": false,
+    "paymentTested": false
+  },
+  "transactionsPerformed": false,
+  "qrIncluded": false
+}

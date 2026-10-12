@@ -6,7 +6,7 @@
   "buildId": "WinterHunt-Win-Diagnostic-20261012-034521-aee0f8e-wtA39BE2EC",
   "captureGate": "PASSED: EngineFinale; source/payload and original PNG hashes verified",
   "evidence": "Selected originals and comparison copies verified against COMPARISON-RECEIPT.json; six playback proof hashes verified. MILESTONE-core9-visual02.md records separate native/package evidence and remaining gates.",
-  "scope": "Normal campaign finale across Forest (receipt Normal), Snow and Fire; Full Impact. Exact-age GPU readback holds scaled time. Still captures do not prove motion, sustained FPS, isolated effect cost, human visual/listening acceptance or full-game acceptance. Zombie has no finale. Existing downloads are earlier builds and unchanged.",
+  "scope": "Normal campaign finale across Forest (receipt Normal), Snow and Fire; Full Impact. Exact-age GPU readback holds scaled time. Still captures do not prove motion, sustained FPS, isolated effect cost, human visual/listening acceptance or full-game acceptance. Zombie has no finale. Gallery depicts visual02; the newer public test download is identified separately above. Earlier released downloads are preserved.",
   "trees": "Each biome has 24 trees selected for the reaction sequence; selected count is not a count of trees visibly moving in any single frame.",
   "webConversion": "Uncropped 640/1280 WebP derivatives; no enhancement, annotations or generated replacement. Original PNGs remain preserved privately.",
   "images": [

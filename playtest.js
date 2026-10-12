@@ -2,19 +2,43 @@
   const safe = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const list = items => items.map(x => `<li>${safe(x)}</li>`).join('');
   const load = async path => {
-    const response = await fetch(path);
+    const response = await fetch(path, {cache: 'no-store'});
     if (!response.ok) throw Error('Playtest details unavailable');
     return response.json();
   };
+  function latestCard(d) {
+    if (d.state !== 'public-test' || d.access !== 'public-release' || d.publicDownloadVerified !== true) return '';
+    if (!/^https:\/\/github\.com\/stevologic\/winter-hunt-tracker\/releases\/download\/[^?#]+\.zip$/.test(d.url)) throw Error('Unapproved public test route');
+    if (!/^https:\/\/github\.com\/stevologic\/winter-hunt-tracker\/releases\/tag\/[a-z0-9-]+$/.test(d.releaseUrl)) throw Error('Unapproved release page');
+    return `<div class="latest-playtest" id="latest-playtest">
+      <p class="eyebrow">LATEST PUBLIC WINDOWS TEST BUILD</p><h2>Download the latest hunt.</h2>
+      <p>${safe(d.summary)}</p><p class="release-date">${safe(d.version)} · Built ${safe(d.builtDatePhoenix)} · ${(d.bytes / 1048576).toFixed(1)} MiB<br>Released for testing ${safe(d.publishedDatePhoenix)}</p>
+      <span class="badge in-progress">Test build · acceptance pending</span>
+      <p class="access-note"><strong>No GitHub sign-in needed.</strong> Earlier working downloads remain below.</p>
+      <a class="button latest-download" href="${safe(d.url)}">Download latest Windows test ZIP <span aria-hidden="true">↓</span></a>
+      <p class="release-link"><a href="${safe(d.releaseUrl)}">Release notes and GitHub Assets</a></p>
+      <h3 class="launch-title">Extract and launch</h3><ol class="latest-launch-steps">
+        <li>Download <code>${safe(d.filename)}</code>, then choose <strong>Extract All</strong> in File Explorer.</li>
+        <li>Keep the whole extracted game folder together, including <code>WinterHunt_Data</code>, <code>WinterHunt.launch.json</code>, <code>MonoBleedingEdge</code>, <code>D3D12</code>, <code>Notices</code> and all DLLs.</li>
+        <li>Double-click <strong><code>${safe(d.executable)}</code></strong>. No CMD launcher, arguments or manual setup is required. Retain legitimate Windows security prompts.</li>
+        <li>At the opening menu select the mode row, use Left/Right to choose <strong>Zombie</strong> or Normal, then select <strong>Start New</strong> and press Enter. Load Saved Game / Resume retain their saved mode. This build uses a separate profile, preserving older saves. Every co-op player needs this exact build.</li>
+      </ol>
+      <p class="baseline-note"><strong>Test candidate, not release-ready.</strong> The retained Zombie Horde and full cooperative-purchase gates remain failed/open. Full gameplay and human playtest, Internet/Steam and controller/Deck checks remain unfinished.</p>
+      <p class="subtext">Bundled private-candidate wording predates the owner's authorization to share this test ZIP publicly. The archive is unchanged; previous downloads and their instructions remain separate below.</p>
+      <details><summary>Included features and known limitations +</summary><ul>${list(d.features)}</ul><ul>${list(d.knownLimits)}</ul></details>
+      <details><summary>Exact build, ZIP hash and verification +</summary><p class="hash">${safe(d.buildId)}<br>${safe(d.bytes)} bytes<br>SHA-256: ${safe(d.sha256)}<br>Source: ${safe(d.sourceRevision)}<br>Payload: ${safe(d.payloadFingerprint)}<br>Protocol: ${safe(d.protocol)} / save schema ${safe(d.saveVersion)}</p><p>${safe(d.verification)}</p></details>
+    </div>`;
+  }
   function privateCard(d) {
     if (d.state !== 'private-playtest' || d.access !== 'github-private-draft') return '';
     if (!/^https:\/\/github\.com\/stevologic\/[a-z0-9-]+\/releases\/tag\/untagged-[a-f0-9]+$/.test(d.url)) throw Error('Unapproved private release route');
     return `<div class="private-playtest" id="private-playtest">
-      <p class="eyebrow">LATEST WINDOWS PLAYTEST · ${safe(d.version)}</p>
-      <h2>Try the latest hunt.</h2>
+      <p class="eyebrow">EARLIER PRIVATE WINDOWS PLAYTEST · ${safe(d.version)}</p>
+      <h2>Earlier private playtest.</h2>
       <p>${safe(d.summary)}</p>
       <p class="release-date">Built ${safe(d.builtDate)} · ${(d.bytes / 1048576).toFixed(1)} MiB · Work in progress</p>
-      <span class="badge in-progress">Private playtest · acceptance pending</span>
+      <span class="badge in-progress">Earlier private draft · not publicly released</span>
+      <p class="release-date">Private draft: not publicly released; no public release date.</p>
       <p class="access-note" id="private-access"><strong>GitHub sign-in required.</strong> You also need existing permission to view the private draft release. GitHub may show a 404 if your account cannot access it.</p>
       <a class="button" href="${safe(d.url)}" aria-describedby="private-access">Open ${safe(d.version)} playtest <span aria-hidden="true">↗</span></a>
       <h3 class="launch-title">Download and launch</h3>
@@ -54,8 +78,8 @@
       <p class="eyebrow">PUBLIC BASELINE · ${safe(d.version)}</p>
       <h2>The open trail.</h2>
       <p>The earlier public Windows ZIP stays available. No GitHub sign-in needed.</p>
-      <p class="release-date">Published ${safe(d.publishedDate)} · ${(d.bytes / 1048576).toFixed(1)} MiB<br>Built ${safe(d.builtDate)}</p>
-      <a class="button public-download" href="${safe(d.url)}">Download public ${safe(d.version)} ZIP <span aria-hidden="true">↓</span></a>
+      <p class="release-date">Released ${safe(publicationDates[d.version]?.phoenix ?? d.publishedDate)} · ${(d.bytes / 1048576).toFixed(1)} MiB<br>Built ${safe(d.builtDate)}</p>
+      <a class="button public-download" href="${safe(d.url)}">Download older ${safe(d.version)} ZIP (no Zombie Mode) <span aria-hidden="true">↓</span></a>
       <p class="baseline-note"><strong>Older tested baseline.</strong> Includes historical short AI video endings. The newer in-scene finale, Santa/Frost Harpoon/flamethrower and Zombie Mode are not in this ZIP. Steam Internet invites and physical Deck acceptance remain unverified.</p>
       <p class="launch-note">Extract All and double-click <strong>${safe(d.executable)}</strong>. Keep the whole game folder together.</p>
       <details><summary>What's in this baseline? +</summary><ul>${list(d.features)}</ul></details>
@@ -63,11 +87,16 @@
       <details><summary>Verify the public ZIP +</summary><p class="hash">${safe(d.filename)}<br>${safe(d.bytes)} bytes<br>SHA-256<br>${safe(d.sha256)}</p><p>${safe(d.verification)}</p></details>
     </div>`;
   }
-  const results = await Promise.allSettled([load('data/private-playtest.json'), load('data/playtest.json')]);
-  const renderers = [privateCard, publicCard];
-  const cards = results.map((result, index) => {
+  const results = await Promise.allSettled([load('data/latest-playtest.json?v=visual05-334bfefe'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=visual05-334bfefe')]);
+  const publicationDates = results[3]?.status === 'fulfilled' ? (results[3].value.publicReleaseDates ?? {}) : {};
+  const renderers = [latestCard, privateCard, publicCard];
+  const cards = results.slice(0, 3).map((result, index) => {
     if (result.status !== 'fulfilled') return '';
     try { return renderers[index](result.value); } catch { return ''; }
   }).join('');
-  if (cards) document.querySelector('#play').innerHTML = cards;
+  if (cards) {
+    const target = document.querySelector('#play');
+    const fallback = cards.includes('id="latest-playtest"') ? '' : (target.innerHTML.match(/<div[^>]*data-latest-fallback[^>]*>[\s\S]*?<\/div>/)?.[0] ?? '');
+    target.innerHTML = fallback + cards;
+  }
 })();

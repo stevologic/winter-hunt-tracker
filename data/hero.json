@@ -1,0 +1,17 @@
+{
+  "captureType": "Actual packaged-player scene and HUD, controlled encounter capture",
+  "buildId": "WinterHunt-Win-Diagnostic-20261012-051434-aee0f8e-wt334BFEFE",
+  "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+  "payloadFingerprint": "26FFDE50539E88C5A7683FDFED3B2F4D4414D1E6EBF694FCAC2BFB9ADF005FC2",
+  "originalFilename": "bigfoot-art-daylight-player.png",
+  "originalSha256": "F19DE9C07031E08702966FD54F306E7CD9A572E19300EB0B19906A6891861576",
+  "originalDimensions": [
+    1280,
+    800
+  ],
+  "webImage": "assets/hero-gameplay-visual05.webp",
+  "webSha256": "775a554612beb7b042a57c8b78dbc3631d7fa2336adc2e739623c3e3f266add7",
+  "webBytes": 126454,
+  "conversion": "Full-frame WebP compression only. Responsive CSS crops and legibility gradients. No generated replacement, invented character, compositing or game-model changes.",
+  "scene": "First-person bow and actual Bigfoot character beside camp in daylight. Diagnostic encounter composition; not a human-playtest or full-game acceptance claim."
+}

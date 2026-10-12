@@ -1,0 +1,24 @@
+import {readFile} from 'node:fs/promises';
+import {runInNewContext} from 'node:vm';
+import assert from 'node:assert/strict';
+const latest=JSON.parse(await readFile('data/latest-playtest.json','utf8'));
+const old=JSON.parse(await readFile('data/playtest.json','utf8'));
+const privateData=JSON.parse(await readFile('data/private-playtest.json','utf8'));
+const dates=JSON.parse(await readFile('data/download-dates.json','utf8'));
+const html=await readFile('index.html','utf8'),script=await readFile('playtest.js','utf8');
+assert.equal(latest.state,'public-test');assert.equal(latest.access,'public-release');assert(latest.publicDownloadVerified&&latest.freshExtractionVerified&&latest.soloSmokePassed&&latest.zombiePresenceVerified);
+assert.equal(latest.interactiveModeMenuVerified,false);assert.equal(latest.zombieDiagnosticCompletePassed,false);
+assert.match(latest.sha256,/^[a-f0-9]{64}$/);assert.equal(latest.bytes,162129007);assert.equal(latest.executable,'WinterHunt.exe');
+assert(html.includes(latest.url)&&html.includes(latest.filename)&&html.includes(latest.sha256),'Static fallback must match latest artifact');
+assert(html.includes(latest.publishedDatePhoenix)&&html.includes(latest.builtDatePhoenix),'Static fallback must distinguish actual release and build dates');
+assert.equal(dates.publicReleaseDates[old.version].utc,'2026-10-10T08:05:48Z');assert.equal(dates.privateDraft.publicReleaseDate,null);
+assert(html.includes('playtest.js?v=visual05-334bfefe'));assert(script.includes("cache: 'no-store'"));
+const initial=html.match(/<section id="play"[^>]*>([\s\S]*?)<\/section>/)[1];
+async function render(next=latest){const target={innerHTML:initial};await runInNewContext(script,{document:{querySelector:s=>{assert.equal(s,'#play');return target}},fetch:async path=>{const key=path.split('?')[0];const data={'data/latest-playtest.json':next,'data/playtest.json':old,'data/private-playtest.json':privateData,'data/download-dates.json':dates}[key];return {ok:data!==null,json:async()=>data}}});return target.innerHTML}
+const output=await render();assert(output.indexOf('id="latest-playtest"')<output.indexOf('id="private-playtest"'));assert(output.includes('No GitHub sign-in needed'));assert(output.includes('WinterHunt.exe'));assert(output.includes('Zombie'));assert(output.includes('no Zombie Mode'));assert(output.includes(dates.publicReleaseDates[old.version].phoenix));assert(output.includes(latest.publishedDatePhoenix));assert(output.includes('not release-ready'));
+const failed=await render(null);assert(failed.includes('data-latest-fallback')&&failed.includes(latest.url),'Failed metadata fetch must preserve latest direct fallback, not promote older ZIP');
+const invalid=await render({...latest,url:privateData.url});assert(!invalid.includes('id="latest-playtest"'));assert(invalid.includes('data-latest-fallback'));
+const escaped=await render({...latest,summary:'<img src=x onerror=alert(1)>'});assert(escaped.includes('&lt;img'));assert(!escaped.includes('<img'));
+const support=JSON.parse(await readFile('data/support.json','utf8'));assert.equal(support.dogecoin.address,'DTW2M5oEW97WbmYJRM71qD7uE6xfJs1MUK');assert.equal(support.xMoney.url,'https://x.com/i/money/pay/MadeItHappenX');assert.equal(support.transactionsPerformed,false);assert(html.includes(support.dogecoin.address)&&html.includes(support.xMoney.url));
+assert(!html.includes('src="world.js"'));assert(!html.includes('href="world.css"'));assert(!html.includes('AI-generated concept illustration'));
+console.log('PASS: verified latest/static fallback, graceful failure, older no-Zombie labels, true Phoenix release/build dates, exact authorized support destinations and authentic theme sources.');

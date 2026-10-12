@@ -1,0 +1,20 @@
+{
+  "buildId": "WinterHunt-Win-Diagnostic-20261012-051434-aee0f8e-wt334BFEFE",
+  "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+  "payloadFingerprint": "26FFDE50539E88C5A7683FDFED3B2F4D4414D1E6EBF694FCAC2BFB9ADF005FC2",
+  "captureType": "Actual packaged-player scene and HUD, staged UFO encounter",
+  "originalFilename": "encounter-ufo-tractoractive-player.png",
+  "originalSha256": "116CD240C085644386664848B8D7186FCD64ACFAB28E0E5A976C680BE5FF7539",
+  "webImage": "assets/scene-ufo-visual05.webp",
+  "webSha256": "4c7f05f083e2ef8804ab8d62b3b5f6d12586f985dbce0ed8114ca9a5d5a5c8c6",
+  "scene": "Real UFO reactor/rim and active tractor beam above camp. Controlled diagnostic encounter, not human fight/playtest acceptance.",
+  "conversion": "Full-frame WebP compression only.",
+  "additionalImage": {
+    "captureType": "Actual packaged-player scene and HUD, controlled Bigfoot meal/rescue encounter",
+    "originalFilename": "bigfoot-interruptible-meal-player.png",
+    "originalSha256": "8C0CDC0DFC2B50F6EDEAC7E2F47E290C6DE1EE56A9182D98845F215201240ED2",
+    "webImage": "assets/scene-night-encounter-visual05.webp",
+    "webSha256": "cb52266550433eb85621cc78f7f44dfab73b68de874f59f03f847d285ffd074e",
+    "scene": "Night-time camp view with Bigfoot, bow and the actual rescue warning. Not a human playthrough or subjective quality acceptance."
+  }
+}
