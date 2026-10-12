@@ -1,49 +1,58 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "title": "The path from playtest to production",
-  "summary": "The current download remains the earlier tested playtest. The recovered survival candidate is private, uncommitted and not release-ready. Every requested feature stays on this trail until its acceptance gate passes.",
+  "summary": "Visual05 / 334BFEFE is the current public Windows TEST BUILD. Its exact ZIP was anonymously downloaded, hash-checked, freshly extracted and smoke-tested. Automated package evidence remains bounded; unresolved gameplay, 30-FPS startup, human-playtest, controller/Deck and separate-PC multiplayer gates prevent release readiness.",
   "candidate": {
-    "base": "aee0f8e",
-    "fingerprint": "F1D48286CAEF58C6B3BCA671B902206404E3E706E5A17CF97AC0A93D060CA8A5",
-    "state": "Private diagnostic / runtime acceptance incomplete",
-    "passed": "Core8: all four managed assemblies, three-biome bake, 1,450 native cases and Windows build passed. Its exact package passed Solo, Coop2, Coop6, CampSave and ZombieCoop.",
-    "limits": "These passes do not certify the whole package: Horde failed, Normal EngineFinale / GroupFire / Flight remain unaccepted, and human, controller, listening, Internet multiplayer, Steam and Deck gates remain open.",
-    "camp": "The two-process Zombie check verified real 30-second shared camp safety, invasion after expiry and repeated entry without reset. Its 299-to-300-second wave transition was accelerated; Zombie save readback did not restart the process.",
-    "performance": [
-      {
-        "target": 512,
-        "live": "481â€“512",
-        "active": 481,
-        "moving": 445,
-        "proxies": 0,
-        "fps": 63.0475,
-        "p95Ms": 17.7902,
-        "state": "Phase passed"
-      },
-      {
-        "target": 1024,
-        "live": "991â€“1024",
-        "active": 991,
-        "moving": 925,
-        "proxies": 0,
-        "fps": 32.7403,
-        "p95Ms": 35.575,
-        "state": "Failed: p95 and strict melee-kill gate"
-      },
-      {
-        "target": 2048,
-        "live": "Unmeasured",
-        "active": null,
-        "moving": null,
-        "proxies": null,
-        "fps": null,
-        "p95Ms": null,
-        "state": "Not run after 1024 failure"
-      }
-    ],
-    "measurement": "One fixed-seed, manually staged ordinary-AI solo diagnostic: 30-second phases, 1280Ã—800 D3D11, 120 FPS cap, vSync off, i7-14700K / RTX 5070. Exceptional threats were isolated. GPU timing was unavailable. Active counts are separate from camera-frustum bounds; occlusion visibility was not measured. Production ordinary-AI cap remains 512, fallback 128. Natural thousands capacity and six-peer density are unverified.",
-    "route": "A seeded Core7 HOME-return route rejected after real contact. Core8 passed another seed; the original failure is still open.",
-    "optimization": "The small Core7/Core8 predicate comparison showed mixed, inconclusive changes. No meaningful general performance improvement is claimed."
+    "label": "Core9 / Visual05 / 334BFEFE",
+    "base": "aee0f8e66af2c8571a06032143c2de09c1e2bc65",
+    "fingerprint": "334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+    "payloadFingerprint": "26FFDE50539E88C5A7683FDFED3B2F4D4414D1E6EBF694FCAC2BFB9ADF005FC2",
+    "state": "Public test build / runtime acceptance incomplete",
+    "passed": "Visual05 passed managed compilation of four assemblies / 1,067 C# inputs, a three-biome bake, all 1,864 required native cases (zero failed or skipped), and Windows build/package verification. EngineFinale passed six biome/mode proofs with 114 scene/HUD PNGs. Flight passed with one rendered host and five headless local peers; accepted players exited naturally.",
+    "limits": "These bounded passes do not close Zombie Horde or full ZombieCoopPurchase, which failed on rounds06-fix2 and were not rerun by Visual05. The exact public ZIP later passed Solo smoke and showed live initialized Zombie actors, but its complete cooperative diagnostic failed. Interactive Normal/Zombie opening-menu selection, sustained 30-FPS startup behavior, human gameplay/listening/visual acceptance, physical controllers/Deck and separate-PC Internet/Steam/voice remain open. The game source candidate is uncommitted; no merge or release-ready claim is made.",
+    "camp": "The unchanged public ZIP was tested with fresh isolated Zombie saves initialized directly by diagnostic arguments. Both peers reported Zombie mode, 12 issued live actors, about 6.36 m of actual pursuit and 18 mirrored contact damage; the guest made 12 distinct real bow kills. Later blocked-approach and physical party-exit assertions failed, and both peers exited naturally with code 1. This proves bounded presence, not interactive menu selection, unrestricted combat or a complete camp/purchase gate.",
+    "flight": "Visual05 Flight finale: 200.63 average FPS, p95 8.45 ms, p99 9.86 ms and worst 140.46 ms at 43 live AI, D3D11, 1280 x 800, on i7-14700K / RTX 5070. This single recorded workload is not a 30-FPS startup test, controlled before/after optimization, isolated effects cost, six rendered computers, Internet measurement or proof of natural thousands.",
+    "historicalDensity": {
+      "base": "aee0f8e",
+      "fingerprint": "F1D48286CAEF58C6B3BCA671B902206404E3E706E5A17CF97AC0A93D060CA8A5",
+      "performance": [
+        {
+          "target": 512,
+          "live": "481-512",
+          "active": 481,
+          "moving": 445,
+          "proxies": 0,
+          "fps": 63.0475,
+          "p95Ms": 17.7902,
+          "state": "Phase passed"
+        },
+        {
+          "target": 1024,
+          "live": "991-1024",
+          "active": 991,
+          "moving": 925,
+          "proxies": 0,
+          "fps": 32.7403,
+          "p95Ms": 35.575,
+          "state": "Failed: p95 and strict melee-kill gate"
+        },
+        {
+          "target": 2048,
+          "live": "Unmeasured",
+          "active": null,
+          "moving": null,
+          "proxies": null,
+          "fps": null,
+          "p95Ms": null,
+          "state": "Not run after 1024 failure"
+        }
+      ],
+      "measurement": "Historical Core8 only: one fixed-seed, manually staged ordinary-AI solo diagnostic with 30-second phases, 1280 x 800 D3D11, 120 FPS cap, vSync off, i7-14700K / RTX 5070. Exceptional threats were isolated. GPU timing was unavailable. Active counts are separate from camera-frustum bounds; occlusion visibility was not measured. These density measurements were not rerun or accepted by Visual05.",
+      "route": "A seeded Core7 HOME-return route rejected after real contact. Core8 passed another seed; the original failure is still open.",
+      "optimization": "The small Core7/Core8 predicate comparison showed mixed, inconclusive changes. No meaningful general performance improvement is claimed.",
+      "label": "Historical Core8 density diagnostic"
+    },
+    "identityNote": "This identity describes the unchanged public Visual05 test ZIP linked above. Later source-only or private candidates do not replace that download or inherit its acceptance evidence."
   },
   "phases": [
     {
@@ -51,12 +60,12 @@
       "title": "Finish the endless survival loop",
       "state": "In progress",
       "criteria": [
-        "Endless Zombie has no win, nuke or finale. Three total lives per stable participant; the third death ends that participantâ€™s run, and co-op ends when all registered participants are out. Final kills, survival time and waves stay visible.",
-        "Five-minute waves increase speed, damage and spawn pressure. Once per wave, shared camp safety lasts exactly 30 seconds with a prominent countdown; reentry, grenade refill and save/reload cannot reset it. Zombies invade after expiry.",
-        "Two weapon types per wave, both barred in the next wave then eligible again. Owned table retrieval costs about $100, retains upgrades and cannot double charge. Two grenades sit outside weapon slots and refill only at camp.",
-        "Earn compatible perks and combinations from kills, loot and harvests, with no paid loot boxes. Giant skeletons arrive every three minutes; 25 ordinary rockets remove about one quarter of 30,000 HP."
+        "Current bundled Zombie rules use finite increasing enemy-budget rounds with no win, nuke or finale. Solo first down or a team wipe ends the run; teammates can rescue, and late join enters next round.",
+        "Bow start and permanent earned weapons/upgrades replace the earlier timed waves, three lives and rotating weapon restrictions. Preparation/intermission lasts 30 seconds; once per combat round, shared camp allowance lasts 30 simulation seconds.",
+        "Two grenades remain separate from weapon slots. Bosses arrive every third round. Ownership, upgrade purchases, allowance, rescue and persisted round state must remain consistent across the party and process restart.",
+        "Earn compatible perks and combinations from kills, loot and harvests, with no paid loot boxes. Natural sustained play and boss behavior under load still require acceptance."
       ],
-      "gate": "Native rules and selected package flows passed. Natural 10+ minute play, third-death results, Zombie process restart, two-peer arsenal/grenade transitions and boss cadence under load remain open. Later speed/damage/pressure tiers are bounded; a three-live-boss cap defers backlog."
+      "gate": "Visual05 contains the owner-confirmed revised finite-round rules. Exact-public diagnostic evidence proves bounded live Zombie presence and 12 bow kills, then fails the physical route/party-exit checks. Earlier Horde and full cooperative-purchase failures remain open. Natural sustained play, team wipe/rescue, process restart, purchases, grenade transitions and boss cadence under load are not accepted."
     },
     {
       "id": "density",
@@ -67,7 +76,7 @@
         "Admit hordes throughout the map from multiple directions, scaling toward thousands through pooling, LOD and spatial/navigation work. Report real active AI separately from proxies.",
         "Keep cheap visible frozen/batched corpse piles bounded, with no unbounded physics, revival or duplicate rewards."
       ],
-      "gate": "512 staged phase passed; 1024 failed; 2048 is unmeasured. Attribute animal/native/render/allocation costs before another optimization. Resolve the seeded return-route rejection, dense melee target churn, sustained corpse persistence and delayed/reordered leap transport. Natural growth, combined exceptional threats and six-peer density remain unaccepted."
+      "gate": "Historical Core8: 512 staged phase passed; 1024 failed; 2048 was unmeasured. The later rounds06-fix2 Horde failure reached 128 ordinary AI with zero proxies; higher phases and melee/cooldown acceptance remained unresolved and were not rerun by Visual05. Production ordinary-AI cap is 512 with fallback 128 and zero proxies. Natural thousands, dense combined threats, route reliability, corpse persistence, delayed/reordered leaps and six-peer density remain unaccepted. The Visual05 Flight result does not replace a density gate."
     },
     {
       "id": "art",
@@ -78,7 +87,7 @@
         "Keep mitten/block hands in first and third person, improve held flamethrower presentation, and keep a sky beam on lost gear until recovered or empty.",
         "Retain bounded weapon/environment particles and existing pooled left/right boot-sole snow footprints; validate slope contact, fade and co-op consistency. Add a shared adaptive effects budget when measured."
       ],
-      "gate": "Modest mitten/flamethrower/beacon and pooled footprint implementations already exist. Profile2 produced original-character palette/mittens and staged equipment/trail renders; representative images were inspected. Integrated near/far gameplay, dense-session cost, shared effects budget and human art acceptance remain open. High-end original character quality is still expected; no purchased or copied game/film assets."
+      "gate": "Visual05 packages current mitten/equipment, profile, beacon and footprint work plus modest original UFO rim/vanes/reactor and Bigfoot/material updates. It has 114 EngineFinale scene/HUD PNGs and 27 preserved encounter comparison PNGs; only 10 Bigfoot scenes have matched before/after views. UFO/roster views are after-only and junipers obscure monster bodies. Staged Profile2 renders are historical evidence. Full-body silhouette, natural fights, warning/HUD readability, dense-session effects cost and human visual acceptance remain open."
     },
     {
       "id": "profiles",
@@ -88,7 +97,7 @@
         "Native Unity Normal / Zombie, Start New / Load / Resume, pause, settings and results flows remain readable at supported resolutions, with keyboard/controller focus, back and cancel.",
         "Editable nonunique nickname and color preview persist across reopen/rejoin separately from private stable identity. Public results require explicit sharing consent."
       ],
-      "gate": "Editable nickname/six-color preview, Apply/Cancel, separate device-profile persistence and matching-build protocol57 cosmetics are implemented in uncommitted profile2, with focused native passes. Separate-process color replication, late join/rejoin, actual menu pixels and controller/Deck hardware acceptance remain open. The earlier downloadable playtest still uses its original defaults."
+      "gate": "Public Visual05 includes nickname/color profile controls and matching-build protocol 58; the required native suite includes focused menu/profile flows. This does not establish interactive opening-menu selection or actual menu pixels in the downloaded player. Separate-process color replication, late join/rejoin, keyboard/controller focus, physical Deck and human menu acceptance remain open. Newer source-only character work is separate from this frozen download."
     },
     {
       "id": "classes",
@@ -113,13 +122,13 @@
     },
     {
       "id": "acceptance",
-      "title": "Verify the exact final private build",
+      "title": "Verify the exact test build before promotion",
       "state": "Open gate",
       "criteria": [
         "Run bound managed/native, build/package and persistence tests for the final source; cover repeated camp entry, waves, high-density combat and Normal regression.",
-        "Resolve actual-screen/HUD capture for Normal EngineFinale, GroupFire and Flight. Complete human gameplay/listening, physical controller/Deck and separate-PC Internet six-player checks."
+        "Retain the passed Visual05 EngineFinale actual-screen/HUD and Flight evidence. Complete sustained 30-FPS startup verification, human gameplay/listening/visual review, physical controller/Deck and separate-PC Internet six-player checks; a rendered host with local headless peers is distinct evidence."
       ],
-      "gate": "Core8 remains the preserved private diagnostic package. Profile2 has focused native evidence only and has not been built or packaged. Commit only the fully verified recovered candidate; keep saves, earlier ZIPs and failed evidence. Compilation, selected native renders and package acceptance remain distinct."
+      "gate": "The unchanged public Visual05 ZIP has verified anonymous download/hash, fresh extraction and a naturally exiting Solo smoke. Its direct-initialized Zombie presence is verified, but the later complete cooperative diagnostic failed. Opening-menu selection and sustained 30-FPS startup remain open. Human playtest, controllers/Deck and separate-PC multiplayer remain open. Preserve failed evidence and earlier ZIPs; do not promote an unverified newer private candidate or treat a compiled build as full acceptance."
     },
     {
       "id": "production",
@@ -129,14 +138,14 @@
         "Verify onboarding, app identity, store/pricing/content survey, playable build review, install/launch and discount eligibility in the authorized Steam workflow.",
         "Every actual game release updates this tracker with the matching download and instructions, then verifies the live site. Public release, merge and promotion require their remaining approvals."
       ],
-      "gate": "November 2 review candidate and November 16 release are planning targets, not promises. Fee-credit evidence is recorded privately; app identity and account gates remain unverified. The October 19/20 submission-date discrepancy needs reconciliation. No new game build is published by this roadmap update."
+      "gate": "November 2 review candidate and November 16 release remain planning targets, not promises. Fee-credit evidence is recorded privately; app identity and account gates remain unverified. The October 19/20 submission-date discrepancy needs reconciliation. Visual05 was published only as an authorized public TEST BUILD, not a Steam or production release. Its existing ZIP and public release date are unchanged by this factual roadmap correction."
     }
   ],
   "routine": {
-    "label": "Private profile/menu continuation / not packaged",
+    "label": "Historical Profile2 staged evidence / superseded by packaged Visual05",
     "source": "aee0f8e + working-tree:9F0107F223A307EEE3A2D1FE3B1B2839D3792E71A4296138C0008A10F6D1703E",
-    "passed": "The later profile2 source passed all four managed assemblies, a fresh three-biome bake and 145 focused native cases: 76 rules, 43 menu/appearance/footprint flows, 24 campaign-reset/results regressions and two GPU capture cases. Zero failures or forced cleanup on this final focused run.",
+    "passed": "Before Visual05, Profile2 passed four managed assemblies, a fresh three-biome bake and 145 focused native cases: 76 rules, 43 menu/appearance/footprint flows, 24 campaign-reset/results regressions and two GPU capture cases. This historical focused run had zero failures or forced cleanup.",
     "visual": "72 original-game PNGs were produced: 65 staged hands/equipment poses, two original-rig palette/mittens renders and five bloody-trail/control renders. Representative images were inspected. These are staged URP renders, not actual menu/HUD or human art acceptance.",
-    "limits": "Nickname/color Apply/Cancel, separate profile storage/reopen, validated color codec, original rigs and Santa-color restoration have focused native evidence. A fresh full Windows build/package, separate-process profile/color late join, density measurement, actual IMGUI capture and physical hardware acceptance remain open. The Core8 horde measurements above belong to Core8, not this changed source. Existing downloads are unchanged."
+    "limits": "These staged URP renders do not prove packaged menu/HUD or human art acceptance. Visual05 subsequently built and packaged the later source identified above; it has its own separate native and packaged receipts. Historical Core8 density results cannot be transferred to either changed source. Later private/source-only work is not the public download."
   }
 }
