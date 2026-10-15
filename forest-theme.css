@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&display=swap');
-/* Forest background: Pexels photo 688660 by Simon Matzinger, used under the Pexels License.
-   https://www.pexels.com/photo/landscape-photography-of-snow-pathway-between-trees-during-winter-688660/
+/* Site background: actual Visual02 Snow biome packaged capture
+   (assets/gallery-visual02/snow-fireball-1280.webp), letterbox/skip bar cropped.
    Relative asset path so this works at winter-hunt.com and /winter-hunt-tracker/. */
 
 :root {
@@ -403,19 +403,6 @@ footer {
   background: rgba(6, 12, 10, 0.55);
   backdrop-filter: blur(18px) saturate(1.1);
   -webkit-backdrop-filter: blur(18px) saturate(1.1);
-}
-
-.photo-credit,
-.photo-credit a {
-  display: inline;
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.photo-credit a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: var(--lime);
 }
 
 .developer-support {
