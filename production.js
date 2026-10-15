@@ -1,7 +1,7 @@
 (() => {
   const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const stat = value => value === null ? 'Unmeasured' : esc(value);
-  fetch('data/production.json?v=visual05-production-20261012', {cache:'no-store'}).then(response => {
+  fetch('data/production.json?v=tracker-refresh-20261014', {cache:'no-store'}).then(response => {
     if (!response.ok) throw Error('Production roadmap unavailable');
     return response.json();
   }).then(data => {
@@ -11,6 +11,9 @@
     document.querySelector('#candidate-evidence').innerHTML = `
       <span class="badge in-progress">${esc(candidate.state)}</span>
       <h3>${esc(candidate.label)}</h3>
+      <p>Public test build. Human, Steam Deck/controller, sustained 30 FPS and separate-PC multiplayer acceptance remain open.</p>
+      ${data.continuation ? `<aside class="current-work"><p class="eyebrow">${esc(data.continuation.label)}</p><h4>${esc(data.continuation.summary)}</h4><p class="subtext">${esc(data.continuation.asOf)}</p><p>${esc(data.continuation.passed)}</p><p>${esc(data.continuation.pending)}</p><details><summary>Density evidence and remaining hardware gates</summary><p>${esc(data.continuation.density)}</p><p>${esc(data.continuation.gates)}</p></details></aside>` : ''}
+      <details class="build-evidence"><summary>Visual05 passed checks, failed diagnostics and historical evidence</summary>
       <p>${esc(candidate.passed)}</p><p>${esc(candidate.limits)}</p>
       <p class="subtext">${esc(candidate.camp)}</p>
       <h4>Recorded Visual05 Flight workload</h4>
@@ -26,7 +29,7 @@
       <p class="subtext">${esc(historical.optimization)}</p>
       <details><summary>Historical density source</summary><p class="source-fingerprint">${esc(historical.base)} + working-tree:${esc(historical.fingerprint)}</p></details>
       ${data.routine ? `<div class="production-gate"><span class="badge in-progress">${esc(data.routine.label)}</span><h4>Preserved historical staged evidence</h4><p>${esc(data.routine.passed)}</p><p class="subtext">${esc(data.routine.visual)}</p><p>${esc(data.routine.limits)}</p><details><summary>Exact historical routine source</summary><p class="source-fingerprint">${esc(data.routine.source)}</p></details></div>` : ''}
-      <details><summary>Exact public test source and payload</summary><p class="source-fingerprint">${esc(candidate.base)} + working-tree:${esc(candidate.fingerprint)}</p><p class="source-fingerprint">Payload: ${esc(candidate.payloadFingerprint)}</p><p class="subtext">${esc(candidate.identityNote)}</p></details>`;
+      <details><summary>Exact public test source and payload</summary><p class="source-fingerprint">${esc(candidate.base)} + working-tree:${esc(candidate.fingerprint)}</p><p class="source-fingerprint">Payload: ${esc(candidate.payloadFingerprint)}</p><p class="subtext">${esc(candidate.identityNote)}</p></details></details>`;
     document.querySelector('#production-phases').innerHTML = data.phases.map(phase => `
       <li id="production-${esc(phase.id)}"><article><span class="badge ${phase.state === 'In progress' ? 'in-progress' : 'requested'}">${esc(phase.state)}</span><h3>${esc(phase.title)}</h3>
       <details><summary>Requested behavior and acceptance +</summary><ul>${phase.criteria.map(item => `<li>${esc(item)}</li>`).join('')}</ul></details>

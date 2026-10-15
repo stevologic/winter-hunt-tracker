@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-14",
   "title": "The path from playtest to production",
   "summary": "Visual05 / 334BFEFE is the current public Windows TEST BUILD. Its exact ZIP was anonymously downloaded, hash-checked, freshly extracted and smoke-tested. Automated package evidence remains bounded; unresolved gameplay, 30-FPS startup, human-playtest, controller/Deck and separate-PC multiplayer gates prevent release readiness.",
   "candidate": {
@@ -147,5 +147,14 @@
     "passed": "Before Visual05, Profile2 passed four managed assemblies, a fresh three-biome bake and 145 focused native cases: 76 rules, 43 menu/appearance/footprint flows, 24 campaign-reset/results regressions and two GPU capture cases. This historical focused run had zero failures or forced cleanup.",
     "visual": "72 original-game PNGs were produced: 65 staged hands/equipment poses, two original-rig palette/mittens renders and five bloody-trail/control renders. Representative images were inspected. These are staged URP renders, not actual menu/HUD or human art acceptance.",
     "limits": "These staged URP renders do not prove packaged menu/HUD or human art acceptance. Visual05 subsequently built and packaged the later source identified above; it has its own separate native and packaged receipts. Historical Core8 density results cannot be transferred to either changed source. Later private/source-only work is not the public download."
+  },
+  "continuation": {
+    "label": "Next candidate / private validation",
+    "asOf": "Owner checkpoint · October 14, 2026 (Phoenix)",
+    "summary": "Steam Deck is the current priority. Six players remains the default.",
+    "passed": "Managed compilation passed all four assemblies. Private spawning, input and network regression work is in progress.",
+    "pending": "Native validation is incomplete and includes a retained failing fixture. No new downloadable build, Camp25 gameplay, high-density, Deck or human acceptance is established. Earlier failures remain preserved.",
+    "density": "A historical six-role clock baseline covered 11.93 common seconds at low density. A later fixed 1,024 attempt failed during setup and did not establish ordinary-AI capacity. The original 1,024 target remains open; four-versus-six and fewer/faster enemies are private comparisons only.",
+    "gates": "Six players remains the default. Physical Steam Deck/controller, sustained 30 FPS, readable UI/text entry and separate-PC multiplayer remain open. Existing Deck hooks and Windows desktop FPS are not Deck or Proton proof. No confirmed Deck installation route is published for this Windows build."
   }
 }

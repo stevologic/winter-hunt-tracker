@@ -90,10 +90,11 @@
   const results = await Promise.allSettled([load('data/latest-playtest.json?v=visual05-334bfefe'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=visual05-334bfefe')]);
   const publicationDates = results[3]?.status === 'fulfilled' ? (results[3].value.publicReleaseDates ?? {}) : {};
   const renderers = [latestCard, privateCard, publicCard];
-  const cards = results.slice(0, 3).map((result, index) => {
+  const rendered = results.slice(0, 3).map((result, index) => {
     if (result.status !== 'fulfilled') return '';
     try { return renderers[index](result.value); } catch { return ''; }
-  }).join('');
+  });
+  const cards = rendered[0] + ((rendered[1] || rendered[2]) ? `<details class="previous-builds"><summary>Previous builds / archived downloads and instructions</summary>${rendered[2]}${rendered[1]}</details>` : '');
   if (cards) {
     const target = document.querySelector('#play');
     const fallback = cards.includes('id="latest-playtest"') ? '' : (target.innerHTML.match(/<div[^>]*data-latest-fallback[^>]*>[\s\S]*?<\/div>/)?.[0] ?? '');

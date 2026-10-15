@@ -18,7 +18,9 @@ async function render(privateManifest=privateData,publicManifest=publicData){
 }
 const both=await render();
 assert(both.includes(`href="${privateData.url}"`));assert(both.includes(`href="${publicData.url}"`));
-assert(both.indexOf('id="private-playtest"')<both.indexOf('id="public-playtest"'));
+assert(both.indexOf('id="public-playtest"')<both.indexOf('id="private-playtest"'));
+assert(both.includes('<details class="previous-builds"><summary>Previous builds / archived downloads and instructions</summary>'));
+assert(both.indexOf('class="previous-builds"')<both.indexOf('id="public-playtest"'));
 assert(both.includes('GitHub sign-in required.'));assert(both.includes('existing permission to view the private draft release'));
 assert(both.includes('aria-describedby="private-access"'));assert(both.includes('not release-ready'));
 assert(both.includes('separate-PC Steam/network'));assert(both.includes('Steam Deck/controller'));
