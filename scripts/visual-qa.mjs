@@ -4,6 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const root=path.resolve('dist'),out='website-qa';
@@ -24,12 +25,14 @@ try{
  const bases=[['local',local]];
  if(process.env.VERIFY_LIVE==='true'){
   const live='https://stevologic.github.io/winter-hunt-tracker/';
+  const liveCommit=process.env.GITHUB_SHA;assert.match(liveCommit,/^[a-f0-9]{40}$/, 'Live verification requires the exact committed head');
+  const committed=file=>execFileSync(process.env.GIT_EXECUTABLE||'git',['show',liveCommit+':'+file]);
   let ready=false;
-  for(let n=0;n<24;n++){try{const r=await fetch(live+'index.html',{cache:'no-store'});if(r.ok&&hash(Buffer.from(await r.arrayBuffer()))===hash(await readFile('index.html'))){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,15000));}
+  for(let n=0;n<24;n++){try{const r=await fetch(live+'index.html',{cache:'no-store'});if(r.ok&&hash(Buffer.from(await r.arrayBuffer()))===hash(committed('index.html'))){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,15000));}
   assert(ready,'Live HTML did not reach the tested source within six minutes');
   const served=[];
   for(const file of ['index.html','site-refresh.css','app.js','playtest.js','production.js','data/checkpoints.json','data/production.json','data/latest-playtest.json','data/download-dates.json']){
-   const r=await fetch(live+file,{cache:'no-store'});assert(r.ok,file);const bytes=Buffer.from(await r.arrayBuffer());assert.equal(hash(bytes),hash(await readFile(file)),file);served.push({path:file,http:r.status,sha256:hash(bytes)});
+   const r=await fetch(live+file,{cache:'no-store'});assert(r.ok,file);const bytes=Buffer.from(await r.arrayBuffer());const expectedBytes=committed(file);assert.equal(hash(bytes),hash(expectedBytes),file);assert.equal((await readFile(file,'utf8')).replace(/\r\n/g,'\n'),expectedBytes.toString('utf8'),'Working tree text differs from committed input: '+file);served.push({path:file,http:r.status,sha256:hash(bytes)});
   }
   report.liveFiles=served;bases.push(['live',live]);
  }
