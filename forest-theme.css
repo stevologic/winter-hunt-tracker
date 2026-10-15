@@ -64,11 +64,38 @@ header {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
-.brand span {
+.brand {
+  color: var(--lime);
+}
+
+.brand .wordmark,
+.eyebrow .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28em;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.brand .wordmark {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 22px;
-  letter-spacing: 0.22em;
+  font-weight: 600;
   color: var(--lime);
+}
+
+.wordmark-arrow {
+  width: 1.2em;
+  height: 0.48em;
+  flex: 0 0 auto;
+  display: block;
+  overflow: visible;
+  color: currentColor;
+}
+
+.eyebrow .wordmark-arrow {
+  width: 1.05em;
+  height: 0.42em;
 }
 
 nav {
@@ -447,6 +474,11 @@ footer {
   nav a {
     padding: 8px 4px;
     font-size: 12px;
+  }
+
+  .brand .wordmark {
+    font-size: 18px;
+    letter-spacing: 0.16em;
   }
 
   .hero {
