@@ -84,18 +84,18 @@ header {
   color: var(--lime);
 }
 
-.wordmark-arrow {
-  width: 1.2em;
-  height: 0.48em;
+.wordmark-bow {
+  width: 1.55em;
+  height: 0.92em;
   flex: 0 0 auto;
   display: block;
   overflow: visible;
   color: currentColor;
 }
 
-.eyebrow .wordmark-arrow {
-  width: 1.05em;
-  height: 0.42em;
+.eyebrow .wordmark-bow {
+  width: 1.35em;
+  height: 0.8em;
 }
 
 nav {
