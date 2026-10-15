@@ -106,7 +106,7 @@
       "criteria": [
         "Expand earned perk inventory and combinations, preserving weapon rotation, ownership, grenades and live weapon state.",
         "Normal map victories unlock persisted playable classes. Bigfoot is a strong melee tank; Devil trades health for strong melee and bounded magic. Neither uses hunter guns.",
-        "Resolve the proposed third classâ€™s recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
+        "Resolve the proposed third class's recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
       ],
       "gate": "Current enemies are not playable classes. Class authority, unlock rollback/rejoin, progression, camera, collider, animation and balance still require implementation and validation."
     },
