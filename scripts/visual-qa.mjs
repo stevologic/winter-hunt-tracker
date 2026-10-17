@@ -7,7 +7,7 @@ import {createRequire} from 'node:module';
 import {execFileSync} from 'node:child_process';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
 const hash=b=>createHash('sha256').update(b).digest('hex');
-const root=path.resolve('dist'),out='website-qa';
+const root=path.resolve('dist'),out=process.env.QA_OUTPUT_DIR||'website-qa';
 await mkdir(out,{recursive:true});
 const latest=JSON.parse(await readFile('data/latest-playtest.json','utf8'));
 const expected='6b81e6d98ad0fdafcceef0fc1ce2d90c5759b8b0852495a2b9599b0d1017be52';
@@ -24,14 +24,15 @@ const browser=await chromium.launch({headless:true});
 try{
  const bases=[['local',local]];
  if(process.env.VERIFY_LIVE==='true'){
-  const live='https://stevologic.github.io/winter-hunt-tracker/';
+  const live=process.env.VERIFY_LIVE_BASE||'https://winter-hunt.com/';
+  assert(['https://winter-hunt.com/','https://stevologic.github.io/winter-hunt-tracker/'].includes(live),'Live checks use the existing authorized site only');
   const liveCommit=process.env.GITHUB_SHA;assert.match(liveCommit,/^[a-f0-9]{40}$/, 'Live verification requires the exact committed head');
   const committed=file=>execFileSync(process.env.GIT_EXECUTABLE||'git',['show',liveCommit+':'+file]);
   let ready=false;
   for(let n=0;n<24;n++){try{const r=await fetch(live+'index.html',{cache:'no-store'});if(r.ok&&hash(Buffer.from(await r.arrayBuffer()))===hash(committed('index.html'))){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,15000));}
   assert(ready,'Live HTML did not reach the tested source within six minutes');
   const served=[];
-  for(const file of ['index.html','site-refresh.css','app.js','playtest.js','production.js','data/checkpoints.json','data/production.json','data/latest-playtest.json','data/download-dates.json']){
+  for(const file of ['index.html','site-refresh.css','forest-theme.css','app.js','playtest.js','production.js','data/checkpoints.json','data/production.json','data/latest-playtest.json','data/download-dates.json']){
    const r=await fetch(live+file,{cache:'no-store'});assert(r.ok,file);const bytes=Buffer.from(await r.arrayBuffer());const expectedBytes=committed(file);assert.equal(hash(bytes),hash(expectedBytes),file);assert.equal((await readFile(file,'utf8')).replace(/\r\n/g,'\n'),expectedBytes.toString('utf8'),'Working tree text differs from committed input: '+file);served.push({path:file,http:r.status,sha256:hash(bytes)});
   }
   report.liveFiles=served;bases.push(['live',live]);
@@ -40,13 +41,16 @@ try{
   for(const [label,width,height]of [['desktop',1440,1000],['mobile',390,844],['narrow',320,800]]){
    const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});const errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.addInitScript(()=>{window.__copied=[];Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>window.__copied.push(text)},configurable:true})});
-   await page.goto(base,{waitUntil:'networkidle'});await page.waitForSelector('#latest-playtest');await page.waitForSelector('#production-phases article');await page.waitForFunction(()=>document.querySelector('#build-data h3')?.textContent.includes('visual05'));
+   await page.goto(base,{waitUntil:'networkidle'});await page.waitForSelector('#latest-playtest');await page.waitForSelector('#production-phases article',{state:'attached'});await page.waitForFunction(()=>document.querySelector('#build-data h3')?.textContent.includes('visual05'));
+   await page.locator('.acceptance-detail > summary').focus();await page.keyboard.press('Enter');assert(await page.locator('#production-phases article').first().isVisible(),'Keyboard opens the detailed acceptance plan');await page.keyboard.press('Enter');assert(!(await page.locator('.acceptance-detail').evaluate(el=>el.open)),'Keyboard closes the detailed acceptance plan');
+   await page.evaluate(()=>scrollTo(0,0));
    await page.screenshot({path:out+'/'+mode+'-'+label+'-hero.png'});
-   for(const [target,suffix]of [['#latest-playtest','download'],['.camp-snap','encounter'],['#production','production'],['.developer-support','support']])await page.locator(target).screenshot({path:out+'/'+mode+'-'+label+'-'+suffix+'.png'});
+   for(const [target,suffix]of [['#latest-playtest','download'],['#features','features'],['.camp-snap','encounter'],['#production','production'],['.developer-support','support']])await page.locator(target).screenshot({path:out+'/'+mode+'-'+label+'-'+suffix+'.png'});
    await page.locator('#copy-doge').click();assert.equal(await page.evaluate(()=>window.__copied[0]),'DTW2M5oEW97WbmYJRM71qD7uE6xfJs1MUK');
    await page.locator('#copy-doge').focus();assert(await page.locator('#copy-doge').evaluate(el=>document.activeElement===el&&getComputedStyle(el).outlineWidth!=='0px'));
-   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,latestHref:document.querySelector('.latest-download').href,releaseText:document.querySelector('#latest-playtest').innerText,ledger:document.querySelector('#build-data').innerText,phaseCount:document.querySelectorAll('#production-phases article').length,currentWork:document.querySelector('.current-work').innerText,caption:document.querySelector('.hero figcaption').innerText,heroRatio:(()=>{const r=document.querySelector('.hero-art img').getBoundingClientRect();return r.width/r.height})(),xMoney:document.querySelector('.support-link').href,historyCollapsed:!document.querySelector('.previous-builds').open,galleryCollapsed:!document.querySelector('.archive-gallery').open}));
-   assert(!result.overflow);assert.equal(result.latestHref,latest.url);assert(result.releaseText.includes(latest.publishedDatePhoenix));assert(result.ledger.includes(latest.version));assert(!result.ledger.includes('Owner-only candidate'));assert.equal(result.phaseCount,8);assert(result.currentWork.includes('No new downloadable build'));assert(result.currentWork.includes('Six players remains the default'));assert(!result.currentWork.includes('185 cases passed'));assert(result.caption.includes('October 11, 2026'));assert(Math.abs(result.heroRatio-1.6)<.01);assert.equal(result.xMoney,'https://x.com/i/money/pay/MadeItHappenX');assert(result.historyCollapsed&&result.galleryCollapsed);assert.equal(errors.length,0);
+   await page.locator('.current-work').evaluate(el=>el.open=true);
+   const result=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,latestHref:document.querySelector('.latest-download').href,releaseText:document.querySelector('#latest-playtest').innerText,ledger:document.querySelector('#build-data').innerText,phaseCount:document.querySelectorAll('#production-phases article').length,currentWork:document.querySelector('.current-work').innerText,nextBuild:document.querySelector('#next-build').innerText,nextBuildDownloads:document.querySelectorAll('#next-build a[href*="releases/download"]').length,featureCount:document.querySelectorAll('.feature-grid article').length,gateCount:document.querySelectorAll('.gate-summary article').length,caption:document.querySelector('.hero figcaption').innerText,heroRatio:(()=>{const r=document.querySelector('.hero-art img').getBoundingClientRect();return r.width/r.height})(),xMoney:document.querySelector('.support-link').href,historyCollapsed:!document.querySelector('.previous-builds').open,galleryCollapsed:!document.querySelector('.archive-gallery').open,acceptanceCollapsed:!document.querySelector('.acceptance-detail').open}));
+   assert(!result.overflow);assert.equal(result.latestHref,latest.url);assert(result.releaseText.includes(latest.publishedDatePhoenix));assert(result.ledger.includes(latest.version));assert(!result.ledger.includes('Owner-only candidate'));assert.equal(result.phaseCount,8);assert(result.currentWork.includes('No new combined ZIP or accepted gameplay captures are published here'));assert(result.currentWork.includes('Six players remains the default'));assert(!result.currentWork.includes('185 cases passed'));assert(result.nextBuild.includes('Visual05 remains the current download'));assert.equal(result.nextBuildDownloads,0);assert.equal(result.featureCount,3);assert.equal(result.gateCount,3);assert(result.caption.includes('October 11, 2026'));assert(Math.abs(result.heroRatio-1.6)<.01);assert.equal(result.xMoney,'https://x.com/i/money/pay/MadeItHappenX');assert(result.historyCollapsed&&result.galleryCollapsed&&result.acceptanceCollapsed);assert.equal(errors.length,0);
    await page.locator('.archive-gallery').evaluate(el=>el.open=true);await page.locator('.night-capture').evaluate(el=>el.open=true);for(const img of await page.locator('img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode())}const decoded=await page.locator('img').evaluateAll(imgs=>imgs.map(i=>({src:new URL(i.src).pathname,alt:i.alt,width:i.naturalWidth,loaded:i.complete&&i.naturalWidth>0})));assert(decoded.every(i=>i.alt&&i.loaded));assert.equal(decoded.length,9);
    if(label==='desktop')await writeFile(out+'/'+mode+'-visible-status.txt',await page.locator('#production').innerText());
    report.checks.push({mode,label,width,height,errors,images:decoded,...result});await page.close();

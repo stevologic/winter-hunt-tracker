@@ -11,23 +11,43 @@
     if (!/^https:\/\/github\.com\/stevologic\/winter-hunt-tracker\/releases\/download\/[^?#]+\.zip$/.test(d.url)) throw Error('Unapproved public test route');
     if (!/^https:\/\/github\.com\/stevologic\/winter-hunt-tracker\/releases\/tag\/[a-z0-9-]+$/.test(d.releaseUrl)) throw Error('Unapproved release page');
     return `<div class="latest-playtest" id="latest-playtest">
-      <p class="eyebrow">LATEST PUBLIC WINDOWS TEST BUILD</p><h2>Download the latest hunt.</h2>
-      <p>${safe(d.summary)}</p><p class="release-date">${safe(d.version)} · Built ${safe(d.builtDatePhoenix)} · ${(d.bytes / 1048576).toFixed(1)} MiB<br>Released for testing ${safe(d.publishedDatePhoenix)}</p>
-      <span class="badge in-progress">Test build · acceptance pending</span>
-      <p class="access-note"><strong>No GitHub sign-in needed.</strong> Earlier working downloads remain below.</p>
-      <a class="button latest-download" href="${safe(d.url)}">Download latest Windows test ZIP <span aria-hidden="true">↓</span></a>
+      <p class="eyebrow">LATEST PUBLIC WINDOWS DIAGNOSTIC PLAYTEST</p><h2>Download the latest hunt.</h2>
+      <p>${safe(d.summary)}</p><p class="release-date">${safe(d.version)} | Build completed ${safe(d.builtDatePhoenix)} | ${(d.bytes / 1048576).toFixed(1)} MiB<br>Released for testing ${safe(d.publishedDatePhoenix)}</p>
+      <span class="badge in-progress">Diagnostic playtest | broader acceptance open</span>
+      <p class="access-note"><strong>No GitHub sign-in needed.</strong> Visual05 and earlier downloads remain archived below.</p>
+      <a class="button latest-download" href="${safe(d.url)}">Download latest Windows test ZIP <span aria-hidden="true">&darr;</span></a>
       <p class="release-link"><a href="${safe(d.releaseUrl)}">Release notes and GitHub Assets</a></p>
-      <h3 class="launch-title">Extract and launch</h3><ol class="latest-launch-steps">
-        <li>Download <code>${safe(d.filename)}</code>, then choose <strong>Extract All</strong> in File Explorer.</li>
-        <li>Keep the whole extracted game folder together, including <code>WinterHunt_Data</code>, <code>WinterHunt.launch.json</code>, <code>MonoBleedingEdge</code>, <code>D3D12</code>, <code>Notices</code> and all DLLs.</li>
-        <li>Double-click <strong><code>${safe(d.executable)}</code></strong>. No CMD launcher, arguments or manual setup is required. Retain legitimate Windows security prompts.</li>
-        <li>At the opening menu select the mode row, use Left/Right to choose <strong>Zombie</strong> or Normal, then select <strong>Start New</strong> and press Enter. Load Saved Game / Resume retain their saved mode. This build uses a separate profile, preserving older saves. Every co-op player needs this exact build.</li>
+      <p data-domain-status>Direct GitHub HTTPS download verified. winter-hunt.com certificate repair remains pending approval; custom-domain delivery is not claimed.</p>
+      <h3 class="launch-title">Extract and launch</h3><p class="launch-scope">Source-derived steps; no-argument startup and interactive opening-menu acceptance remain open for this exact package.</p><ol class="latest-launch-steps">
+        <li>Download <code>${safe(d.filename)}</code>, then choose <strong>Extract All</strong> into a new folder.</li>
+        <li>Keep <code>WinterHunt_Data</code>, <code>WinterHunt.launch.json</code>, runtime folders, <code>Notices</code> and all DLLs together.</li>
+        <li>Double-click <strong><code>${safe(d.executable)}</code></strong>. No CMD launcher, arguments or developer tools are required. Keep normal Windows security prompts.</li>
+        <li>Choose Normal or Zombie, then Start New. Load/Resume retains its saved mode. Hunter is the current playable class. This build uses isolated saves; older saves are preserved, not migrated.</li>
       </ol>
-      <p class="baseline-note"><strong>Test candidate, not release-ready.</strong> The retained Zombie Horde and full cooperative-purchase gates remain failed/open. Full gameplay and human playtest, Internet/Steam and controller/Deck checks remain unfinished.</p>
-      <p class="subtext">Bundled private-candidate wording predates the owner's authorization to share this test ZIP publicly. The archive is unchanged; previous downloads and their instructions remain separate below.</p>
+      <details class="latest-friends"><summary>Play with friends / source-derived steps</summary><ol>
+        <li>Every player uses this exact ZIP. Start or load a camp, then press <kbd>F2</kbd> for Friends. <kbd>Tab</kbd> or <kbd>F3</kbd> opens the camp board.</li>
+        <li>For LAN play, the host selects <strong>HOST MY CAMP</strong>; guests select the local camp or enter its local IPv4 and select <strong>JOIN ADDRESS</strong>. See <code>START-HERE.txt</code> for controls and LAN/Internet prerequisites.</li>
+        <li>The party limit is six including the host. The passed diagnostic used two headless processes on one PC; separate-PC/Internet and six-player reliability remain unverified. Steam invites/relay are unavailable in this diagnostic profile.</li>
+      </ol><p>Keep the host running. Returning guests should load the same local saved camp before rejoining the same host/camp. Do not disable security settings or bypass certificate warnings.</p></details>
+      <p class="baseline-note"><strong>Test build, not release-ready.</strong> Six-role/Horde/full-purchase, no-argument/menu/restart, human/controller/Deck, separate-PC and sustained 30 FPS gates remain open.</p>
+      <p class="subtext">${safe(d.packagingNote ?? '')}</p>
       <details><summary>Included features and known limitations +</summary><ul>${list(d.features)}</ul><ul>${list(d.knownLimits)}</ul></details>
-      <details><summary>Exact build, ZIP hash and verification +</summary><p class="hash">${safe(d.buildId)}<br>${safe(d.bytes)} bytes<br>SHA-256: ${safe(d.sha256)}<br>Source: ${safe(d.sourceRevision)}<br>Payload: ${safe(d.payloadFingerprint)}<br>Protocol: ${safe(d.protocol)} / save schema ${safe(d.saveVersion)}</p><p>${safe(d.verification)}</p></details>
+      <details><summary>Exact build, ZIP hash and verification +</summary><p class="hash">${safe(d.buildId)}<br>${safe(d.bytes)} bytes<br>SHA-256: ${safe(d.sha256)}<br>Source recorded in package: ${safe(d.sourceRevision)}<br>Later verified source commit: ${safe(d.verifiedSourceCommit ?? 'Not recorded')}<br>Payload: ${safe(d.payloadFingerprint)}<br>Protocol: ${safe(d.protocol)} / save schema ${safe(d.saveVersion)}</p><p>${safe(d.verification)}</p></details>
     </div>`;
+  }
+  function visual05Archive(d) {
+    if (d.state !== 'public-test' || d.access !== 'public-release' || d.publicDownloadVerified !== true) return '';
+    if (d.sha256 !== '6b81e6d98ad0fdafcceef0fc1ce2d90c5759b8b0852495a2b9599b0d1017be52' || d.bytes !== 162129007) throw Error('Visual05 archive identity changed');
+    if (d.url !== 'https://github.com/stevologic/winter-hunt-tracker/releases/download/playtest-core9-visual05-334bfefe/WinterHunt-Win-Diagnostic-20261012-051434-aee0f8e-wt334BFEFE.zip') throw Error('Unapproved Visual05 archive route');
+    if (d.protocol !== 'winter-hunt-party-58' || d.saveVersion !== 22) throw Error('Visual05 archive version changed');
+    return `<details class="archived-visual05" id="visual05-archive"><summary>Preserved Visual05 / 334BFEFE public test download</summary>
+      <p>Unchanged earlier public package. It remains available when a newer build becomes the primary download.</p>
+      <p><a href="${safe(d.url)}">Download Visual05 / 334BFEFE ZIP</a> · No GitHub sign-in needed.</p>
+      <p>Released ${safe(d.publishedDatePhoenix)}. Protocol 58 / save schema 22. Every friend must use this exact build; newer candidate instructions and content do not apply to it.</p>
+      <p>Extract All into a separate folder, keep the full game folder together and double-click <code>WinterHunt.exe</code>. Open Friends to host a camp; LAN friends select that camp. Internet Host/Join requires a supplied reachable address. Separate-PC and separate-network human multiplayer remain unverified.</p>
+      <p>The exact public package passed Solo smoke and bounded initialized Zombie presence, then failed its complete cooperative diagnostic. Horde/cooperative-purchase and interactive opening-menu, human/controller/Deck and performance acceptance remain open.</p>
+      <p class="hash">${safe(d.filename)}<br>${safe(d.bytes)} bytes<br>SHA-256: ${safe(d.sha256)}</p>
+    </details>`;
   }
   function privateCard(d) {
     if (d.state !== 'private-playtest' || d.access !== 'github-private-draft') return '';
@@ -87,17 +107,21 @@
       <details><summary>Verify the public ZIP +</summary><p class="hash">${safe(d.filename)}<br>${safe(d.bytes)} bytes<br>SHA-256<br>${safe(d.sha256)}</p><p>${safe(d.verification)}</p></details>
     </div>`;
   }
-  const results = await Promise.allSettled([load('data/latest-playtest.json?v=visual05-334bfefe'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=visual05-334bfefe')]);
+  const results = await Promise.allSettled([load('data/latest-playtest.json?v=assets34-198dc281'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=assets34-198dc281'), load('data/visual05-playtest.json?v=visual05-334bfefe')]);
   const publicationDates = results[3]?.status === 'fulfilled' ? (results[3].value.publicReleaseDates ?? {}) : {};
   const renderers = [latestCard, privateCard, publicCard];
   const rendered = results.slice(0, 3).map((result, index) => {
     if (result.status !== 'fulfilled') return '';
     try { return renderers[index](result.value); } catch { return ''; }
   });
-  const cards = rendered[0] + ((rendered[1] || rendered[2]) ? `<details class="previous-builds"><summary>Previous builds / archived downloads and instructions</summary>${rendered[2]}${rendered[1]}</details>` : '');
+  let archive = '';
+  if (results[4]?.status === 'fulfilled') { try { archive = visual05Archive(results[4].value); } catch { /* Preserve the static archive link below. */ } }
+  const cards = rendered[0] + ((archive || rendered[1] || rendered[2]) ? `<details class="previous-builds"><summary>Previous builds / archived downloads and instructions</summary>${archive}${rendered[2]}${rendered[1]}</details>` : '');
   if (cards) {
     const target = document.querySelector('#play');
     const fallback = cards.includes('id="latest-playtest"') ? '' : (target.innerHTML.match(/<div[^>]*data-latest-fallback[^>]*>[\s\S]*?<\/div>/)?.[0] ?? '');
-    target.innerHTML = fallback + cards;
+    const archiveFallback = archive ? '' : (target.innerHTML.match(/<p[^>]*data-visual05-archive[^>]*>[\s\S]*?<\/p>/)?.[0] ?? '');
+    const olderFallback = rendered[2] ? '' : (target.innerHTML.match(/<p[^>]*data-older-public-fallback[^>]*>[\s\S]*?<\/p>/)?.[0] ?? '');
+    target.innerHTML = fallback + cards + archiveFallback + olderFallback;
   }
 })();

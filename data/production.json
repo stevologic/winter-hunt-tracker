@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-16",
   "title": "The path from playtest to production",
-  "summary": "Visual05 / 334BFEFE is the current public Windows TEST BUILD. Its exact ZIP was anonymously downloaded, hash-checked, freshly extracted and smoke-tested. Automated package evidence remains bounded; unresolved gameplay, 30-FPS startup, human-playtest, controller/Deck and separate-PC multiplayer gates prevent release readiness.",
+  "summary": "Assets34 / Source04 is the current public Windows diagnostic playtest on GitHub. The exact public ZIP passed anonymous HTTPS download/hash verification, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. Full runtime, visual/human/hardware, restart, separate-PC, six-role/Horde/full-purchase and sustained 30-FPS acceptance remain open. Custom-domain HTTPS delivery remains unverified.",
   "candidate": {
     "label": "Core9 / Visual05 / 334BFEFE",
     "base": "aee0f8e66af2c8571a06032143c2de09c1e2bc65",
@@ -9,7 +9,7 @@
     "payloadFingerprint": "26FFDE50539E88C5A7683FDFED3B2F4D4414D1E6EBF694FCAC2BFB9ADF005FC2",
     "state": "Public test build / runtime acceptance incomplete",
     "passed": "Visual05 passed managed compilation of four assemblies / 1,067 C# inputs, a three-biome bake, all 1,864 required native cases (zero failed or skipped), and Windows build/package verification. EngineFinale passed six biome/mode proofs with 114 scene/HUD PNGs. Flight passed with one rendered host and five headless local peers; accepted players exited naturally.",
-    "limits": "These bounded passes do not close Zombie Horde or full ZombieCoopPurchase, which failed on rounds06-fix2 and were not rerun by Visual05. The exact public ZIP later passed Solo smoke and showed live initialized Zombie actors, but its complete cooperative diagnostic failed. Interactive Normal/Zombie opening-menu selection, sustained 30-FPS startup behavior, human gameplay/listening/visual acceptance, physical controllers/Deck and separate-PC Internet/Steam/voice remain open. The game source candidate is uncommitted; no merge or release-ready claim is made.",
+    "limits": "These bounded passes do not close Zombie Horde or full ZombieCoopPurchase, which failed on rounds06-fix2 and were not rerun by Visual05. The exact public ZIP later passed Solo smoke and showed live initialized Zombie actors, but its complete cooperative diagnostic failed. Interactive Normal/Zombie opening-menu selection, sustained 30-FPS startup behavior, human gameplay/listening/visual acceptance, physical controllers/Deck and separate-PC Internet/Steam/voice remain open. Visual05 was packaged from the then-uncommitted candidate; this historical build statement does not describe the latest private branch. No merge or release-ready claim is made.",
     "camp": "The unchanged public ZIP was tested with fresh isolated Zombie saves initialized directly by diagnostic arguments. Both peers reported Zombie mode, 12 issued live actors, about 6.36 m of actual pursuit and 18 mirrored contact damage; the guest made 12 distinct real bow kills. Later blocked-approach and physical party-exit assertions failed, and both peers exited naturally with code 1. This proves bounded presence, not interactive menu selection, unrestricted combat or a complete camp/purchase gate.",
     "flight": "Visual05 Flight finale: 200.63 average FPS, p95 8.45 ms, p99 9.86 ms and worst 140.46 ms at 43 live AI, D3D11, 1280 x 800, on i7-14700K / RTX 5070. This single recorded workload is not a 30-FPS startup test, controlled before/after optimization, isolated effects cost, six rendered computers, Internet measurement or proof of natural thousands.",
     "historicalDensity": {
@@ -65,7 +65,7 @@
         "Two grenades remain separate from weapon slots. Bosses arrive every third round. Ownership, upgrade purchases, allowance, rescue and persisted round state must remain consistent across the party and process restart.",
         "Earn compatible perks and combinations from kills, loot and harvests, with no paid loot boxes. Natural sustained play and boss behavior under load still require acceptance."
       ],
-      "gate": "Visual05 contains the owner-confirmed revised finite-round rules. Exact-public diagnostic evidence proves bounded live Zombie presence and 12 bow kills, then fails the physical route/party-exit checks. Earlier Horde and full cooperative-purchase failures remain open. Natural sustained play, team wipe/rescue, process restart, purchases, grenade transitions and boss cadence under load are not accepted."
+      "gate": "Assets34 passed the complete headless same-PC two-process no-purchase Zombie baseline: 12 real kills, round/save transitions, camp grace/contact, grenade debit/refill and same-wave entry/readback. The archived Visual05 complete cooperative diagnostic failed. Earlier Horde and full cooperative-purchase failures remain open. Natural sustained play, team wipe/rescue, process restart, purchases and boss cadence under load remain unaccepted."
     },
     {
       "id": "density",
@@ -87,7 +87,7 @@
         "Keep mitten/block hands in first and third person, improve held flamethrower presentation, and keep a sky beam on lost gear until recovered or empty.",
         "Retain bounded weapon/environment particles and existing pooled left/right boot-sole snow footprints; validate slope contact, fade and co-op consistency. Add a shared adaptive effects budget when measured."
       ],
-      "gate": "Visual05 packages current mitten/equipment, profile, beacon and footprint work plus modest original UFO rim/vanes/reactor and Bigfoot/material updates. It has 114 EngineFinale scene/HUD PNGs and 27 preserved encounter comparison PNGs; only 10 Bigfoot scenes have matched before/after views. UFO/roster views are after-only and junipers obscure monster bodies. Staged Profile2 renders are historical evidence. Full-body silhouette, natural fights, warning/HUD readability, dense-session effects cost and human visual acceptance remain open."
+      "gate": "Assets34 adds campfire and existing devil-elk artwork with scoped native image review; boss side/warning and mid/far camp occlusion remain unresolved. Shown gameplay images and the 114 EngineFinale/27 encounter captures are earlier Visual05 evidence, not new Assets34 screenshots. Historical Profile2 and Core8 evidence remain separate. Full-body silhouette, natural fights, warning/HUD readability, dense-session effects cost and human visual acceptance remain open."
     },
     {
       "id": "profiles",
@@ -97,14 +97,14 @@
         "Native Unity Normal / Zombie, Start New / Load / Resume, pause, settings and results flows remain readable at supported resolutions, with keyboard/controller focus, back and cancel.",
         "Editable nonunique nickname and color preview persist across reopen/rejoin separately from private stable identity. Public results require explicit sharing consent."
       ],
-      "gate": "Public Visual05 includes nickname/color profile controls and matching-build protocol 58; the required native suite includes focused menu/profile flows. This does not establish interactive opening-menu selection or actual menu pixels in the downloaded player. Separate-process color replication, late join/rejoin, keyboard/controller focus, physical Deck and human menu acceptance remain open. Newer source-only character work is separate from this frozen download."
+      "gate": "Assets34 uses matching-build protocol 61 / save 24 and retains source-derived Normal/Zombie, profile and camp controls. Its 63 scoped native cases and packaged diagnostics do not establish interactive opening-menu selection. Separate-process color replication, late join/rejoin, keyboard/controller focus, physical Deck and human menu acceptance remain open. Hunter is the current playable class. Archived Visual05 retains its original protocol 58 / save 22."
     },
     {
       "id": "classes",
       "title": "Earn perks and playable monster classes",
       "state": "Requested",
       "criteria": [
-        "Expand earned perk inventory and combinations, preserving weapon rotation, ownership, grenades and live weapon state.",
+        "Expand earned perk inventory and combinations, preserving permanent earned weapon ownership, upgrades, grenades and live weapon state.",
         "Normal map victories unlock persisted playable classes. Bigfoot is a strong melee tank; Devil trades health for strong melee and bounded magic. Neither uses hunter guns.",
         "Resolve the proposed third class's recorded creature identity before committing it; the current proposal is an Ash Crown undead-elk silhouette at fair player scale."
       ],
@@ -128,7 +128,7 @@
         "Run bound managed/native, build/package and persistence tests for the final source; cover repeated camp entry, waves, high-density combat and Normal regression.",
         "Retain the passed Visual05 EngineFinale actual-screen/HUD and Flight evidence. Complete sustained 30-FPS startup verification, human gameplay/listening/visual review, physical controller/Deck and separate-PC Internet six-player checks; a rendered host with local headless peers is distinct evidence."
       ],
-      "gate": "The unchanged public Visual05 ZIP has verified anonymous download/hash, fresh extraction and a naturally exiting Solo smoke. Its direct-initialized Zombie presence is verified, but the later complete cooperative diagnostic failed. Opening-menu selection and sustained 30-FPS startup remain open. Human playtest, controllers/Deck and separate-PC multiplayer remain open. Preserve failed evidence and earlier ZIPs; do not promote an unverified newer private candidate or treat a compiled build as full acceptance."
+      "gate": "Assets34 passed exact public GitHub download/hash, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. The archived Visual05 complete cooperative diagnostic failed. Opening-menu selection, no-argument launch, process-restart persistence and sustained 30-FPS startup remain open. Human playtest, controllers/Deck and separate-PC multiplayer remain open, as do six-role/Horde/full-purchase and full visual acceptance. Preserve failed evidence and earlier ZIPs; scoped checks do not establish full acceptance. Custom-domain HTTPS delivery remains unverified."
     },
     {
       "id": "production",
@@ -138,7 +138,7 @@
         "Verify onboarding, app identity, store/pricing/content survey, playable build review, install/launch and discount eligibility in the authorized Steam workflow.",
         "Every actual game release updates this tracker with the matching download and instructions, then verifies the live site. Public release, merge and promotion require their remaining approvals."
       ],
-      "gate": "November 2 review candidate and November 16 release remain planning targets, not promises. Fee-credit evidence is recorded privately; app identity and account gates remain unverified. The October 19/20 submission-date discrepancy needs reconciliation. Visual05 was published only as an authorized public TEST BUILD, not a Steam or production release. Its existing ZIP and public release date are unchanged by this factual roadmap correction."
+      "gate": "November 2 review candidate and November 16 release remain planning targets, not promises. Account/app identity and Steam gates remain unverified, including the October 19/20 submission-date discrepancy. Assets34 is an authorized GitHub public diagnostic playtest, not a Steam or production release. Visual05 and older ZIPs, hashes and release dates are unchanged. Normal winter-hunt.com HTTPS remains blocked by pending certificate/settings approval; direct GitHub delivery is verified separately."
     }
   ],
   "routine": {
@@ -149,12 +149,182 @@
     "limits": "These staged URP renders do not prove packaged menu/HUD or human art acceptance. Visual05 subsequently built and packaged the later source identified above; it has its own separate native and packaged receipts. Historical Core8 density results cannot be transferred to either changed source. Later private/source-only work is not the public download."
   },
   "continuation": {
-    "label": "Next candidate / private validation",
-    "asOf": "Owner checkpoint · October 14, 2026 (Phoenix)",
-    "summary": "Steam Deck is the current priority. Six players remains the default.",
-    "passed": "Managed compilation passed all four assemblies. Private spawning, input and network regression work is in progress.",
-    "pending": "Native validation is incomplete and includes a retained failing fixture. No new downloadable build, Camp25 gameplay, high-density, Deck or human acceptance is established. Earlier failures remain preserved.",
-    "density": "A historical six-role clock baseline covered 11.93 common seconds at low density. A later fixed 1,024 attempt failed during setup and did not establish ordinary-AI capacity. The original 1,024 target remains open; four-versus-six and fewer/faster enemies are private comparisons only.",
-    "gates": "Six players remains the default. Physical Steam Deck/controller, sustained 30 FPS, readable UI/text entry and separate-PC multiplayer remain open. Existing Deck hooks and Windows desktop FPS are not Deck or Proton proof. No confirmed Deck installation route is published for this Windows build."
+    "label": "Assets34 / Source04 current public diagnostic playtest",
+    "asOf": "Exact package: Solo passed October 16 at 23:22 UTC; the complete two-process no-purchase Zombie baseline passed at 23:30 UTC. Public GitHub download/hash verification is complete. The release date is recorded in the download manifest.",
+    "summary": "Scoped checks passed. Broader acceptance remains open.",
+    "passed": "Source04 passed four managed assemblies covering 1,288 C# inputs, with 46 baseline and 46 candidate warnings and no changed diagnostics. The fresh Unity import audit completed with no audit errors and natural exit code 0: 8,595 raw inputs, 122 materials and 244 generated material/metadata outputs. All 63 scoped native cases passed: 48 EditMode, 8 PlayMode, 5 graphics-target, 1 boss and 1 camp case. These results apply to this exact source; they do not replace the public Visual05 package evidence. The Windows Mono diagnostic build completed with natural exit code 0. The Assets34 ZIP hash and all 261 freshly extracted file hashes match the saved package receipts; the extracted instructions also passed their exact-template check. The exact extracted package now passed Solo smoke and the complete headless, same-PC two-process Zombie baseline without the purchase branch. Both Zombie roles exited naturally with code 0 after 490.96 seconds overall, with 42 saved evidence files verified and unchanged inputs. The baseline cleared 12 actual enemies with 24 bow shots, then verified the paid round save/intermission, round-two camp grace/contact, grenade debit/refill and same-wave repeat-entry/readback.",
+    "pending": "The first full-library import audit failed and remains recorded; the corrected Source04 audit passed. Current Assets34 Solo and no-purchase Zombie baseline passes are separate from Visual05's historical failed cooperative diagnostic. No-argument launch, interactive menu, persistence across a process restart, human/controller/Deck, separate-PC/Internet multiplayer, six-role/Horde, full cooperative purchase and sustained 30 FPS remain unverified. Third-party editor scripts remain quarantined. The GitHub download is verified; winter-hunt.com HTTPS certificate delivery remains unverified and settings approval is pending.",
+    "assetStages": [
+      {
+        "label": "Staged for import",
+        "detail": "The hash-checked import set contains 74 additional FBX models, 445 PNG images and 8,076 original WAV files: 8,595 raw inputs. The 75-model artwork pack also includes the previously integrated campfire; the separate devil-elk model is integrated in source."
+      },
+      {
+        "label": "Imported in Unity",
+        "detail": "Source04 native import audit passed with no audit errors, preserving all 8,595 raw inputs and producing 122 materials / 244 material-and-metadata outputs. The 13-sheet, 196-tile original-image review is complete within its static-view limits. The earlier failed import attempt remains part of the record."
+      },
+      {
+        "label": "Used in gameplay",
+        "detail": "The current source uses the campfire and existing devil-elk encounter artwork. Alternate models and sounds may remain available in the library without appearing in gameplay. This scope adds no audio playback, bank or settings changes."
+      },
+      {
+        "label": "Included in a download",
+        "detail": "The public Assets34 runtime ZIP is 163,351,250 bytes with 261 verified extracted files. That exact package passed Solo smoke and the same-PC, two-process no-purchase Zombie baseline. This does not establish that every alternate imported asset appears in gameplay or ships as a raw file. Visual05 remains an unchanged archived download; broader acceptance remains open."
+      }
+    ],
+    "sourceEvidence": {
+      "sourceManifestSha256": "198DC2817C39C87ECC182B16D86E439C90870E60279F6119C8F54C67DC55F49D",
+      "managedReceiptSha256": "3032B1DB284DECC15176A3C81E7EFFB6B0E22DFCCEC1F4534C77D58E6ACD3896",
+      "sourceCount": 1288,
+      "managedAssembliesPassed": 4,
+      "stagedCounts": {
+        "fbx": 74,
+        "png": 445,
+        "wav": 8076,
+        "total": 8595
+      },
+      "nativeImportStatus": "passed-audit",
+      "nativeResultsStatus": "passed-scoped",
+      "contactSheetReviewStatus": "reviewed-scoped",
+      "packagedDownloadStatus": "public-github-download-hash-verified",
+      "package": {
+        "buildId": "WinterHunt-Private-CoopHorde23-Assets34-20261016-2251",
+        "sourceRevision": "e2df9bc87ff14da7625a82b7b4a0f2f70eda48d6+diagnostic-source-manifest:198DC2817C39C87ECC182B16D86E439C90870E60279F6119C8F54C67DC55F49D",
+        "protocol": "winter-hunt-party-61",
+        "saveVersion": 24,
+        "archiveSha256": "BEB553565CD8DE3C6CEECA81F5EF3478429203DDD308833A106352CFBD0B0EAF",
+        "archiveBytes": 163351250,
+        "payloadFingerprint": "A98CD9D613E87BDDB722E428A5190241323E7B353140914F323E3F6E71DB3E84",
+        "entries": 261,
+        "packageCreatedUtc": "2026-10-16T23:13:14.4529575Z",
+        "extractedUtc": "2026-10-16T23:14:01.4819112Z",
+        "instructionsSha256": "103C22CBA8CAE9386C9556872723B9AD9A1ABD5C30BC367B3BED605B359B3658",
+        "publicUrl": "https://github.com/stevologic/winter-hunt-tracker/releases/download/playtest-assets34-198dc281/WinterHunt-Private-CoopHorde23-Assets34-20261016-2251.zip",
+        "publishedUtc": "2026-10-16T23:56:54Z",
+        "soloRuntimeStatus": "passed",
+        "zombieRuntimeStatus": "passed-two-process-no-purchase-baseline",
+        "packageReceiptSha256": "911CA3CF88ACBE7BD69CBB20D35D095940F98CC197B2381C836492EA269CF991",
+        "extractionReceiptSha256": "64646559C1E43072D3A6749E8560A52FF6FBB4157172763856258200550D19D7",
+        "buildReceiptSha256": "2FD2F7B0CDC39D151B536F0D2131358B9C4E2537C11241334B7707E7ED5A9A90",
+        "freshInstructionsReceiptSha256": "230E7185FF64AD647D8DED1C56858A0C057CA51DB447D2BC0D93B3FACA49044E",
+        "extractionHashesVerified": 261,
+        "runtimeAccepted": false,
+        "publicRelease": true,
+        "publicDownloadReceiptSha256": "9021386242692C3CE11DB09CD33D8C588C6917F7D055C7511784BA0E4F06656A",
+        "verifiedSourceCommit": "a42a4013a71ba27bb0ac8a15394d4e99172bc26d"
+      },
+      "managedCompletedUtc": "2026-10-16T07:42:05.7668532Z",
+      "baselineWarnings": 46,
+      "candidateWarnings": 46,
+      "addedDiagnostics": 0,
+      "removedDiagnostics": 0,
+      "allCompilerExitsNaturalZero": true,
+      "earlierImportStatus": "failed",
+      "buildStatus": "passed-diagnostic-private-candidate",
+      "runtimeStatus": "passed-scoped-solo-and-zombie-baseline",
+      "nativeCasesPassed": 63,
+      "nativeGroups": [
+        {
+          "label": "EditMode",
+          "passed": 48
+        },
+        {
+          "label": "PlayMode",
+          "passed": 8
+        },
+        {
+          "label": "Graphics targets",
+          "passed": 5
+        },
+        {
+          "label": "Boss",
+          "passed": 1
+        },
+        {
+          "label": "Camp",
+          "passed": 1
+        }
+      ],
+      "importCounts": {
+        "rawInputs": 8595,
+        "materials": 122,
+        "generatedOutputs": 244
+      },
+      "reviewedOriginalImages": {
+        "librarySheets": 13,
+        "libraryTiles": 196,
+        "bossImages": 6,
+        "campImages": 6
+      },
+      "importSummarySha256": "6BF9866DF07E192F69652FC4E6585B4B93484091CDE32A89ED9FBCE2B18CD202",
+      "importReportSha256": "E4A0DD051470CA5FB02021585AC605183AC24D7DE22A8028B84124F47DF0A4F1",
+      "scopedEvidenceSha256": "E8DA78051EA1041E96433E5AC3E2BC85FB37B7A18E02E59FF352C172374D0E9E",
+      "scopedBuildReviewSha256": "64DA8EF0EEEF92A909F297E0200DC7AB2DE2F823B17291CF31CC522C68E8E1ED",
+      "fullVisualAcceptance": false,
+      "runtimeAccepted": false,
+      "performanceAccepted": false,
+      "humanAccepted": false,
+      "publicRelease": true,
+      "runtimeEvidence": {
+        "solo": {
+          "status": "passed",
+          "summarySha256": "FC6E9FDD51BAD9D280D6F8A01E13661E74E8C6B53A66A6514A34A47DED2123B8",
+          "completedUtc": "2026-10-16T23:22:17.8476814Z",
+          "naturalExit": true,
+          "exitCode": 0,
+          "forcedCleanup": false
+        },
+        "zombieBaseline": {
+          "status": "passed",
+          "summarySha256": "D0CDD6353313597B16D9C4B56C32083BC33FD6025312B9058CD413B8BDB5A601",
+          "completedUtc": "2026-10-16T23:30:58.0976105Z",
+          "elapsedSeconds": 490.9600881,
+          "roleCount": 2,
+          "headless": true,
+          "samePc": true,
+          "purchaseRequested": false,
+          "seed": 1985673739,
+          "actualKills": 12,
+          "actualBowShots": 24,
+          "evidenceFilesVerified": 42,
+          "allNaturalExitZero": true,
+          "forcedCleanup": false,
+          "portsClearAfter": true,
+          "inputsUnchanged": true,
+          "semanticEvidenceVerified": true
+        },
+        "fullRuntimeAcceptance": false,
+        "menuAccepted": false,
+        "restartPersistenceAccepted": false,
+        "hordeAccepted": false,
+        "separatePcMultiplayerAccepted": false,
+        "performanceAccepted": false,
+        "humanAccepted": false,
+        "releaseAccepted": false
+      },
+      "publicReleaseMeaning": "Diagnostic public playtest only; full runtime, human, performance and Steam/production release acceptance remain false.",
+      "customDomainHttpsVerified": false
+    },
+    "density": "A historical six-role clock baseline covered 11.93 common seconds at low density. A later fixed 1,024 attempt failed during setup and did not establish ordinary-AI capacity. A separate private cp32 six-role comparison failed on screen readback; its strict comparison was not run, and a visible rerun still needs human approval. The original 1,024 target remains open; four-versus-six and fewer/faster enemies are private comparisons only.",
+    "gates": "Six players remains the default. Opening-menu interaction, human gameplay/listening/visual review, physical Steam Deck/controller, sustained 30 FPS, readable UI/text entry and separate-PC multiplayer remain open. Earlier Horde and full cooperative-purchase failures are retained. Existing Deck hooks and Windows desktop FPS are not Deck or Proton proof. No confirmed Deck installation route is published for this Windows build.",
+    "visualReview": "The root image review inspected all 13 original library sheets and all 196 model/material tiles, plus 6 original boss images and 6 original camp images. These controlled static views support scoped diagnostic build preparation. They do not establish animation, full in-world visual fit, human readability or sustained performance.",
+    "visualLimits": "A foreground tree heavily obscures the boss side view. Terrain hides parts of the charge lane, and only one substantial eruption ring is visibly established despite three enabled warning renderers. Mid/far camp views are screened by vegetation, with some cropped or reverse-facing sign text. Full boss/camp fit and warning/approach readability remain open. GPU timing and draw counts are unavailable and remain unknown; whole-editor samples are not packaged FPS or isolated effect cost."
+  },
+  "currentRelease": {
+    "label": "Assets34 / Source04 / 198DC281",
+    "state": "Public diagnostic playtest / broader acceptance open",
+    "sourceRevision": "e2df9bc87ff14da7625a82b7b4a0f2f70eda48d6+diagnostic-source-manifest:198DC2817C39C87ECC182B16D86E439C90870E60279F6119C8F54C67DC55F49D",
+    "verifiedSourceCommit": "a42a4013a71ba27bb0ac8a15394d4e99172bc26d",
+    "sourceManifestSha256": "198DC2817C39C87ECC182B16D86E439C90870E60279F6119C8F54C67DC55F49D",
+    "payloadFingerprint": "A98CD9D613E87BDDB722E428A5190241323E7B353140914F323E3F6E71DB3E84",
+    "sha256": "beb553565cd8de3c6ceeca81f5ef3478429203ddd308833a106352cfbd0b0eaf",
+    "protocol": "winter-hunt-party-61",
+    "saveVersion": 24,
+    "nativeCasesPassed": 63,
+    "soloSmokePassed": true,
+    "zombieNoPurchaseBaselinePassed": true,
+    "publicDownloadVerified": true,
+    "publicReleaseDate": "2026-10-16T23:56:54Z",
+    "customDomainHttpsVerified": false
   }
 }

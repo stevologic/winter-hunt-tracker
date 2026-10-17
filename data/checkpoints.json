@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-16",
   "build": {
-    "version": "core9-visual05 / 334BFEFE",
-    "label": "Current public Windows TEST BUILD",
-    "tested": "Visual05: four managed assemblies, 1,864 required native cases, six EngineFinale proofs and local Flight checks passed. Anonymous full-download hash, fresh extraction and Solo smoke passed. Bounded Zombie presence was verified; the later complete cooperative diagnostic failed. Human, Deck and separate-PC acceptance remain open.",
-    "sourceCandidate": "aee0f8e",
-    "sourceLabel": "This ledger describes the public Visual05 download above. Newer private development is separate and has not replaced this ZIP. Earlier public 1d79ef7 remains available under Previous builds.",
-    "publishedDatePhoenix": "October 11, 2026, 10:40 p.m. Phoenix (MST / UTC-7)",
-    "builtDatePhoenix": "October 11, 2026, 10:14 p.m. Phoenix (MST / UTC-7)",
+    "version": "Assets34 / Source04 / 198DC281",
+    "label": "Current public Windows diagnostic playtest on GitHub",
+    "tested": "Four managed assemblies, corrected import audit and 63 scoped native cases passed. Exact package/extraction, anonymous public GitHub download/hash, Solo and complete same-PC headless two-process no-purchase Zombie baseline passed. Menu, restart, human/controller/Deck, separate-PC, six-role/Horde/full-purchase and sustained 30 FPS remain open.",
+    "sourceCandidate": "198DC281",
+    "sourceLabel": "Exact package source manifest 198DC281 is recorded separately from the later verified source commit. Visual05 and older downloads remain archived with their original evidence. Custom-domain HTTPS delivery is unverified.",
+    "publishedDatePhoenix": "October 16, 2026, 4:56 p.m. Phoenix (MST / UTC-7)",
+    "builtDatePhoenix": "October 16, 2026, 3:50 p.m. Phoenix (MST / UTC-7)",
     "manifest": [
-      "Normal campaign and finite-round Zombie mode; separate Start New, Load Saved Game and Resume flows",
-      "Hunter nickname/color profiles, current equipment, camp activities and retained audio",
-      "In-scene Normal finale, updated UFO hull/reactor presentation and modest monster material changes",
-      "Build-specific isolated saves; all cooperative participants need this exact build and protocol 58",
-      "Windows test build: physical Steam Deck/controller, sustained 30 FPS and separate-PC multiplayer are unverified"
+      "Normal campaign and finite-round Zombie mode; Hunter is the current playable class",
+      "Campfire and existing devil-elk artwork updates, backed by scoped import/native validation",
+      "F2 Friends; Tab/F3 camp board; every peer needs this exact ZIP and protocol 61 / save 24",
+      "Build-specific isolated saves; prior saves and existing audio behavior preserved",
+      "Windows diagnostic playtest; full visual/human/hardware/performance and separate-PC acceptance remain open"
     ],
     "evidence": [
       {
-        "title": "Visual05 public test release and exact package",
-        "url": "https://github.com/stevologic/winter-hunt-tracker/releases/tag/playtest-core9-visual05-334bfefe"
+        "title": "Assets34 public diagnostic release and exact package",
+        "url": "https://github.com/stevologic/winter-hunt-tracker/releases/tag/playtest-assets34-198dc281"
       }
     ]
   },
@@ -35,7 +35,7 @@
         "First-person remains primary; third-person supports character inspection",
         "Compass and clearer upgrade navigation pass usability review"
       ],
-      "blocker": "Public Visual05 has bounded automated package evidence. Newer private work has passed managed compilation and is undergoing native validation; it is not a new public build. Sustained 30-FPS startup, human usability/listening and supported-hardware acceptance remain open."
+      "blocker": "Assets34 is the current GitHub public diagnostic playtest. Its exact package passed Solo and the complete same-PC headless two-process no-purchase Zombie baseline. Interactive menus, no-argument startup, process-restart persistence, sustained 30 FPS, human usability/listening and supported-hardware acceptance remain open."
     },
     {
       "id": "world",
@@ -50,23 +50,23 @@
         "Rare Christmas trees and late-snow red-nosed reindeer encounter verified",
         "20+ live elk lead to Santa boss, present and camp outfit unlock"
       ],
-      "blocker": "Art and encounter acceptance require in-game review."
+      "blocker": "Campfire artwork and the existing devil-elk encounter model are integrated in Assets34 source. The additional library passed its import audit, and all 13 library sheets / 196 tiles plus 6 boss and 6 camp originals were reviewed. Boss side/warning views and mid/far camp views remain partly obscured. Full visual fit, readable warnings/approaches, animation, multiplayer and performance acceptance remain open; the exact Assets34 package passed scoped Solo and local Zombie diagnostics, with broader acceptance still open."
     },
     {
       "id": "systems",
       "title": "Survive what follows",
       "biome": "fire",
       "state": "in-progress",
-      "summary": "Normal/Zombie menus and revised finale presentation are in the public Visual05 test build. Complete survival, progression, bosses and purchase acceptance remain unfinished.",
+      "summary": "Normal/Zombie and Hunter systems are in the Assets34 public diagnostic build. Broader survival, progression, bosses and full purchase acceptance remain unfinished.",
       "criteria": [
         "Normal Forest / Snow / Fire progression and independent endless Zombie runs preserve unlocks, host authority and saves; Start New never overwrites an existing slot",
         "Main-menu Zombie Mode includes all species and unrestricted-distance pursuit",
         "Fire undead-elk boss passes gameplay and balance review",
         "Special signature weapons roll independently at 33% per kill; no third-kill guarantee",
         "Destruction, NPC quests and progression pass complete-loop tests",
-        "Normal mode’s nuke ending is realistic and entirely in-scene, with no AI video. Endless Zombie has no win, nuke or finale."
+        "Normal mode\u2019s nuke ending is realistic and entirely in-scene, with no AI video. Endless Zombie has no win, nuke or finale."
       ],
-      "blocker": "The unchanged public ZIP showed live Zombie actors and real damage/kills in a direct-initialized diagnostic, then failed later cooperative route/party-exit assertions. This is not interactive menu or full-loop acceptance. Horde, cooperative purchase and human play remain open."
+      "blocker": "The current Assets34 same-PC headless two-process no-purchase baseline passed real kills, round/save, camp and grenade checks. This is not interactive menu, process-restart or full gameplay acceptance. Archived Visual05 failed its complete cooperative diagnostic; historical Horde/full-purchase failures remain separate and open."
     },
     {
       "id": "multiplayer",
@@ -102,7 +102,7 @@
     {
       "state": "verified",
       "title": "In-scene finale",
-      "text": "The old 30-45 second video requirement is cancelled. Normal mode’s nuclear ending must be realistic and rendered entirely in the game scene. Endless Zombie has no win, nuke or finale."
+      "text": "The old 30-45 second video requirement is cancelled. Normal mode\u2019s nuclear ending must be realistic and rendered entirely in the game scene. Endless Zombie has no win, nuke or finale."
     },
     {
       "state": "verified",

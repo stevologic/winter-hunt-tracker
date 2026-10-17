@@ -593,3 +593,151 @@ footer {
     background: rgba(9, 18, 15, 0.92) !important;
   }
 }
+
+/* Playtest draft: preserve the snow scene and bow identity, clarify the next step. */
+main[id] { scroll-margin-top: 100px; }
+.skip { z-index: 60; }
+.hero-copy { padding: clamp(24px, 3vw, 38px); }
+.hero .intro { max-width: 42ch; }
+.hero .note strong { color: var(--text); }
+.status-strip a, .feature-grid a, .next-build a {
+  color: #f1dca7;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.status-strip a { display: block; margin-top: 10px; }
+.status-strip h2 { font-size: clamp(25px, 2.4vw, 31px); }
+.feature-section, #production { padding-top: 56px; padding-bottom: 56px; }
+.section-intro { max-width: 76ch; margin-bottom: 28px; }
+.section-intro > p:last-child { color: var(--muted); }
+.feature-grid, .gate-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.feature-grid article, .gate-summary article {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(9, 20, 15, 0.94);
+}
+.feature-grid article { display: flex; flex-direction: column; }
+.feature-number {
+  color: #b9caba;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.15em;
+  margin-bottom: 22px;
+}
+.feature-grid h3 { font-size: 31px; line-height: 1.15; }
+.feature-grid p { color: #c7d5ca; font-size: 15px; margin: 16px 0 24px; }
+.feature-grid a { margin-top: auto; font-size: 14px; }
+.gate-summary { margin: 28px 0; }
+.gate-summary article { padding: 24px; }
+.gate-summary h4 { font-size: 19px; line-height: 1.35; margin: 14px 0 10px; }
+.gate-summary p { font-size: 14px; line-height: 1.7; color: #c7d5ca; margin: 0; }
+.gate-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  border-left: 3px solid currentColor;
+  padding-left: 10px;
+}
+.gate-label.passed { color: #b5deb8; }
+.gate-label.failed { color: #f2bc9e; }
+.gate-label.pending { color: #d2d9eb; }
+.next-build {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 32px;
+  margin: 30px 0;
+  padding: 30px;
+  border: 1px solid #847651;
+  border-radius: var(--radius);
+  background: #17251e;
+  scroll-margin-top: 110px;
+}
+.next-build h3 { font-size: 32px; line-height: 1.15; }
+.next-build p { max-width: 70ch; font-size: 14px; color: #cad6cd; }
+.next-build .eyebrow { font-size: 10px; }
+.next-build-state { border-left: 1px solid #59614b; padding-left: 28px; }
+.next-build-state a { font-size: 14px; }
+#candidate-evidence { margin-top: 24px; }
+.current-work { padding-top: 0; border-top: 1px solid var(--line); }
+.current-work > summary { color: #ead59a; font-size: 14px; }
+.acceptance-detail, .decision-archive {
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(9, 20, 15, 0.94);
+  padding: 0 24px;
+}
+.acceptance-detail > summary, .decision-archive > summary {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 22px 0;
+  color: #f1dca7;
+}
+.acceptance-detail .production-phases { margin: 4px 0 24px; }
+.decision-archive .decisions { margin: 4px 0 24px; }
+.launch-scope { font-size: 13px; color: #c7d5ca; }
+.latest-launch-steps { padding-left: 1.4em; }
+.latest-launch-steps li { padding-left: 8px; margin-bottom: 13px; }
+.latest-download { max-width: 100%; white-space: normal; text-align: center; }
+.latest-playtest .hash { font-size: 12px; }
+.latest-playtest details > summary { line-height: 1.5; }
+.section-intro, #production-summary, .gallery-intro, .sale-note { text-wrap: pretty; }
+section[id] { scroll-margin-top: 108px; }
+
+@media (max-width: 1100px) {
+  header { gap: 16px; }
+  header .live { display: none; }
+  nav { gap: 8px 16px; }
+  .feature-grid article { padding: 24px; }
+  .feature-grid h3 { font-size: 28px; }
+}
+@media (max-width: 850px) {
+  .feature-grid, .gate-summary { grid-template-columns: 1fr; }
+  .feature-grid article { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 0 18px; }
+  .feature-number { grid-column: 1; grid-row: 1 / span 3; margin: 4px 0 0; }
+  .feature-grid h3, .feature-grid p, .feature-grid a { grid-column: 2; }
+  .feature-grid p { margin: 12px 0 18px; }
+  .next-build { grid-template-columns: 1fr; gap: 18px; }
+  .next-build-state { border-left: 0; border-top: 1px solid #59614b; padding: 20px 0 0; }
+}
+@media (max-width: 760px) {
+  header { position: relative; top: auto; padding-top: 16px; padding-bottom: 12px; }
+  nav { justify-content: center; width: 100%; gap: 4px 14px; }
+  nav a { min-height: 44px; display: inline-flex; align-items: center; font-size: 12px; }
+  html { scroll-padding-top: 18px; }
+  main[id], section[id], .next-build { scroll-margin-top: 18px; }
+  .hero { align-items: stretch; padding-top: 22px; }
+  .hero .hero-art { width: 100%; }
+  .hero-copy { padding: 26px 22px; }
+  .hero .button { width: 100%; justify-content: center; }
+  .hero .eyebrow .wordmark { font-size: 14px; }
+  .status-strip { gap: 12px; }
+  .status-strip > div + div { border: 1px solid var(--line); }
+  .status-strip > div { padding: 20px 22px; }
+  .feature-section, #production { padding-top: 38px; padding-bottom: 38px; }
+  .feature-grid article, .gate-summary article { padding: 22px; }
+  .feature-grid h3 { font-size: 27px; }
+  .next-build { padding: 24px 20px; }
+  .next-build h3 { font-size: 29px; }
+  .acceptance-detail, .decision-archive { padding: 0 17px; }
+  .acceptance-detail > summary, .decision-archive > summary { font-size: 15px; }
+  .acceptance-detail .production-phases > li { padding: 18px 16px; }
+  .latest-launch-steps { padding-left: 1.2em; }
+  .latest-launch-steps li { padding-left: 2px; }
+  .latest-launch-steps code { font-size: 12px; }
+}
+@media (max-width: 360px) {
+  nav { gap: 0 10px; }
+  .hero-copy { padding: 22px 16px; }
+  .hero .eyebrow { letter-spacing: 0.1em; }
+  .feature-grid article { grid-template-columns: 24px minmax(0, 1fr); gap: 0 12px; padding: 20px 16px; }
+  .gate-summary article { padding: 20px 16px; }
+}
