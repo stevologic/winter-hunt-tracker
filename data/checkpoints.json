@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "build": {
     "version": "Assets34 / Source04 / 198DC281",
     "label": "Current public Windows diagnostic playtest on GitHub",
@@ -121,8 +121,8 @@
       "Verify onboarding and fee date"
     ],
     [
-      "Oct 20",
-      "Submit store, pricing and survey"
+      "Oct 19",
+      "Planned store-page review submission"
     ],
     [
       "Oct 30",
@@ -130,7 +130,7 @@
     ],
     [
       "Nov 2",
-      "Playable build review candidate"
+      "Planned release-candidate acceptance and build-review submission"
     ],
     [
       "Nov 12",

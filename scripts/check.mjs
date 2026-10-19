@@ -1,5 +1,8 @@
 import{readFile,readdir}from'node:fs/promises';import assert from'node:assert/strict';
 const d=JSON.parse(await readFile('data/checkpoints.json','utf8'));const latest=JSON.parse(await readFile('data/latest-playtest.json','utf8'));assert.equal(d.build.version,latest.version);assert.equal(d.build.publishedDatePhoenix,latest.publishedDatePhoenix);assert.equal(d.stages.length,5);
+// Keep the store-page target separate from release-candidate/build review.
+assert.deepEqual(d.targets[1],['Oct 19','Planned store-page review submission']);
+assert.deepEqual(d.targets[3],['Nov 2','Planned release-candidate acceptance and build-review submission']);
 for(const s of d.stages){assert(['requested','in-progress','verified'].includes(s.state));assert(s.criteria.length>0);if(s.state==='verified')assert(s.evidence?.length,'Verified checkpoint requires evidence');}
 for(const[,u]of d.sources)assert.equal(new URL(u).hostname,'partner.steamgames.com');
 const privatePlaytest=JSON.parse(await readFile('data/private-playtest.json','utf8'));

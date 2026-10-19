@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "title": "The path from playtest to production",
   "summary": "Assets34 / Source04 is the current public Windows diagnostic playtest on GitHub. The exact public ZIP passed anonymous HTTPS download/hash verification, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. Full runtime, visual/human/hardware, restart, separate-PC, six-role/Horde/full-purchase and sustained 30-FPS acceptance remain open. Custom-domain HTTPS delivery remains unverified.",
   "candidate": {
@@ -138,7 +138,7 @@
         "Verify onboarding, app identity, store/pricing/content survey, playable build review, install/launch and discount eligibility in the authorized Steam workflow.",
         "Every actual game release updates this tracker with the matching download and instructions, then verifies the live site. Public release, merge and promotion require their remaining approvals."
       ],
-      "gate": "November 2 review candidate and November 16 release remain planning targets, not promises. Account/app identity and Steam gates remain unverified, including the October 19/20 submission-date discrepancy. Assets34 is an authorized GitHub public diagnostic playtest, not a Steam or production release. Visual05 and older ZIPs, hashes and release dates are unchanged. Normal winter-hunt.com HTTPS remains blocked by pending certificate/settings approval; direct GitHub delivery is verified separately."
+      "gate": "October 19 store-page review submission, November 2 release-candidate acceptance and build-review submission, and November 16 release remain planning targets, not completed submissions or approvals. Account/app identity, owner-approved store preview and Steam gates remain unverified. Assets34 is an authorized GitHub public diagnostic playtest, not a Steam or production release. Visual05 and older ZIPs, hashes and release dates are unchanged. Normal winter-hunt.com HTTPS remains blocked by pending certificate/settings approval; direct GitHub delivery is verified separately."
     }
   ],
   "routine": {
