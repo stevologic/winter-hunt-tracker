@@ -6,9 +6,13 @@ assert(!/Visual\d+|Assets\d+|Source\d+|Core\d+|198DC281|334BFEFE/i.test(visible)
 const links=[...html.matchAll(/href="([^"]*)"/g)].map(x=>x[1]);
 assert(!links.some(x=>/releases\/|\.zip(?:$|[?#])|data\//i.test(x)),'Public page must not expose package or provenance links');
 assert.equal(links.filter(x=>x==='https://www.gofundme.com/f/help-build-winterhunt-an-indie-coop-hunting-game').length,3);
-assert.match(visible,/Testing access is being arranged/);
-assert.match(visible,/access managed individually by the developer/);
-assert.match(visible,/does not currently promise testing access or a copy of the game/);
+assert.match(visible,/Request playtest access/);
+assert(!visible.includes('Testing access is being arranged'));
+assert.equal(links.filter(x=>x==='https://drive.google.com/drive/folders/12kt2fVVhpI2BOdXKgZEXtpxxe9PREiET').length,2);
+assert.match(visible,/Access requires owner approval and is granted individually/);
+assert.match(visible,/Sign in with your Google account/);
+assert.match(visible,/Donations are voluntary and independent of playtest access/);
+assert.match(visible,/donating does not guarantee approval/);
 assert(!/\$10|buy now|donate to (?:play|get access)/i.test(visible));
 assert.match(visible,/no guaranteed release date/i);
 assert.match(visible,/Steam Deck support is not verified/);

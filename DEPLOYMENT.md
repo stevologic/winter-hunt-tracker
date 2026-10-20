@@ -22,4 +22,4 @@ Display the actual GitHub release/publication timestamp beside each version/down
 
 ## Current publication override — October 20, 2026
 
-The public-download presentation instructions above are historical. The current landing page must not display public package links or internal build labels. Keep provenance records and existing GitHub release artifacts intact. Publish the static root from main, run `npm run build` and `npm test`, and verify no legacy renderer restores download links. Testing access remains individually managed and pending; campaign contributions carry no advertised access promise.
+The public-download presentation instructions above are historical. The current landing page must not display public package links or internal build labels. Keep provenance records and existing GitHub release artifacts intact. Publish the static root from main, run `npm run build` and `npm test`, and verify no legacy renderer restores download links. The restricted Google Drive folder is linked for individually approved access requests; campaign contributions carry no advertised access promise.
