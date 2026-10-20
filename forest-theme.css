@@ -741,3 +741,13 @@ section[id] { scroll-margin-top: 108px; }
   .feature-grid article { grid-template-columns: 24px minmax(0, 1fr); gap: 0 12px; padding: 20px 16px; }
   .gate-summary article { padding: 20px 16px; }
 }
+
+/* Optional campaign support alongside the diagnostic download. */
+.hero .support-cta { margin-top: 12px; background: transparent; color: var(--lime); white-space: normal; text-align: center; }
+.hero .support-cta:hover { background: #24382c; color: #ffe3ae; }
+.support-camp { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 36px; align-items: center; background: #14231b; border-block: 1px solid var(--line); }
+.support-camp p { max-width: 66ch; }
+.support-camp-action { min-width: 0; padding: 28px; border: 1px solid #6e7954; border-radius: 5px; background: #1c2b20; }
+.support-camp-action h3 { font-size: 28px; }
+.support-camp-action .button { max-width: 100%; white-space: normal; text-align: center; }
+@media (max-width: 760px) { .support-camp { grid-template-columns: minmax(0, 1fr); gap: 20px; } .support-camp-action { padding: 22px; } }
