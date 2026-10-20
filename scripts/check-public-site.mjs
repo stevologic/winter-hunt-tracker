@@ -36,3 +36,10 @@ for(const image of imagery.images){
   for(const derivative of image.derivatives) assert.equal(createHash('sha256').update(await readFile(derivative.path)).digest('hex'),derivative.sha256);
 }
 console.log('PASS: original cover preserved, authentic image hashes verified, no HUD24 or generated promotional art published.');
+
+const roadmap=await readFile('dist/roadmap.html','utf8');
+assert.match(html,/href="roadmap.html"/);
+assert(!/https?:\/\/|drive\.google|\.zip|80%|80 percent|password|credential/i.test(roadmap));
+for(const text of ['Build49','Live voice:','Online leaderboards:','Particle-rich visual effects:','Playing with friends:','reward and save recovery','production build','rollback checks','Platform onboarding remains pending']) assert(roadmap.includes(text),text);
+assert.match(roadmap,/not a claim that online services are live/);
+console.log('PASS: public roadmap status categories, no access URLs or completion percentage, and homepage navigation.');

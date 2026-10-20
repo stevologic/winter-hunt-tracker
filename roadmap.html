@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a17">
+  <meta name="description" content="Winter Hunt development roadmap: completed private-build work, features in development and validation still ahead.">
+  <title>Winter Hunt | The work ahead</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101a17; color: #f5f1e6; line-height: 1.65; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header, main, footer { max-width: 1040px; margin: auto; padding-inline: clamp(22px, 6vw, 64px); }
+    header { padding-block: 30px; border-bottom: 1px solid #3d5147; }
+    .wordmark { font-weight: 750; letter-spacing: .22em; color: #efce91; }
+    main { padding-block: 56px; }
+    .eyebrow { color: #c1cdbf; font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2.7rem, 7vw, 4.6rem); line-height: 1.07; margin: 18px 0 24px; font-weight: 500; }
+    .intro { max-width: 65ch; font-size: 1.1rem; color: #d0dacd; }
+    .scope { padding: 18px 22px; background: #1c2b20; border-left: 3px solid #efce91; margin-block: 30px 42px; }
+    section { margin-block: 22px; padding: clamp(22px, 4vw, 32px); border: 1px solid #496052; border-radius: 6px; background: #17251e; }
+    h2 { margin: 10px 0 16px; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.2; }
+    .status { display: inline-block; border: 1px solid #63745d; border-radius: 3px; padding: 3px 10px; font-size: .75rem; font-weight: 650; color: #dfebd8; }
+    .active { color: #efce91; border-color: #8a7955; }
+    ul { padding-left: 1.25em; margin-bottom: 0; }
+    li { padding-left: 5px; margin-block: 10px; }
+    li strong { color: #f5f1e6; }
+    p { color: #d0dacd; }
+    footer { padding-block: 26px 40px; border-top: 1px solid #3d5147; color: #b9c8b9; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <header><span class="wordmark">WINTER HUNT</span></header>
+  <main>
+    <p class="eyebrow">PUBLIC DEVELOPMENT ROADMAP</p>
+    <h1>The work ahead.</h1>
+    <p class="intro">We’re continuing work on Winter Hunt’s features, online systems and testing. Here is what has been completed and what still needs attention.</p>
+    <p class="scope">Work in progress. Completed private-build fixes and automated checks do not establish human-play, hardware or release readiness.</p>
+
+    <section aria-labelledby="completed-title">
+      <span class="status">Completed / scoped work</span>
+      <h2 id="completed-title">Private-build fixes and automated checks</h2>
+      <p>Build49 private-build fixes and automated checks have been completed. The validation areas below remain pending.</p>
+    </section>
+
+    <section aria-labelledby="development-title">
+      <span class="status active">In development</span>
+      <h2 id="development-title">Features still being built</h2>
+      <ul>
+        <li><strong>Live voice:</strong> in development. Service setup, connection recovery and live acceptance remain to be completed.</li>
+        <li><strong>Online leaderboards:</strong> in development. Opt-in online submission and ranking still need service integration and validation.</li>
+        <li><strong>Third-level zombie elk:</strong> work on zombie elk for the fire level is in development.</li>
+        <li><strong>Particle-rich visual effects:</strong> dedicated work across biomes, environments, the interface, weapons and impacts.</li>
+        <li><strong>Playing with friends:</strong> improve the hosting and joining experience.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="validation-title">
+      <span class="status">Pending validation</span>
+      <h2 id="validation-title">Real-world play and hardware</h2>
+      <ul>
+        <li>Human playtesting of campaign progression, encounters and the full friends experience.</li>
+        <li>Input, accessibility, controller and Steam Deck validation on actual devices.</li>
+        <li>Networking between separate PCs.</li>
+        <li>Audio and performance validation.</li>
+        <li>Targeted acceptance checks for reward and save recovery.</li>
+        <li>Validation of which player classes are available in the production build.</li>
+        <li>Shipping package, clean installation, update, restart and rollback checks.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="platform-title">
+      <span class="status">Pending</span>
+      <h2 id="platform-title">Platform onboarding</h2>
+      <p>Platform onboarding remains pending. Store-readiness work includes supported-feature descriptions, privacy and service disclosures, and measured hardware requirements.</p>
+    </section>
+  </main>
+  <footer>Winter Hunt · Work in progress · This roadmap is a development status update, not a claim that online services are live.</footer>
+</body>
+</html>
