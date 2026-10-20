@@ -19,3 +19,16 @@ for(const [,src] of html.matchAll(/(?:src|href)="(assets\/[^"?]+)"/g)) await acc
 for(const path of ['data/hero.json','data/scene.json','data/gallery.json','data/latest-playtest.json']) JSON.parse(await readFile(path,'utf8'));
 assert.equal((html.match(/<!--/g)||[]).length,(html.match(/-->/g)||[]).length);
 console.log('PASS: restricted testing copy, no public package links or internal labels, support links, anchors, images, preserved provenance and no paid-access promise.');
+
+// Preserve the authentic cover and keep unapproved development captures off the landing page.
+assert.match(html,/src="assets\/hero-gameplay-visual05.webp"/);
+assert(!/camp-controls|hud24|coop-hero-v2/.test(html));
+const imagery=JSON.parse(await readFile('data/site-imagery.json','utf8'));
+assert.equal(imagery.kind,'Actual captured gameplay only');
+assert.equal(imagery.images.length,3);
+const {createHash}=await import('node:crypto');
+for(const image of imagery.images){
+  assert.equal(createHash('sha256').update(await readFile(image.fullFramePath)).digest('hex'),image.sourceSha256);
+  for(const derivative of image.derivatives) assert.equal(createHash('sha256').update(await readFile(derivative.path)).digest('hex'),derivative.sha256);
+}
+console.log('PASS: original cover preserved, authentic image hashes verified, no HUD24 or generated promotional art published.');

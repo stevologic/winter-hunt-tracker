@@ -1,0 +1,90 @@
+{
+  "kind": "Actual captured gameplay only",
+  "conversion": "Full frame preserved. WebP encoding and proportional downsampling only; no compositing, retouching, generated additions or HUD removal.",
+  "images": [
+    {
+      "name": "encounter-ufo",
+      "description": "Earlier staged in-game UFO encounter",
+      "sourceFilename": "scene-ufo-visual05.webp",
+      "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+      "sourceSha256": "4c7f05f083e2ef8804ab8d62b3b5f6d12586f985dbce0ed8114ca9a5d5a5c8c6",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "derivatives": [
+        {
+          "path": "assets/encounter-ufo-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 20378,
+          "sha256": "39622b8ecafbff105645b28b08eaf7fab07cedd4bb1a4f4f3d11c1b9492a55b8"
+        },
+        {
+          "path": "assets/encounter-ufo-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 41470,
+          "sha256": "4c543aa5426f46e1def47a7b5124e01d8f24de6864fc107e937e190c5f527465"
+        }
+      ],
+      "fullFramePath": "assets/scene-ufo-visual05.webp"
+    },
+    {
+      "name": "encounter-creature",
+      "description": "Earlier staged in-game creature encounter",
+      "sourceFilename": "hero-gameplay-visual05.webp",
+      "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+      "sourceSha256": "775a554612beb7b042a57c8b78dbc3631d7fa2336adc2e739623c3e3f266add7",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "derivatives": [
+        {
+          "path": "assets/encounter-creature-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 25068,
+          "sha256": "e5d98e14d109eff213a628fc2ba63e5983be38e7a19dde9d93e0103b160a5762"
+        },
+        {
+          "path": "assets/encounter-creature-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 50662,
+          "sha256": "6c093fbd62585ff7ac1717dc6e314e15537dfc09be77d267927987135c03ef44"
+        }
+      ],
+      "fullFramePath": "assets/hero-gameplay-visual05.webp"
+    },
+    {
+      "name": "encounter-night",
+      "description": "Earlier staged nighttime in-game rescue encounter; not multiplayer proof",
+      "sourceFilename": "scene-night-encounter-visual05.webp",
+      "sourceRevision": "aee0f8e66af2c8571a06032143c2de09c1e2bc65+working-tree:334BFEFE141DF39FBC912FA4AAC83E7D96D13C7EE63165E2FF40861ECB3DB0E9",
+      "sourceSha256": "cb52266550433eb85621cc78f7f44dfab73b68de874f59f03f847d285ffd074e",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "fullFramePath": "assets/scene-night-encounter-visual05.webp",
+      "derivatives": [
+        {
+          "path": "assets/encounter-night-480.webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18850,
+          "sha256": "1555be415b1035dff8ac9d66c61a7805f045a516185edf623fca0846ed86fcba"
+        },
+        {
+          "path": "assets/encounter-night-768.webp",
+          "width": 768,
+          "height": 480,
+          "bytes": 36682,
+          "sha256": "4d0eafcda5366f3171f4c27ba00472f2575a07f5364ea7c1f5c1e3cb049a31f9"
+        }
+      ]
+    }
+  ]
+}
