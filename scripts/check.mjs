@@ -16,7 +16,7 @@ assert.match(d.build.label,/Current public Windows diagnostic playtest on GitHub
 assert.match(d.build.tested,/63 scoped native cases/);
 assert.match(d.build.tested,/two-process no-purchase Zombie baseline/);
 assert.match(d.build.sourceLabel,/Visual05 and older downloads remain archived/);
-assert.match(d.build.sourceLabel,/Custom-domain HTTPS delivery is unverified/);
+assert.match(d.build.sourceLabel,/winter-hunt\.com HTTPS was verified October 20, 2026\./);
 async function walk(p){for(const f of await readdir(p,{withFileTypes:true})){const q=`${p}/${f.name}`;if(f.isDirectory())await walk(q);else if(/\.(html|css|js|json)$/.test(q)){let t=await readFile(q,'utf8');if(q==='dist/data/private-playtest.json'){assert.deepEqual(JSON.parse(t),privatePlaytest);t=t.replace(JSON.stringify(authorizedPrivateUrl),'"AUTHORIZED_PRIVATE_PLAYTEST_LINK"');}assert(!/operation-winter-steam-sale|steamcommunity\.com|password|ghp_|github_pat_|appID\s*[:=]\s*\d/i.test(t),`Private data risk: ${q}`);}}}await walk('dist');
 await import('./check-playtest.mjs');
 await import('./check-playtest-render.mjs');

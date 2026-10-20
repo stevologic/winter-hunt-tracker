@@ -47,9 +47,9 @@ assert.deepEqual(latest.sourceEvidence, {
 assert.match(latest.publicDownloadReceiptSha256, /^[A-Fa-f0-9]{64}$/);
 assert(!/^0{64}$/.test(latest.publicDownloadReceiptSha256));
 assert.equal(latest.delivery.githubDirectHttpsVerified, true);
-assert.equal(latest.delivery.customDomainHttpsVerified, false);
-assert.match(latest.delivery.customDomainStatus, /pending approval/);
-assert.equal(latest.delivery.lastCustomDomainCheckUtc, '2026-10-16T22:54:07.782285+00:00');
+assert.equal(latest.delivery.customDomainHttpsVerified, true);
+assert.equal(latest.delivery.customDomainStatus, 'winter-hunt.com HTTPS was verified October 20, 2026.');
+assert.equal(latest.delivery.lastCustomDomainCheckUtc, '2026-10-20T02:39:18.3882597Z');
 assert.match(latest.verification, /headless same-PC two-process no-purchase Zombie baseline/);
 assert.match(latest.verification, /same-process save readback, not restart persistence/);
 assert.match(latest.verification, /anonymously fetched over normal HTTPS with HTTP 200/);
@@ -82,7 +82,7 @@ assert.equal(archive.saveVersion, 22);
 assert.equal(archive.zombieDiagnosticCompletePassed, false);
 assert.notEqual(latest.url, archive.url);
 
-assert(html.includes('playtest.js?v=assets34-public-198dc281'));
+assert(html.includes('playtest.js?v=assets34-https-20261020'));
 assert(script.includes("cache: 'no-store'"));
 const initial = html.match(/<section id="play"[^>]*>([\s\S]*?)<\/section>/)[1];
 const fallback = initial.match(/<div[^>]*data-latest-fallback[^>]*>([\s\S]*?)<\/div>/)[1];
@@ -91,7 +91,7 @@ for (const value of [latest.url, latest.filename, latest.sha256, String(latest.b
 }
 assert(fallback.includes('F2 opens Friends; Tab/F3 opens the camp board'));
 assert(fallback.includes('Hunter is the current playable class'));
-assert(fallback.includes('custom-domain delivery is not claimed'));
+assert(fallback.includes('winter-hunt.com HTTPS was verified October 20, 2026.'));
 
 async function render(next = latest) {
   const target = {innerHTML: initial};
@@ -112,7 +112,7 @@ const output = await render();
 assert(output.indexOf('id="latest-playtest"') < output.indexOf('id="visual05-archive"'));
 assert(output.indexOf('id="latest-playtest"') < output.indexOf('id="private-playtest"'));
 const current = output.match(/<div class="latest-playtest" id="latest-playtest">([\s\S]*?)<\/div>/)[1];
-for (const text of ['No GitHub sign-in needed', 'WinterHunt.exe', 'Extract All', 'WinterHunt.launch.json', 'Notices', 'Hunter is the current playable class', '<kbd>F2</kbd>', '<kbd>Tab</kbd>', '<kbd>F3</kbd>', 'HOST MY CAMP', 'JOIN ADDRESS', 'START-HERE.txt', 'separate-PC/Internet', 'not release-ready', 'Source-derived steps', 'custom-domain delivery is not claimed', latest.publishedDatePhoenix, latest.sourceRevision, latest.verifiedSourceCommit]) {
+for (const text of ['No GitHub sign-in needed', 'WinterHunt.exe', 'Extract All', 'WinterHunt.launch.json', 'Notices', 'Hunter is the current playable class', '<kbd>F2</kbd>', '<kbd>Tab</kbd>', '<kbd>F3</kbd>', 'HOST MY CAMP', 'JOIN ADDRESS', 'START-HERE.txt', 'separate-PC/Internet', 'not release-ready', 'Source-derived steps', 'winter-hunt.com HTTPS was verified October 20, 2026.', latest.publishedDatePhoenix, latest.sourceRevision, latest.verifiedSourceCommit]) {
   assert(current.includes(text), `Current playtest card must include ${text}`);
 }
 assert(!current.includes('failed its complete cooperative diagnostic'), 'Do not label the new scoped baseline with the archived failure');
@@ -134,4 +134,4 @@ assert.equal(support.transactionsPerformed, false);
 assert(html.includes(support.dogecoin.address) && html.includes(support.xMoney.url));
 assert(!html.includes('src="world.js"') && !html.includes('href="world.css"'));
 assert(!html.includes('AI-generated concept illustration'));
-console.log('PASS: exact public Assets34 identity, scoped no-purchase baseline, source/release dates, source-derived controls, TLS hold, safe fallback and preserved archive/support/theme.');
+console.log('PASS: exact public Assets34 identity, scoped no-purchase baseline, source/release dates, source-derived controls, verified HTTPS status, safe fallback and preserved archive/support/theme.');

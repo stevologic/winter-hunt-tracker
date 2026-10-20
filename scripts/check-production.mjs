@@ -11,13 +11,13 @@ for (const key of ['sourceRevision', 'verifiedSourceCommit', 'payloadFingerprint
 }
 assert.equal(current.sourceManifestSha256, latest.effectiveSourceManifestSha256);
 assert.equal(current.publicReleaseDate, latest.publishedDate);
-assert.equal(current.customDomainHttpsVerified, false);
+assert.equal(current.customDomainHttpsVerified, true);
 assert.equal(current.verifiedSourceCommit, 'a42a4013a71ba27bb0ac8a15394d4e99172bc26d');
 assert.equal(`${d.candidate.base}+working-tree:${d.candidate.fingerprint}`,archive.sourceRevision);
 assert.equal(d.candidate.payloadFingerprint,archive.payloadFingerprint);
 assert.notEqual(current.sourceRevision, archive.sourceRevision);
 assert.match(d.summary, /Assets34.*current public Windows diagnostic playtest on GitHub/);
-assert.match(d.summary, /Custom-domain HTTPS delivery remains unverified/);
+assert.match(d.summary, /winter-hunt\.com HTTPS was verified October 20, 2026\./);
 assert.match(d.candidate.state,/Public test build/);
 assert.match(d.candidate.passed,/1,864 required native.*zero failed or skipped/);
 assert.match(d.candidate.passed,/one rendered host and five headless local peers/);
@@ -52,7 +52,7 @@ assert.match(d.phases[3].gate,/protocol 61 \/ save 24/);
 assert.match(d.phases[3].gate,/Hunter is the current playable class/);
 assert.match(d.phases[2].gate,/earlier Visual05 evidence, not new Assets34 screenshots/);
 assert.match(d.phases[6].gate,/no-argument launch, process-restart persistence/);
-assert.match(d.phases[7].gate,/pending certificate\/settings approval/);
+assert.match(d.phases[7].gate,/winter-hunt\.com HTTPS was verified October 20, 2026/);
 assert.match(d.phases[0].criteria.join(' '),/finite increasing enemy-budget rounds/);
 assert.match(d.candidate.limits,/Zombie Horde or full ZombieCoopPurchase/);
 const nodes = new Map();
@@ -71,7 +71,7 @@ assert.match(evidence,/200\.63 average FPS/);
 assert(!evidence.includes('releases/download'),'Production status must not introduce a replacement download');
 assert.equal((nodes.get('#production-phases').innerHTML.match(/<article>/g)||[]).length,8);
 assert.equal(nodes.get('#production-summary').textContent,d.summary);
-console.log('PASS: current Assets34 identity, separate archived Visual05/Core8 evidence, historical failed diagnostics and open acceptance/TLS gates.');
+console.log('PASS: current Assets34 identity, separate archived Visual05/Core8 evidence, historical failed diagnostics and open acceptance gates and verified HTTPS status.');
 assert.match(d.routine.source,/9F0107F223A307EEE3A2D1FE3B1B2839D3792E71A4296138C0008A10F6D1703E/); assert.match(d.routine.passed,/145 focused native/); assert.match(d.routine.limits,/subsequently built and packaged/);
 
 // Current Assets34 evidence must stay distinct from the immutable archived Visual05 package.
@@ -111,7 +111,7 @@ assert(evidence.includes(packaged.archiveSha256));
 assert(evidence.includes(packaged.payloadFingerprint));
 assert.match(evidence,/Visual05 retains protocol 58 \/ save schema 22/);
 assert.match(evidence,/Exact current Assets34 package/);
-assert.match(evidence,/custom-domain HTTPS remains unverified/);
+assert.match(evidence,/winter-hunt\.com HTTPS was verified October 20, 2026\./);
 for (const label of ['Staged for import','Imported in Unity','Used in gameplay','Included in a download']) assert(evidence.includes(label));
 assert.match(evidence,/8,076 original WAV files/);
 assert.match(evidence,/Source04 native import audit passed/);
@@ -141,7 +141,8 @@ assert.deepEqual(continuation.sourceEvidence.importCounts,{rawInputs:8595,materi
 assert.deepEqual(continuation.sourceEvidence.reviewedOriginalImages,{librarySheets:13,libraryTiles:196,bossImages:6,campImages:6});
 assert.equal(continuation.sourceEvidence.scopedEvidenceSha256,'E8DA78051EA1041E96433E5AC3E2BC85FB37B7A18E02E59FF352C172374D0E9E');
 assert.equal(continuation.sourceEvidence.scopedBuildReviewSha256,'64DA8EF0EEEF92A909F297E0200DC7AB2DE2F823B17291CF31CC522C68E8E1ED');
-for (const key of ['fullVisualAcceptance','runtimeAccepted','performanceAccepted','humanAccepted','customDomainHttpsVerified']) assert.equal(continuation.sourceEvidence[key],false);
+for (const key of ['fullVisualAcceptance','runtimeAccepted','performanceAccepted','humanAccepted']) assert.equal(continuation.sourceEvidence[key],false);
+assert.equal(continuation.sourceEvidence.customDomainHttpsVerified,true);
 assert.equal(continuation.sourceEvidence.publicRelease,true);
 assert.match(continuation.sourceEvidence.publicReleaseMeaning,/Diagnostic public playtest only/);
 assert.match(continuation.sourceEvidence.publicReleaseMeaning,/Steam\/production release acceptance remain false/);

@@ -1,7 +1,7 @@
 {
   "updated": "2026-10-19",
   "title": "The path from playtest to production",
-  "summary": "Assets34 / Source04 is the current public Windows diagnostic playtest on GitHub. The exact public ZIP passed anonymous HTTPS download/hash verification, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. Full runtime, visual/human/hardware, restart, separate-PC, six-role/Horde/full-purchase and sustained 30-FPS acceptance remain open. Custom-domain HTTPS delivery remains unverified.",
+  "summary": "Assets34 / Source04 is the current public Windows diagnostic playtest on GitHub. The exact public ZIP passed anonymous HTTPS download/hash verification, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. Full runtime, visual/human/hardware, restart, separate-PC, six-role/Horde/full-purchase and sustained 30-FPS acceptance remain open. winter-hunt.com HTTPS was verified October 20, 2026.",
   "candidate": {
     "label": "Core9 / Visual05 / 334BFEFE",
     "base": "aee0f8e66af2c8571a06032143c2de09c1e2bc65",
@@ -128,7 +128,7 @@
         "Run bound managed/native, build/package and persistence tests for the final source; cover repeated camp entry, waves, high-density combat and Normal regression.",
         "Retain the passed Visual05 EngineFinale actual-screen/HUD and Flight evidence. Complete sustained 30-FPS startup verification, human gameplay/listening/visual review, physical controller/Deck and separate-PC Internet six-player checks; a rendered host with local headless peers is distinct evidence."
       ],
-      "gate": "Assets34 passed exact public GitHub download/hash, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. The archived Visual05 complete cooperative diagnostic failed. Opening-menu selection, no-argument launch, process-restart persistence and sustained 30-FPS startup remain open. Human playtest, controllers/Deck and separate-PC multiplayer remain open, as do six-role/Horde/full-purchase and full visual acceptance. Preserve failed evidence and earlier ZIPs; scoped checks do not establish full acceptance. Custom-domain HTTPS delivery remains unverified."
+      "gate": "Assets34 passed exact public GitHub download/hash, fresh extraction, Solo smoke and the complete headless same-PC two-process no-purchase Zombie baseline. The archived Visual05 complete cooperative diagnostic failed. Opening-menu selection, no-argument launch, process-restart persistence and sustained 30-FPS startup remain open. Human playtest, controllers/Deck and separate-PC multiplayer remain open, as do six-role/Horde/full-purchase and full visual acceptance. Preserve failed evidence and earlier ZIPs; scoped checks do not establish full acceptance. winter-hunt.com HTTPS was verified October 20, 2026."
     },
     {
       "id": "production",
@@ -138,7 +138,7 @@
         "Verify onboarding, app identity, store/pricing/content survey, playable build review, install/launch and discount eligibility in the authorized Steam workflow.",
         "Every actual game release updates this tracker with the matching download and instructions, then verifies the live site. Public release, merge and promotion require their remaining approvals."
       ],
-      "gate": "October 19 store-page review submission, November 2 release-candidate acceptance and build-review submission, and November 16 release remain planning targets, not completed submissions or approvals. Account/app identity, owner-approved store preview and Steam gates remain unverified. Assets34 is an authorized GitHub public diagnostic playtest, not a Steam or production release. Visual05 and older ZIPs, hashes and release dates are unchanged. Normal winter-hunt.com HTTPS remains blocked by pending certificate/settings approval; direct GitHub delivery is verified separately."
+      "gate": "October 19 store-page review submission, November 2 release-candidate acceptance and build-review submission, and November 16 release remain planning targets, not completed submissions or approvals. Account/app identity, owner-approved store preview and Steam gates remain unverified. Assets34 is an authorized GitHub public diagnostic playtest, not a Steam or production release. Visual05 and older ZIPs, hashes and release dates are unchanged. winter-hunt.com HTTPS was verified October 20, 2026; direct GitHub delivery remains verified separately."
     }
   ],
   "routine": {
@@ -153,7 +153,7 @@
     "asOf": "Exact package: Solo passed October 16 at 23:22 UTC; the complete two-process no-purchase Zombie baseline passed at 23:30 UTC. Public GitHub download/hash verification is complete. The release date is recorded in the download manifest.",
     "summary": "Scoped checks passed. Broader acceptance remains open.",
     "passed": "Source04 passed four managed assemblies covering 1,288 C# inputs, with 46 baseline and 46 candidate warnings and no changed diagnostics. The fresh Unity import audit completed with no audit errors and natural exit code 0: 8,595 raw inputs, 122 materials and 244 generated material/metadata outputs. All 63 scoped native cases passed: 48 EditMode, 8 PlayMode, 5 graphics-target, 1 boss and 1 camp case. These results apply to this exact source; they do not replace the public Visual05 package evidence. The Windows Mono diagnostic build completed with natural exit code 0. The Assets34 ZIP hash and all 261 freshly extracted file hashes match the saved package receipts; the extracted instructions also passed their exact-template check. The exact extracted package now passed Solo smoke and the complete headless, same-PC two-process Zombie baseline without the purchase branch. Both Zombie roles exited naturally with code 0 after 490.96 seconds overall, with 42 saved evidence files verified and unchanged inputs. The baseline cleared 12 actual enemies with 24 bow shots, then verified the paid round save/intermission, round-two camp grace/contact, grenade debit/refill and same-wave repeat-entry/readback.",
-    "pending": "The first full-library import audit failed and remains recorded; the corrected Source04 audit passed. Current Assets34 Solo and no-purchase Zombie baseline passes are separate from Visual05's historical failed cooperative diagnostic. No-argument launch, interactive menu, persistence across a process restart, human/controller/Deck, separate-PC/Internet multiplayer, six-role/Horde, full cooperative purchase and sustained 30 FPS remain unverified. Third-party editor scripts remain quarantined. The GitHub download is verified; winter-hunt.com HTTPS certificate delivery remains unverified and settings approval is pending.",
+    "pending": "The first full-library import audit failed and remains recorded; the corrected Source04 audit passed. Current Assets34 Solo and no-purchase Zombie baseline passes are separate from Visual05's historical failed cooperative diagnostic. No-argument launch, interactive menu, persistence across a process restart, human/controller/Deck, separate-PC/Internet multiplayer, six-role/Horde, full cooperative purchase and sustained 30 FPS remain unverified. Third-party editor scripts remain quarantined. The GitHub download is verified. winter-hunt.com HTTPS was verified October 20, 2026.",
     "assetStages": [
       {
         "label": "Staged for import",
@@ -303,7 +303,7 @@
         "releaseAccepted": false
       },
       "publicReleaseMeaning": "Diagnostic public playtest only; full runtime, human, performance and Steam/production release acceptance remain false.",
-      "customDomainHttpsVerified": false
+      "customDomainHttpsVerified": true
     },
     "density": "A historical six-role clock baseline covered 11.93 common seconds at low density. A later fixed 1,024 attempt failed during setup and did not establish ordinary-AI capacity. A separate private cp32 six-role comparison failed on screen readback; its strict comparison was not run, and a visible rerun still needs human approval. The original 1,024 target remains open; four-versus-six and fewer/faster enemies are private comparisons only.",
     "gates": "Six players remains the default. Opening-menu interaction, human gameplay/listening/visual review, physical Steam Deck/controller, sustained 30 FPS, readable UI/text entry and separate-PC multiplayer remain open. Earlier Horde and full cooperative-purchase failures are retained. Existing Deck hooks and Windows desktop FPS are not Deck or Proton proof. No confirmed Deck installation route is published for this Windows build.",
@@ -325,6 +325,6 @@
     "zombieNoPurchaseBaselinePassed": true,
     "publicDownloadVerified": true,
     "publicReleaseDate": "2026-10-16T23:56:54Z",
-    "customDomainHttpsVerified": false
+    "customDomainHttpsVerified": true
   }
 }

@@ -17,7 +17,7 @@
       <p class="access-note"><strong>No GitHub sign-in needed.</strong> Visual05 and earlier downloads remain archived below.</p>
       <a class="button latest-download" href="${safe(d.url)}">Download latest Windows test ZIP <span aria-hidden="true">&darr;</span></a>
       <p class="release-link"><a href="${safe(d.releaseUrl)}">Release notes and GitHub Assets</a></p>
-      <p data-domain-status>Direct GitHub HTTPS download verified. winter-hunt.com certificate repair remains pending approval; custom-domain delivery is not claimed.</p>
+      <p data-domain-status>Direct GitHub HTTPS download verified. winter-hunt.com HTTPS was verified October 20, 2026.</p>
       <h3 class="launch-title">Extract and launch</h3><p class="launch-scope">Source-derived steps; no-argument startup and interactive opening-menu acceptance remain open for this exact package.</p><ol class="latest-launch-steps">
         <li>Download <code>${safe(d.filename)}</code>, then choose <strong>Extract All</strong> into a new folder.</li>
         <li>Keep <code>WinterHunt_Data</code>, <code>WinterHunt.launch.json</code>, runtime folders, <code>Notices</code> and all DLLs together.</li>
@@ -107,7 +107,7 @@
       <details><summary>Verify the public ZIP +</summary><p class="hash">${safe(d.filename)}<br>${safe(d.bytes)} bytes<br>SHA-256<br>${safe(d.sha256)}</p><p>${safe(d.verification)}</p></details>
     </div>`;
   }
-  const results = await Promise.allSettled([load('data/latest-playtest.json?v=assets34-198dc281'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=assets34-198dc281'), load('data/visual05-playtest.json?v=visual05-334bfefe')]);
+  const results = await Promise.allSettled([load('data/latest-playtest.json?v=assets34-https-20261020'), load('data/private-playtest.json'), load('data/playtest.json'), load('data/download-dates.json?v=assets34-198dc281'), load('data/visual05-playtest.json?v=visual05-334bfefe')]);
   const publicationDates = results[3]?.status === 'fulfilled' ? (results[3].value.publicReleaseDates ?? {}) : {};
   const renderers = [latestCard, privateCard, publicCard];
   const rendered = results.slice(0, 3).map((result, index) => {
