@@ -1,1 +1,1 @@
-{"name":"winter-hunt-tracker","private":true,"scripts":{"build":"node scripts/build.mjs","test":"node scripts/check.mjs"},"type":"module"}
+{"name":"winter-hunt-tracker","private":true,"scripts":{"build":"node scripts/build.mjs","test":"node scripts/check-public-site.mjs"},"type":"module"}

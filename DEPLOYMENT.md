@@ -19,3 +19,7 @@ Reconciliation found no existing Winter Hunt release tracker in the owner's repo
 The Support the developer footer uses only the user's supplied Dogecoin address and decoded X Money target. No transfer, payment, account authentication or tax/reward claim is performed by publication.
 
 Display the actual GitHub release/publication timestamp beside each version/download in Phoenix local time (America/Phoenix, MST/UTC-7). Keep it distinct from package build time. Update data/download-dates.json for new releases; preserve old timestamps. Private drafts have no public release date. Never stamp the current date on an unchanged older build.
+
+## Current publication override — October 20, 2026
+
+The public-download presentation instructions above are historical. The current landing page must not display public package links or internal build labels. Keep provenance records and existing GitHub release artifacts intact. Publish the static root from main, run `npm run build` and `npm test`, and verify no legacy renderer restores download links. Testing access remains individually managed and pending; campaign contributions carry no advertised access promise.

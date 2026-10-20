@@ -19,3 +19,9 @@ The latest publicly authorized test candidate is identified in `data/latest-play
 The active theme uses the game's forest/earth/snow/HUD palette, unique visual05 Bigfoot and UFO frames, and solid/gradient content panels. Repeated SVG scene backgrounds, jagged motifs and the invented web compass are retired. Gallery frames remain separately identified as visual02.
 
 The October 14 Phoenix tracker refresh presents existing Visual05 frames uncropped with captions outside the game HUD, and keeps the older Visual02 finale archive collapsed and explicitly dated. The ledger/checkpoints foreground the public Visual05 test rather than the earlier sign-in-only draft. Current private validation remains separate from downloadable builds. Steam Deck, sustained 30 FPS, human acceptance, high-density and separate-PC multiplayer gates remain open.
+
+## Current public website access policy — October 20, 2026
+
+The landing page now uses plain work-in-progress copy and an individually managed testing-access placeholder. Do not expose public package/download links, internal build IDs or technical provenance in the page. Retain the existing data manifests, original image filenames and historical verification scripts as provenance; they are not rendered by the landing page. The old app/playtest/production renderers must remain disconnected from index.html. `npm test` checks this public-page policy. Earlier package-delivery checks are historical and must not be used to restore public download links.
+
+The GoFundMe link supports development. Do not promise testing access, a game copy or a reward for any contribution until explicitly authorized following the separate campaign-terms review. Restricted testing access is being prepared separately; no Drive folder link is published here.
