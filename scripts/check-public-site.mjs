@@ -7,6 +7,7 @@ const links=[...html.matchAll(/href="([^"]*)"/g)].map(x=>x[1]);
 assert(!links.some(x=>/releases\/|\.zip(?:$|[?#])|data\//i.test(x)),'Public page must not expose package or provenance links');
 assert.equal(links.filter(x=>x==='https://www.gofundme.com/f/help-build-winterhunt-an-indie-coop-hunting-game').length,3);
 assert.match(visible,/Request playtest access/);
+assert.match(visible,/current verified private Windows playtest candidate is Build81/);
 assert(!visible.includes('Testing access is being arranged'));
 assert.equal(links.filter(x=>x==='https://drive.google.com/drive/folders/12kt2fVVhpI2BOdXKgZEXtpxxe9PREiET').length,2);
 assert.match(visible,/Access requires owner approval and is granted individually/);
@@ -40,6 +41,7 @@ console.log('PASS: original cover preserved, authentic image hashes verified, no
 const roadmap=await readFile('dist/roadmap.html','utf8');
 assert.match(html,/href="roadmap.html"/);
 assert(!/https?:\/\/|drive\.google|\.zip|80%|80 percent|password|credential/i.test(roadmap));
-for(const text of ['Build49','Live voice:','Online leaderboards:','Particle-rich visual effects:','Playing with friends:','reward and save recovery','production build','rollback checks','Platform onboarding remains pending']) assert(roadmap.includes(text),text);
+for(const text of ['Build81','Live voice:','Online leaderboards:','Visual effects:','Playing with friends:','reward and save recovery','production build','rollback checks','Platform onboarding remains pending']) assert(roadmap.includes(text),text);
+assert(!roadmap.includes('Build49'),'Roadmap should identify the current verified private candidate');
 assert.match(roadmap,/not a claim that online services are live/);
 console.log('PASS: public roadmap status categories, no access URLs or completion percentage, and homepage navigation.');
