@@ -1,0 +1,63 @@
+{
+  "repository": "stevologic/operation-winter-steam-sale",
+  "revision": "8c515f28c376ae9f27c40786c5432d24ef321633",
+  "sourceBranch": "claude/friendly-turing-ozrk6r",
+  "rights": "Original first-party Winter Hunt artwork. Rights belong to the project owner. Owner-authorized marketing use; no new public asset license is granted.",
+  "models": [
+    {
+      "name": "WH_PonderosaPine_C",
+      "sourcePath": "AssetPacks/Environment/WH_PonderosaPine_C/WH_PonderosaPine_C.glb",
+      "bytes": 116384,
+      "sha256": "24b8ce364e42c5bf613f2e16c6fbab950b83d95fd3d0efb6a91d07680a28ee29"
+    },
+    {
+      "name": "WH_PocketSpruce",
+      "sourcePath": "AssetPacks/Environment/WH_PocketSpruce/WH_PocketSpruce.glb",
+      "bytes": 34356,
+      "sha256": "2c89f1e2a2905b18cce1419f1e62ec90f7cd73870feb4c320544964c1907aaeb"
+    },
+    {
+      "name": "WH_BoulderSnow",
+      "sourcePath": "AssetPacks/Environment/WH_BoulderSnow/WH_BoulderSnow.glb",
+      "bytes": 15820,
+      "sha256": "02160d2801f22df4ea354bfa0af22cc3f14fb0a7f407108fa1d97904bcb79e8f"
+    },
+    {
+      "name": "WH_CanvasTent",
+      "sourcePath": "AssetPacks/Camp/WH_CanvasTent/WH_CanvasTent.glb",
+      "bytes": 280964,
+      "sha256": "c646c078d3acca567f8be426ca755535d8bf8a8d68877046ddd94082c432df03"
+    },
+    {
+      "name": "WH_Campfire",
+      "sourcePath": "AssetPacks/Camp/WH_Campfire/WH_Campfire.glb",
+      "bytes": 183484,
+      "sha256": "b6065d8e927cd0e2b6831507c6092129a87c03384a75f2f2a0385c534f99cc3e"
+    },
+    {
+      "name": "WH_CamperRV",
+      "sourcePath": "AssetPacks/Camp/WH_CamperRV/WH_CamperRV.glb",
+      "bytes": 115328,
+      "sha256": "1a8408fa9688ef2d8a53a9dff96fc436aff4a5a4271c0323e3d59836d50edef3"
+    },
+    {
+      "name": "WH_Lantern",
+      "sourcePath": "AssetPacks/Camp/WH_Lantern/WH_Lantern.glb",
+      "bytes": 27772,
+      "sha256": "ba3a93047ab1bdfa109b9e50e00c9b81131862e5592ce3eeb809669675e892d7"
+    }
+  ],
+  "textures": [
+    {
+      "name": "WH_Tex_Snow_BaseColor",
+      "sourcePath": "AssetPacks/Textures/WH_Tex_Snow/WH_Tex_Snow_BaseColor.jpg",
+      "sourceBytes": 361304,
+      "sourceSha256": "3a5a46738e2f352bac592ebdcf99027dbb93acc2bd5ecceb0debe18daa8433d6",
+      "path": "WH_Tex_Snow_BaseColor.webp",
+      "bytes": 4454,
+      "sha256": "ea31b27b502a3270d9bc3a7bc23f4182bd82823ca75a36f86801af9690ae5c5f",
+      "treatment": "Resized to 512 x 512; WebP quality 76. No other texture maps used."
+    }
+  ],
+  "totalModelBytes": 774108
+}
