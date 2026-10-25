@@ -1,0 +1,103 @@
+{
+  "checkedUtc": "2026-10-25T20:44:27.087Z",
+  "gameProcessesLaunched": false,
+  "checks": [
+    {
+      "name": "No 3D bundle/models requested before interaction",
+      "resources": [
+        "http://127.0.0.1:52406/landing.css",
+        "http://127.0.0.1:52406/assets/showcase/camp-poster.webp",
+        "http://127.0.0.1:52406/showcase-entry.js",
+        "http://127.0.0.1:52406/support.js?v=restricted-testing-20261020",
+        "http://127.0.0.1:52406/assets/hero-gameplay-visual05.webp",
+        "http://127.0.0.1:52406/assets/encounter-ufo-768.webp",
+        "http://127.0.0.1:52406/assets/encounter-night-768.webp"
+      ],
+      "bytes": 302375,
+      "lcpMs": 84,
+      "cls": 0
+    },
+    {
+      "name": "Desktop WCAG AA automated checks",
+      "violations": 0
+    },
+    {
+      "name": "3D load and rendering budgets",
+      "loadMs": 246,
+      "state": "ready",
+      "drawCalls": "72",
+      "triangles": "17972",
+      "renderWidth": "707",
+      "renderHeight": "589",
+      "motion": "false"
+    },
+    {
+      "name": "No repeated draw calls while motion paused"
+    },
+    {
+      "name": "Motion enabled on request; rendering stops offscreen"
+    },
+    {
+      "name": "Actual WebGL context loss shows poster; restoration recovers"
+    },
+    {
+      "name": "Keyboard-accessible scene controls"
+    },
+    {
+      "name": "DOGE manual copy fallback"
+    },
+    {
+      "name": "Reduced motion mobile3D starts paused and respects pixel cap",
+      "width": 526,
+      "height": 438
+    },
+    {
+      "name": "Responsive 390px, no horizontal overflow, WCAG AA automated checks"
+    },
+    {
+      "name": "Responsive 320px, no horizontal overflow, WCAG AA automated checks"
+    },
+    {
+      "name": "Responsive 768px, no horizontal overflow, WCAG AA automated checks"
+    },
+    {
+      "name": "No-JavaScript poster, gameplay and access links"
+    },
+    {
+      "name": "WebGL-disabled fallback"
+    },
+    {
+      "name": "Model network failure cleans up; retry succeeds"
+    },
+    {
+      "name": "GitHub Pages subpath loading"
+    },
+    {
+      "name": "Throttled first-render observation",
+      "profile": "1.6 Mbps down, 150 ms RTT, 4x CPU; localhost Chromium, not real mobile hardware",
+      "lcpMs": 912,
+      "firstContentfulPaintMs": 864,
+      "resourceBytes": 97769
+    },
+    {
+      "name": "No uncaught runtime errors"
+    }
+  ],
+  "screenshots": [
+    "desktop-poster.png",
+    "desktop-3d.png",
+    "mobile-390.png",
+    "mobile-3d.png",
+    "mobile-320.png",
+    "mobile-768.png",
+    "no-javascript.png"
+  ],
+  "budget": {
+    "modelsBytes": 774108,
+    "textureBytes": 4454,
+    "posterBytes": 81656,
+    "bundleBytes": 622001,
+    "bundleGzipBytes": 159432
+  },
+  "scope": "Local Luigi website QA only; no Unity/game acceptance"
+}

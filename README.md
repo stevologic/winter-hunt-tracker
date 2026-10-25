@@ -1,5 +1,42 @@
 # Winter Hunt public checkpoint journal
 
+## Original-art website showcase — October 25, 2026
+
+The landing page now pairs a lightweight, explicitly labeled Three.js art scene
+with a separate authentic gameplay gallery. The scene is original Winter Hunt
+marketing artwork, not gameplay or confirmation of Unity integration. The
+historical gameplay manifest and all original capture hashes remain unchanged.
+`assets/showcase/provenance.json` and the adjacent license document the seven
+unchanged first-party GLBs, one optimized snow texture and pinned art revision.
+No bought/private third-party raw assets, Unity files or build packages are used.
+
+Use Node 22+, `npm ci`, `npm run build`, `npm test`, and `npm run qa` (requires the
+Playwright Chromium browser). `npm run preview` serves http://127.0.0.1:4173/.
+The generated `static/showcase.js` and Three.js MIT notice are committed because
+GitHub Pages serves the repository root. Rebuild after editing `scene/camp.js`.
+No new backend, analytics, accounts or payment service is introduced.
+
+The first render is an 82 KB poster; 3D code and models load only on request.
+The 622 KB bundle compresses to 160 KB gzip; models total 774,108 bytes and the
+texture is 4,454 bytes. The scene uses 72 draw calls / 17,972 triangles, a maximum
+1.5 DPR and 1.2 million pixels, one render pass, no dynamic shadows, and optional
+24 FPS motion. Motion starts paused, respects reduced-motion changes, and stops
+rendering offscreen or in hidden tabs. Model failure, disabled WebGL/JavaScript
+and context loss retain the poster and all essential links.
+
+`npm test` retains all existing Drive, Build81, donation and image integrity
+guards, and adds exact source hashes, self-contained GLBs, truthful labeling,
+notice and byte budgets. `npm run qa` checks desktop/mobile accessibility,
+keyboard controls, no eager 3D requests, rendering limits, reduced motion,
+failed downloads/retry and real WebGL loss/recovery. The PR workflow produces
+a downloadable website preview and screenshots; it does not deploy. Publication
+remains a separate review/merge decision. Local/browser timings are not a claim
+about real mobile GPU performance or game acceptance.
+
+The earlier theme notes below describe prior revisions. Current copy continues
+to use the approved restricted Drive folder and Build81 designation; newer game
+build delivery is separate work and is not promoted by this website change.
+
 Static GitHub Pages website. Only public-safe branding, requirements and milestone information belong here. Never copy private game source, account identities, app IDs or credentials into this repository. Private download URLs are excluded except for the user's explicitly authorized a047a9a private draft release-page link in `data/private-playtest.json`. That public link does not grant access or authorize uploading its ZIP publicly. The earlier vetted public Windows ZIP remains a separate baseline.
 
 `data/checkpoints.json` is the auditable source. Update a checkpoint to `verified` only with acceptance evidence and public-safe evidence links. A compiled source candidate is not a delivered playable build. Decision verification is distinct from implementation verification. Add the included-feature manifest from a tested build's actual evidence, not the requested feature list.

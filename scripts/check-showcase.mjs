@@ -1,0 +1,30 @@
+import {readFile,stat} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {gzipSync} from 'node:zlib';
+import assert from 'node:assert/strict';
+const html=await readFile('dist/index.html','utf8');
+assert.match(html,/Art showcase, not gameplay or a current game build/);
+assert(!html.includes('All displayed scenes are captured in-game'));
+assert.match(html,/<section id="gameplay"/);
+assert.match(html,/<script type="module" src="showcase-entry.js"/);
+assert(!/modulepreload|<script[^>]*static\/showcase/.test(html),'Never eagerly load 3D');
+const manifest=JSON.parse(await readFile('assets/showcase/provenance.json','utf8'));
+assert.equal(manifest.revision,'8c515f28c376ae9f27c40786c5432d24ef321633');
+assert.equal(manifest.models.length,7);
+const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
+for(const item of [...manifest.models,...manifest.textures]){
+  const path=`assets/showcase/${item.path||item.name+'.glb'}`;
+  const bytes=await readFile(path);assert.equal(bytes.length,item.bytes);assert.equal(sha256(bytes),item.sha256,path);
+  if(!path.endsWith('.glb'))continue;
+  assert.equal(bytes.toString('ascii',0,4),'glTF');
+  const json=JSON.parse(bytes.toString('utf8',20,20+bytes.readUInt32LE(12)).trim());
+  assert(!JSON.stringify(json.buffers||[]).includes('uri'),'GLBs must be self-contained');
+  assert(!JSON.stringify(json.images||[]).includes('uri'),'No external model textures');
+}
+assert(manifest.totalModelBytes<800000);
+assert((await stat('assets/showcase/camp-poster.webp')).size<100000);
+assert((await stat('static/showcase.js')).size<650000);
+assert(gzipSync(await readFile('static/showcase.js')).length<170000);
+assert.match(await readFile('static/three-LICENSE.txt','utf8'),/Permission is hereby granted/);
+assert.match(await readFile('assets/showcase/LICENSE.md','utf8'),/Rights belong to the project owner/);
+console.log('PASS: truthful art/game separation, exact original GLB hashes, self-contained assets, download budgets and retained rights/notices.');

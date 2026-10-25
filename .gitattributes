@@ -1,0 +1,2 @@
+# The bundled upstream shader strings intentionally retain GLSL whitespace.
+static/showcase.js -whitespace linguist-generated=true
